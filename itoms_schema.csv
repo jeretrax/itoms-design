@@ -1,0 +1,52 @@
+ObjectID,PrimaryDomainID,DomainTag,Object,Field,Type,Required,Description,Relationship_or_Rule
+OBJ-CMP-0001,DOM-ORG-0001,ORG,Company,CompanyID,UUID,Yes,Runtime Company record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-CMP-0001,DOM-ORG-0001,ORG,Company,Name,String,Yes,Common company name,
+OBJ-CMP-0001,DOM-ORG-0001,ORG,Company,CompanyType,Enum,Yes,Customer Vendor Partner Internal Prospect etc,
+OBJ-CMP-0001,DOM-ORG-0001,ORG,Company,PrimaryLocationID,UUID,No,Primary operating location,FK Location
+OBJ-CMP-0001,DOM-ORG-0001,ORG,Company,PrimaryInternetDomain,String,No,Primary DNS/Internet domain for the company,Not the ITOMS architectural PrimaryDomainID
+OBJ-PER-0001,DOM-ORG-0001,ORG,Person,PersonID,UUID,Yes,Runtime Person record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-PER-0001,DOM-ORG-0001,ORG,Person,DisplayName,String,Yes,Display name,
+OBJ-PER-0001,DOM-ORG-0001,ORG,Person,VerificationState,Enum,Yes,Unverified Verified Authorized NotAuthorized,
+OBJ-PER-0001,DOM-ORG-0001,ORG,Person,PrimaryCompanyID,UUID,No,Default company context,FK Company
+OBJ-CON-0001,DOM-ORG-0001,ORG,Contact,ContactID,UUID,Yes,Runtime Contact record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-CON-0001,DOM-ORG-0001,ORG,Contact,PersonID,UUID,Yes,Person holding contact role,FK Person
+OBJ-CON-0001,DOM-ORG-0001,ORG,Contact,CompanyID,UUID,No,Company context,FK Company
+OBJ-LOC-0001,DOM-LOC-0001,LOC,Location,LocationID,UUID,Yes,Runtime Location record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-LOC-0001,DOM-LOC-0001,LOC,Location,ParentLocationID,UUID,No,Parent site floor room or container,Self FK
+OBJ-LOC-0001,DOM-LOC-0001,LOC,Location,Latitude,Decimal,No,Geographic latitude,
+OBJ-LOC-0001,DOM-LOC-0001,LOC,Location,Longitude,Decimal,No,Geographic longitude,
+OBJ-AST-0001,DOM-INV-0001,INV,Asset,AssetID,UUID,Yes,Runtime Asset record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-AST-0001,DOM-INV-0001,INV,Asset,AssetTag,String,No,Human-facing tag,Unique within company where used
+OBJ-AST-0001,DOM-INV-0001,INV,Asset,CurrentLocationID,UUID,No,Convenience current location,Derived from latest occupancy interval
+OBJ-AST-0001,DOM-INV-0001,INV,Asset,CustodianPersonID,UUID,No,Current responsible person,FK Person
+OBJ-DEV-0001,DOM-INV-0001,INV,Device,DeviceID,UUID,Yes,Runtime Device record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-DEV-0001,DOM-INV-0001,INV,Device,AssetID,UUID,Yes,Underlying asset,FK Asset
+OBJ-DEV-0001,DOM-INV-0001,INV,Device,Hostname,String,No,Current hostname,Historical changes retained
+OBJ-DEV-0001,DOM-INV-0001,INV,Device,LastSeen,DateTime,No,Last management or discovery sighting,
+OBJ-SRV-0001,DOM-INV-0001,INV,Server,ServerID,UUID,Yes,Runtime Server record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-SRV-0001,DOM-INV-0001,INV,Server,DeviceID,UUID,Yes,Underlying device,FK Device
+OBJ-APP-0001,DOM-APP-0001,APP,Application,ApplicationID,UUID,Yes,Runtime Application record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-APP-0001,DOM-APP-0001,APP,Application,BusinessOwnerPersonID,UUID,No,Business owner,FK Person
+OBJ-SUB-0001,DOM-FIN-0001,FIN,Subscription,SubscriptionID,UUID,Yes,Runtime Subscription record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-SUB-0001,DOM-FIN-0001,FIN,Subscription,RenewalDate,Date,No,Next renewal date,
+OBJ-SGR-0001,DOM-IAM-0001,IAM,SecurityGroup,SecurityGroupID,UUID,Yes,Runtime SecurityGroup record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-SGR-0001,DOM-IAM-0001,IAM,SecurityGroup,SourceSystem,String,No,Entra AD local app etc,
+OBJ-POL-0001,DOM-GRC-0001,GRC,Policy,PolicyID,UUID,Yes,Runtime Policy record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-POL-0001,DOM-GRC-0001,GRC,Policy,VerificationPercent,Decimal,No,Percent currently verified,0-100
+OBJ-CTL-0001,DOM-GRC-0001,GRC,Control,ControlID,UUID,Yes,Runtime Control record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-RSK-0001,DOM-GRC-0001,GRC,Risk,RiskID,UUID,Yes,Runtime Risk record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-RSK-0001,DOM-GRC-0001,GRC,Risk,AcceptedByPersonID,UUID,No,Person accepting risk,FK Person
+OBJ-OBS-0001,DOM-OPS-0001,OPS,Observation,ObservationID,UUID,Yes,Runtime Observation record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-OBS-0001,DOM-OPS-0001,OPS,Observation,ObservationText,Text,Yes,Factual captured note,
+OBJ-ASM-0001,DOM-GRC-0001,GRC,Assessment,AssessmentID,UUID,Yes,Runtime Assessment record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-ASM-0001,DOM-GRC-0001,GRC,Assessment,RunAt,DateTime,Yes,Assessment execution timestamp,
+OBJ-WFL-0001,DOM-OPS-0001,OPS,Workflow,WorkflowID,UUID,Yes,Runtime Workflow record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-WFL-0001,DOM-OPS-0001,OPS,Workflow,ObjectType,String,Yes,Object type workflow applies to,
+OBJ-ATT-0001,DOM-OPS-0001,OPS,AttentionItem,AttentionItemID,UUID,Yes,Runtime AttentionItem record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-ATT-0001,DOM-OPS-0001,OPS,AttentionItem,Weight,Decimal,Yes,Computed attention weight,Derived
+OBJ-TOP-0001,DOM-OPS-0001,OPS,Topic,TopicID,UUID,Yes,Runtime Topic record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-CAS-0001,DOM-OPS-0001,OPS,Case,CaseID,UUID,Yes,Runtime Case record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-CAS-0001,DOM-OPS-0001,OPS,Case,TopicID,UUID,No,Parent topic,FK Topic
+OBJ-EVD-0001,DOM-KNO-0001,KNO,Evidence,EvidenceID,UUID,Yes,Runtime Evidence record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-EVD-0001,DOM-KNO-0001,KNO,Evidence,RelatedObjectType,String,Yes,Object type evidence supports,Polymorphic relationship
+OBJ-EVD-0001,DOM-KNO-0001,KNO,Evidence,RelatedObjectID,UUID,Yes,Object identifier evidence supports,Polymorphic relationship
