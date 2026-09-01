@@ -1,0 +1,21 @@
+ObjectID,ObjectName,PrimaryDomainID,DomainTag,Definition,Aliases,Status,LifecyclePolicy
+OBJ-CMP-0001,Company,DOM-ORG-0001,ORG,"A legal, operational, customer, vendor, partner, internal, or third-party organization represented in ITOMS.",Organization;Tenant Company;Vendor Company,Active,Archive
+OBJ-PER-0001,Person,DOM-ORG-0001,ORG,"A human being tracked independently of any single login, employer, company relationship, or account.",Individual;Human;Employee,Active,Archive
+OBJ-CON-0001,Contact,DOM-ORG-0001,ORG,"A contextual communication or relationship role held by a Person for another object or purpose.",Contact Role,Active,Archive
+OBJ-LOC-0001,Location,DOM-LOC-0001,LOC,"A physical or logical place where people, assets, services, or data can exist.",Site;Room;Place,Active,Archive
+OBJ-AST-0001,Asset,DOM-INV-0001,INV,"A tracked item of operational, technical, financial, compliance, or custodial value.",Tracked Asset;Inventory Item,Active,Archive
+OBJ-DEV-0001,Device,DOM-INV-0001,INV,"A technical Asset with computing, networking, communications, security, or embedded functionality.",Endpoint;Node;Managed Device,Active,Archive
+OBJ-SRV-0001,Server,DOM-INV-0001,INV,"A Device delivering shared compute, storage, identity, application, network, or infrastructure services.",Host;Server Device,Active,Archive
+OBJ-APP-0001,Application,DOM-APP-0001,APP,"A software product, service, workload, SaaS application, executable, or service principal used by a Company.",Software;SaaS;Workload,Active,Archive
+OBJ-SUB-0001,Subscription,DOM-FIN-0001,FIN,"A recurring entitlement, service plan, license agreement, cloud subscription, or contractual right to use a service.",License Subscription;Service Plan,Active,Archive
+OBJ-SGR-0001,Security Group,DOM-IAM-0001,IAM,"A collection used to grant, deny, scope, classify, or review access to systems and data.",Access Group;Group,Active,Archive
+OBJ-POL-0001,Policy,DOM-GRC-0001,GRC,"A formal or operational statement of expected behavior, configuration, responsibility, or control.",IT Policy;Security Policy,Active,Versioned
+OBJ-CTL-0001,Control,DOM-GRC-0001,GRC,"A measurable safeguard or practice used to reduce risk or satisfy a framework requirement.",Safeguard,Active,Versioned
+OBJ-RSK-0001,Risk,DOM-GRC-0001,GRC,"A documented exposure, uncertainty, weakness, or condition that may negatively affect business objectives.",Risk Register Entry,Active,Archive
+OBJ-OBS-0001,Observation,DOM-OPS-0001,OPS,"A low-friction factual note about something seen, heard, measured, discovered, or suspected that may deserve later review.",Finding Note;Captured Observation,Active,Archive
+OBJ-ASM-0001,Assessment,DOM-GRC-0001,GRC,"A structured evaluation that answers one or more Questions using current evidence, object state, and defined criteria.",Evaluation;Assessment Run,Active,RetainHistory
+OBJ-WFL-0001,Workflow,DOM-OPS-0001,OPS,"A defined sequence of states, activities, approvals, automation, verification, and outcomes associated with an object or business process.",Process;Runbook Workflow,Active,Versioned
+OBJ-ATT-0001,Attention Item,DOM-OPS-0001,OPS,"A signal indicating something currently deserves human attention and explaining why.",Attention Signal,Active,Archive
+OBJ-TOP-0001,Topic,DOM-OPS-0001,OPS,"An enduring business or technical subject that can accumulate cases, observations, evidence, decisions, risks, and projects over time.",Discussion Topic;Subject,Active,Archive
+OBJ-CAS-0001,Case,DOM-OPS-0001,OPS,"A specific instance, investigation, question, incident, decision thread, or problem within a Topic.",Investigation;Issue Thread,Active,Archive
+OBJ-EVD-0001,Evidence,DOM-KNO-0001,KNO,"A captured artifact, measurement, assertion, screenshot, log, document, API result, approval, photo, or other support for a finding or decision.",Artifact;Proof,Active,RetainHistory
