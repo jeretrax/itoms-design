@@ -1,0 +1,10 @@
+DomainID,DomainTag,DomainName,Definition,Status
+DOM-ORG-0001,ORG,Organization & People,"Companies, people, organizational structures, departments, contact roles, and business relationships.",Active
+DOM-LOC-0001,LOC,Location & Physical Context,"Physical and logical places, geographic context, occupancy, placement, and spatial hierarchy.",Active
+DOM-INV-0001,INV,Inventory & Asset Lifecycle,"Tracked assets and devices, custody, lifecycle, technical inventory, and configuration identity.",Active
+DOM-APP-0001,APP,Applications & Services,"Applications, software services, workloads, subscriptions as service entitlements, and technical service relationships.",Active
+DOM-IAM-0001,IAM,Identity & Access,"Accounts, security groups, roles, entitlements, membership, authorization, and access history.",Active
+DOM-GRC-0001,GRC,Governance Risk & Compliance,"Policies, controls, risks, assessments, framework mappings, acceptance, and compliance state.",Active
+DOM-OPS-0001,OPS,Operations & Work Management,"Workflows, observations, attention items, topics, cases, reviews, projects, and operational decision flow.",Active
+DOM-KNO-0001,KNO,Knowledge & Evidence,"Evidence, knowledge artifacts, documentation, assertions, supporting records, and provenance.",Active
+DOM-FIN-0001,FIN,Financial & Commercial,"Purchasing, cost, contract, renewal, valuation, commercial commitments, and accounting context.",Active
