@@ -87,7 +87,7 @@ Conceptually:
 
 `Effective Context = Canonical Data + Organization Profile + Operating Model + Person + Relationships + Roles + Lens + Capabilities/Permissions + Engagement + Temporal Context + Current Scope`
 
-`Current Scope` includes the active tenant, provider/customer relationship, workspace or interface mode, workflow, selected object, location, purpose, and other immediate request conditions. Temporal Context supplies the effective time or interval used to resolve relationships, roles, responsibility, and historical state.
+`Current Scope` includes the active tenant, provider/customer relationship, Work Session, workspace or interface mode, workflow, selected object, location, purpose, and other immediate request conditions. Temporal Context supplies the effective time or interval used to resolve relationships, roles, responsibility, and historical state. Work Architecture defines Work Session behavior; its presence here allows current work to contribute to Effective Context without making work progression an authorization or presentation concern.
 
 Effective Context determines:
 

@@ -7,9 +7,11 @@ ITOMS is a multi-tenant platform built around shared canonical services rather t
 ## Logical components
 
 - Role-specific workspaces and contextual capability navigation
-- Effective Context resolution across Organization Profile, Operating Model, Lens, Permissions, and current scope
+- Effective Context resolution across Organization Profile, Operating Model, Lens, Capabilities, Permissions, and current scope
 - Canonical object and relationship services
 - Workflow and orchestration engine
+- Work Session continuity and next-action guidance services
+- Workflow pattern observation and suggestion services
 - Ingestion, normalization, and reconciliation services
 - Search, reporting, and timeline services
 - Evidence and knowledge services

@@ -42,6 +42,12 @@ OBJ-ASM-0001,DOM-GRC-0001,GRC,Assessment,AssessmentID,UUID,Yes,Runtime Assessmen
 OBJ-ASM-0001,DOM-GRC-0001,GRC,Assessment,RunAt,DateTime,Yes,Assessment execution timestamp,
 OBJ-WFL-0001,DOM-OPS-0001,OPS,Workflow,WorkflowID,UUID,Yes,Runtime Workflow record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-WFL-0001,DOM-OPS-0001,OPS,Workflow,ObjectType,String,Yes,Object type workflow applies to,
+OBJ-WSS-0001,DOM-OPS-0001,OPS,WorkSession,WorkSessionID,UUID,Yes,Runtime Work Session record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-WSS-0001,DOM-OPS-0001,OPS,WorkSession,PersonID,UUID,Yes,Person performing the work,FK Person
+OBJ-WSS-0001,DOM-OPS-0001,OPS,WorkSession,WorkflowID,UUID,No,Applicable Workflow definition or instance,FK Workflow; optional for ad-hoc work
+OBJ-WSS-0001,DOM-OPS-0001,OPS,WorkSession,Status,String,Yes,Current session lifecycle state,Active paused handed-off completed abandoned archived
+OBJ-WSS-0001,DOM-OPS-0001,OPS,WorkSession,StartedAt,DateTime,Yes,Time the Work Session began,
+OBJ-WSS-0001,DOM-OPS-0001,OPS,WorkSession,LastActivityAt,DateTime,Yes,Most recent material activity time,
 OBJ-ATT-0001,DOM-OPS-0001,OPS,AttentionItem,AttentionItemID,UUID,Yes,Runtime AttentionItem record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-ATT-0001,DOM-OPS-0001,OPS,AttentionItem,Weight,Decimal,Yes,Computed attention weight,Derived
 OBJ-TOP-0001,DOM-OPS-0001,OPS,Topic,TopicID,UUID,Yes,Runtime Topic record identifier,Runtime primary key; distinct from canonical ObjectID

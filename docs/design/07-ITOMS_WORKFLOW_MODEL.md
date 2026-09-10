@@ -3,7 +3,9 @@
 **Status:** Proposed  
 **Canonical workflow concept:** `OBJ-WFL-0001`
 
-A Workflow is a versioned definition of states, activities, approvals, automation, verification, gates, and outcomes associated with an object or business process.
+A Workflow, also called a Process in business-facing language, is a versioned definition of states, Stages, Tasks, Actions, decisions, approvals, automation, verification, exceptions, and outcomes associated with a Work Function, object, or business process.
+
+A Workflow is a graph of possible progression, not necessarily a rigid sequence. It may branch, skip optional work, move backward, pause, allow parallel activity, require judgment, or record work performed outside ITOMS. Detailed hierarchy, Work Session, discovery, handoff, and guidance rules are defined in [`work-architecture.md`](work-architecture.md).
 
 ## Operational progression
 
@@ -27,6 +29,7 @@ A workflow should specify:
 - gates, exceptions, and escalation
 - completion criteria and outcomes
 - history and audit requirements
+- suggested next-action rules and explanation
+- pause, resume, handoff, and external-work behavior
 
 The customer lifecycle uses this shared model for discovery, onboarding, management, support, review, and offboarding rather than hard-coded page sequences.
-

@@ -8,10 +8,11 @@ Any developer, AI coding assistant, agent, automation, or reviewer working in th
 2. `ITOMS_CANONICAL_RULES.md` — identity, domain, naming, and relationship rules.
 3. `docs/design/README.md` — master design index and reading structure.
 4. `docs/design/context-architecture.md` — rules for Canonical Data, profiles, operating models, lenses, capabilities, permissions, and Effective Context.
-5. `itoms_domains.csv` — canonical Domain registry.
-6. `itoms_objects.csv` — canonical Object registry.
-7. `itoms_glossary.html` — authoritative human-readable glossary and object library.
-8. `itoms_schema.csv` — field-level starter schema/data dictionary.
+5. `docs/design/work-architecture.md` — rules for Work Functions, flexible Workflows, Work Sessions, guidance, handoffs, exceptions, and outcomes.
+6. `itoms_domains.csv` — canonical Domain registry.
+7. `itoms_objects.csv` — canonical Object registry.
+8. `itoms_glossary.html` — authoritative human-readable glossary and object library.
+9. `itoms_schema.csv` — field-level starter schema/data dictionary.
 
 If two files appear to disagree, stop treating the names as authority. Resolve the concept by its permanent ID and update the inconsistent documentation. Permanent IDs are the identity of a concept; display names are labels.
 
@@ -26,6 +27,7 @@ If two files appear to disagree, stop treating the names as authority. Resolve t
 - Aliases, former names, UI captions, abbreviations, and vendor-specific names may change without changing canonical identity.
 - Archive rather than delete when historical references exist.
 - Organization Profile, Operating Model, or Lens changes never delete, replace, or redefine Canonical Data. They may change behavior, visibility, defaults, and presentation only.
+- Workflows guide possible progression and must not be assumed to be rigid sequences. Work Session preserves resumable work context independently of Workspace presentation.
 - Material changes to definitions, ownership, or architecture should be recorded as an ADR/decision record.
 
 ## Reserved ID namespaces

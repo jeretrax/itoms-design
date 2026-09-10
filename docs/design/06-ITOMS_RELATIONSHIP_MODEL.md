@@ -19,7 +19,7 @@ Relationships make the customer operations graph useful. They preserve why objec
 - Device specializes or references an underlying Asset.
 - Evidence supports an Observation, Assessment, Risk, Control, decision, or other object.
 - Case belongs to or contributes to a Topic.
+- Work Session (`OBJ-WSS-0001`) relates a Person and current Work Function to the canonical records, Tasks, Actions, Exceptions, and outcomes involved during a resumable period of work.
 - Work affects one or more supported Business Processes or Business Functions once those concepts are canonically approved.
 
 Relationship definitions promoted to metadata use the `REL-` namespace.
-

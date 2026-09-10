@@ -95,6 +95,45 @@ Not yet incorporated.
 
 Move entries here only for organizational convenience. Do not delete their history.
 
+### DR-003 — Work Architecture and Persistent Work Sessions
+
+**Status:** Implemented
+
+**Category:** Architecture / Work Management / Experience
+
+**Domain:** Operations
+
+**Facet:** All
+
+**Related Objects:** Workflow (`OBJ-WFL-0001`), Work Session (`OBJ-WSS-0001`), Case, Assessment, Topic, and proposed work objects
+
+**Related Workflow:** All guided and ad-hoc work
+
+**Date Raised:** 2026-09-10
+
+**Raised By:** Product Owner
+
+#### Design Concern / Idea
+
+ITOMS must help people perform recurring business functions across tasks, decisions, exceptions, records, communications, documents, and external systems. Object-centric navigation and rigid automation sequences do not preserve the user's real work context.
+
+#### Why It Matters
+
+People need persistent, resumable continuity and useful next-action guidance while moving across many objects and systems. The system should learn repeatable patterns and offer guidance or selective automation without forcing the organization to redesign work around an inflexible engine.
+
+#### Disposition
+
+Accepted. ITOMS uses the hierarchy Work Function, Workflow/Process, Stage, Task, and Action. Workflow progression may branch, skip, reverse, pause, involve judgment, or leave ITOMS. Work Session is promoted as first-class object `OBJ-WSS-0001`; Workspace remains presentation. Automation is subordinate to work purpose and outcome.
+
+#### Incorporated Into
+
+- `docs/design/work-architecture.md`
+- `docs/design/02-ITOMS_DESIGN_PRINCIPLES.md`
+- `docs/design/07-ITOMS_WORKFLOW_MODEL.md`
+- `docs/design/09-ITOMS_APPLICATION_ARCHITECTURE.md`
+- `docs/design/10-ITOMS_EXPERIENCE_AND_UI_MODEL.md`
+- `adr/ADR-0003-work-architecture-and-work-session.md`
+
 ### DR-002 — Context Layers and Canonical Persistence
 
 **Status:** Implemented
