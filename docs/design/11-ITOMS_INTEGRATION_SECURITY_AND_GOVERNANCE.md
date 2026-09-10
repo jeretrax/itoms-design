@@ -15,10 +15,9 @@ Connectors extend the customer operations graph while maintaining least privileg
 
 ## Governance rules
 
-- Authorization considers tenant, role, relationship, Facet, purpose, and sensitivity.
+- Authorization considers tenant, role, relationship, Operating Model, purpose, and sensitivity. Lens and Facet configuration may reduce what is presented but never grant access.
 - Material actions produce attributable audit records.
 - Policies and Controls map to frameworks without duplicating the underlying canonical objects.
 - Risk acceptance records the accepting Person, scope, rationale, evidence, and review date.
 - Retention, residency, export, and deletion rules are explicit for each deployment and data class.
 - Security architecture and durable permission changes require ADR review.
-

@@ -7,7 +7,7 @@ ITOMS navigation is centered on the user's role, current position, responsibilit
 ## Experience structure
 
 - A persistent application shell supports tenant and workspace context.
-- Each module may provide its own contextual sub-navigation.
+- Each workspace or capability area may provide contextual sub-navigation without becoming a separate data silo.
 - Journey or workflow banners show current stage, blockers, ownership, and next steps.
 - Role-specific Facets present the same canonical truth differently for end users, IT staff, department managers, executives, and MSP personnel.
 - Dense operational tables provide saved views, filters, sorting, grouping, and a Datto RMM-style field chooser.
@@ -24,4 +24,3 @@ ITOMS navigation is centered on the user's role, current position, responsibilit
 - evidence and verification
 
 Customer-facing views explain what is happening, why it matters, what is needed from the customer, and what happens next while keeping credentials and technician-only details hidden.
-

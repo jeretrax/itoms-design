@@ -94,3 +94,42 @@ Not yet incorporated.
 ## Resolved / Integrated Design Notes
 
 Move entries here only for organizational convenience. Do not delete their history.
+
+### DR-002 — Context Layers and Canonical Persistence
+
+**Status:** Implemented
+
+**Category:** Architecture / Information Model / Authorization
+
+**Domain:** Cross-domain
+
+**Facet:** All
+
+**Related Objects:** All canonical objects
+
+**Related Workflow:** All context-dependent workflows
+
+**Date Raised:** 2026-09-10
+
+**Raised By:** Product Owner
+
+#### Design Concern / Idea
+
+ITOMS must support internal IT, MSP-managed, co-managed, and other operating arrangements without maintaining competing datasets or losing information when the organization changes mode. Organization characteristics, responsibility boundaries, presentation, and authorization need distinct definitions and a deterministic runtime composition.
+
+#### Why It Matters
+
+The platform must preserve one durable operational history while allowing different organizations and roles to experience and operate the system appropriately. A profile or mode change must never erase assets, people, identities, contracts, evidence, work, relationships, or prior responsibility.
+
+#### Disposition
+
+Accepted. ITOMS uses Canonical Data with Organization Profile, Operating Model, Lens, Permissions, and Current Scope to compute Effective Context. Canonical Persistence prohibits context changes from deleting or recreating canonical records.
+
+#### Incorporated Into
+
+- `docs/design/context-architecture.md`
+- `docs/design/02-ITOMS_DESIGN_PRINCIPLES.md`
+- `docs/design/09-ITOMS_APPLICATION_ARCHITECTURE.md`
+- `docs/design/10-ITOMS_EXPERIENCE_AND_UI_MODEL.md`
+- `docs/design/11-ITOMS_INTEGRATION_SECURITY_AND_GOVERNANCE.md`
+- `adr/ADR-0002-context-layers-and-canonical-persistence.md`

@@ -6,7 +6,8 @@ ITOMS is a multi-tenant platform built around shared canonical services rather t
 
 ## Logical components
 
-- Role-specific workspaces and module navigation
+- Role-specific workspaces and contextual capability navigation
+- Effective Context resolution across Organization Profile, Operating Model, Lens, Permissions, and current scope
 - Canonical object and relationship services
 - Workflow and orchestration engine
 - Ingestion, normalization, and reconciliation services
@@ -24,4 +25,3 @@ ITOMS is a multi-tenant platform built around shared canonical services rather t
 - Self-hosted operation for regulated or local-storage-only requirements
 
 Implementation technology choices must preserve the same contracts, canonical identity, tenant isolation, and audit behavior across deployment shapes. Durable architecture choices belong in `/adr`.
-

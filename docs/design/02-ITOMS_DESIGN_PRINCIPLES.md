@@ -2,7 +2,7 @@
 
 **Status:** Proposed
 
-1. **The customer operations graph is the center.** Modules share canonical entities instead of maintaining disconnected copies.
+1. **The customer operations graph is the center.** Capabilities and experiences use shared canonical entities instead of maintaining disconnected copies.
 2. **Identity is permanent.** Canonical IDs identify concepts; display names and aliases may evolve.
 3. **One Primary Domain, many Facets.** Each first-class object has one owning Domain and may appear through many role-specific lenses.
 4. **Work is contextual.** Requests, cases, projects, and recommendations retain the business process, relationship, risk, and outcome they affect.
@@ -12,4 +12,4 @@
 8. **Human decisions stay accountable.** Automation may recommend and prepare, but approval and risk acceptance remain attributable.
 9. **Security is contextual and least-privileged.** Access follows tenant, role, relationship, data sensitivity, and purpose.
 10. **Design decisions are durable.** Material changes are recorded in the design register and promoted into canonical documents or ADRs.
-
+11. **Context never replaces truth.** Organization Profile, Operating Model, Lens, and Permissions shape Effective Context without destroying or duplicating Canonical Data.

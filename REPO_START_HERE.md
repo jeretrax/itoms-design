@@ -6,10 +6,12 @@ Any developer, AI coding assistant, agent, automation, or reviewer working in th
 
 1. `REPO_START_HERE.md` — repository operating rules.
 2. `ITOMS_CANONICAL_RULES.md` — identity, domain, naming, and relationship rules.
-3. `itoms_domains.csv` — canonical Domain registry.
-4. `itoms_objects.csv` — canonical Object registry.
-5. `itoms_glossary.html` — authoritative human-readable glossary and object library.
-6. `itoms_schema.csv` — field-level starter schema/data dictionary.
+3. `docs/design/README.md` — master design index and reading structure.
+4. `docs/design/context-architecture.md` — rules for Canonical Data, profiles, operating modes, lenses, permissions, and Effective Context.
+5. `itoms_domains.csv` — canonical Domain registry.
+6. `itoms_objects.csv` — canonical Object registry.
+7. `itoms_glossary.html` — authoritative human-readable glossary and object library.
+8. `itoms_schema.csv` — field-level starter schema/data dictionary.
 
 If two files appear to disagree, stop treating the names as authority. Resolve the concept by its permanent ID and update the inconsistent documentation. Permanent IDs are the identity of a concept; display names are labels.
 
@@ -23,6 +25,7 @@ If two files appear to disagree, stop treating the names as authority. Resolve t
 - Cross-object relationships reference canonical IDs, not display names.
 - Aliases, former names, UI captions, abbreviations, and vendor-specific names may change without changing canonical identity.
 - Archive rather than delete when historical references exist.
+- Organization Profile, Operating Model, or Lens changes never delete, replace, or redefine Canonical Data. They may change behavior, visibility, defaults, and presentation only.
 - Material changes to definitions, ownership, or architecture should be recorded as an ADR/decision record.
 
 ## Reserved ID namespaces
@@ -48,3 +51,5 @@ Before adding a new object, search `itoms_objects.csv` and the glossary for an e
 ## Repository intent
 
 The repository is the canonical machine- and human-readable definition of ITOMS. Code, database migrations, API contracts, UI forms, documentation, AI instructions, test fixtures, and generated artifacts should converge on the same canonical object metadata rather than independently redefining terminology.
+
+The foundational design set is indexed in `docs/design/README.md`. New design documents should be placed according to that index instead of introducing a competing root-level naming pattern.
