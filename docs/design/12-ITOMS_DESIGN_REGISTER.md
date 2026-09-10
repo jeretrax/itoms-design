@@ -123,7 +123,7 @@ The platform must preserve one durable operational history while allowing differ
 
 #### Disposition
 
-Accepted. ITOMS uses Canonical Data with Organization Profile, Operating Model, Lens, Permissions, and Current Scope to compute Effective Context. Canonical Persistence prohibits context changes from deleting or recreating canonical records.
+Accepted. ITOMS uses Canonical Data with Organization Profile, Operating Model, Lens, Capabilities, Permissions, and Current Scope to compute Effective Context. Capabilities identify available functions while Permissions authorize their use for an actor and scope. Canonical Persistence prohibits context changes from deleting or recreating canonical records.
 
 #### Incorporated Into
 

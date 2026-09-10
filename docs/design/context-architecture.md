@@ -6,7 +6,7 @@
 
 ## Core rule
 
-ITOMS has one Canonical Data layer. Organization Profile, Operating Model, Lens, and Permissions are context layers applied to that data. Their evaluated combination is the Effective Context for a request or session.
+ITOMS has one Canonical Data layer. Organization Profile, Operating Model, Lens, Capabilities, and Permissions are contextual inputs applied to that data. Their evaluated combination is the Effective Context for a request or session.
 
 Context may change what is enabled, required, editable, emphasized, hidden, or named in the interface. Context does not create a separate truth and does not change the canonical identity of an object.
 
@@ -59,9 +59,13 @@ A Lens:
 
 Existing design references to a **Facet** remain valid. A Facet is a reusable, named role- or use-case-oriented Lens definition. At runtime, the selected Facet contributes its Lens configuration to Effective Context. Facet and Lens are not Domains, departments, feature modules, or security roles.
 
-## Permissions
+## Capabilities and Permissions
+
+**Capability** is a named function ITOMS can perform or make available, such as viewing asset details, reconciling source records, approving a risk, exporting evidence, administering a connector, or changing a policy. Capabilities are the stable functional vocabulary used by authorization, workflows, packaging, and interface composition. They may span many Domains and Lenses and must not be treated as module ownership boundaries.
 
 **Permissions** determine whether an actor may discover, view, create, change, approve, export, administer, or otherwise act on data or a capability. Authorization is evaluated independently from presentation.
+
+Capabilities describe **what functions exist**. Permissions describe **whether the current actor may use a capability on the requested scope under the current conditions**. A role, relationship, policy, or delegated authority may contribute permission grants or restrictions, but a Lens never grants a Capability merely by displaying it.
 
 Permissions consider, as applicable:
 
@@ -81,9 +85,9 @@ Permissions are deny-safe. A Lens can hide an allowed action for simplicity, but
 
 Conceptually:
 
-`Effective Context = Canonical Data + Organization Profile + Operating Model + Lens + Permissions + Current Scope`
+`Effective Context = Canonical Data + Organization Profile + Operating Model + Person + Relationships + Roles + Lens + Capabilities/Permissions + Engagement + Temporal Context + Current Scope`
 
-`Current Scope` includes the active tenant, provider/customer relationship, user, workspace, engagement or workflow, selected object, location, and effective time where relevant.
+`Current Scope` includes the active tenant, provider/customer relationship, workspace or interface mode, workflow, selected object, location, purpose, and other immediate request conditions. Temporal Context supplies the effective time or interval used to resolve relationships, roles, responsibility, and historical state.
 
 Effective Context determines:
 
@@ -95,6 +99,17 @@ Effective Context determines:
 - which policy warnings, guidance, and recommendations are relevant.
 
 Effective Context is computed, not persisted as a competing copy of the underlying records. Material inputs and authorization decisions should be auditable when needed to explain past visibility or action.
+
+## Required architectural separation
+
+ITOMS keeps four concerns separate even when they are composed into one experience:
+
+1. **Canonical data:** what exists or existed, including identity, provenance, relationships, state, and history.
+2. **Context:** what that information means, whether it applies, and which defaults or responsibilities are relevant under current organizational, operational, engagement, relationship, and temporal conditions.
+3. **Capabilities and permissions:** which functions exist and what the current actor is authorized to do within the resolved scope.
+4. **Presentation and interface:** how permitted, relevant information and actions are arranged, labeled, summarized, filtered, and navigated.
+
+Screen layout, navigation trees, dashboards, ribbons, workspace composition, and interface modes are presentation definitions. They may reference canonical objects and capabilities, but they must not become fields or ownership boundaries in the Canonical Data model. A screen redesign must not require redefining operational truth.
 
 ## Resolution rules
 
@@ -114,7 +129,7 @@ A lower item cannot override a restriction established by a higher item. Explici
 
 **Canonical Persistence** is the invariant that context changes never destroy operational truth.
 
-- Changing Organization Profile, Operating Model, Lens, service tier, workspace, or responsible party never deletes or recreates Canonical Data.
+- Changing Organization Profile, Operating Model, Lens, interface mode, service tier, workspace, or responsible party never deletes or recreates Canonical Data.
 - Context changes may hide data from a particular view, disable behavior, close a responsibility interval, or change future defaults. They must not erase history.
 - Records that are no longer active are archived, ended, or made inactive according to lifecycle and retention policy.
 - Relationships with temporal meaning retain effective dates so responsibility and state can be reconstructed.

@@ -7,7 +7,7 @@ Any developer, AI coding assistant, agent, automation, or reviewer working in th
 1. `REPO_START_HERE.md` — repository operating rules.
 2. `ITOMS_CANONICAL_RULES.md` — identity, domain, naming, and relationship rules.
 3. `docs/design/README.md` — master design index and reading structure.
-4. `docs/design/context-architecture.md` — rules for Canonical Data, profiles, operating modes, lenses, permissions, and Effective Context.
+4. `docs/design/context-architecture.md` — rules for Canonical Data, profiles, operating models, lenses, capabilities, permissions, and Effective Context.
 5. `itoms_domains.csv` — canonical Domain registry.
 6. `itoms_objects.csv` — canonical Object registry.
 7. `itoms_glossary.html` — authoritative human-readable glossary and object library.

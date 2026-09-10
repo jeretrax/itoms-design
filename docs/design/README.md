@@ -10,7 +10,7 @@ Read `REPO_START_HERE.md` before this directory. Root registries and canonical r
 
 1. [`01-ITOMS_VISION.md`](01-ITOMS_VISION.md) — enduring product direction and boundary.
 2. [`02-ITOMS_DESIGN_PRINCIPLES.md`](02-ITOMS_DESIGN_PRINCIPLES.md) — non-negotiable design principles.
-3. [`context-architecture.md`](context-architecture.md) — Canonical Data, Organization Profile, Operating Model, Lens, Permissions, Effective Context, and Canonical Persistence.
+3. [`context-architecture.md`](context-architecture.md) — Canonical Data, Organization Profile, Operating Model, Lens, Capabilities, Permissions, Effective Context, and Canonical Persistence.
 4. [`03-ITOMS_GLOSSARY_MODEL.md`](03-ITOMS_GLOSSARY_MODEL.md) — terminology governance.
 5. [`04-ITOMS_DOMAIN_MODEL.md`](04-ITOMS_DOMAIN_MODEL.md) — canonical ownership boundaries.
 6. [`05-ITOMS_OBJECT_MODEL.md`](05-ITOMS_OBJECT_MODEL.md) — first-class concept rules.
