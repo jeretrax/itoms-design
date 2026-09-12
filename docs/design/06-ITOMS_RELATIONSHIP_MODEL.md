@@ -15,7 +15,9 @@ Relationships make the customer operations graph useful. They preserve why objec
 ## Representative relationships
 
 - Person relates to one or more Companies through contextual roles.
-- Asset occupies a Location during an occupancy interval.
+- Asset has exactly one authoritative Owner for an effective interval, or a documented ownership-reconciliation state.
+- Asset occupies a Location, is held in Custody, receives Assignments, and participates in Deployments through separate effective-dated relationships.
+- External-system placement and management coverage relate to an Asset without defining its Owner.
 - Device specializes or references an underlying Asset.
 - Evidence supports an Observation, Assessment, Risk, Control, decision, or other object.
 - Case belongs to or contributes to a Topic.

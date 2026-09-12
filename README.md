@@ -12,6 +12,7 @@ Read `REPO_START_HERE.md` first. It defines the mandatory read order and the rul
 - `docs/design/README.md` — index and reading order for the ITOMS master design.
 - `docs/design/context-architecture.md` — context layers and Canonical Persistence rules.
 - `docs/design/work-architecture.md` — work hierarchy, Work Session continuity, guidance, workflow discovery, and selective automation.
+- `docs/design/asset-architecture.md` — explicit ownership, separate custody and deployment, provider service hardware, and inventory-scope rules.
 - `ITOMS_CANONICAL_RULES.md` — detailed Object ID, Domain, DomainTag, Facet, relationship, and naming rules.
 - `itoms_domains.csv` — canonical Domain registry.
 - `itoms_objects.csv` — canonical first-class Object registry.

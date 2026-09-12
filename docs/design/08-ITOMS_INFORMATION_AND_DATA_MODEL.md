@@ -17,7 +17,7 @@ ITOMS maintains a normalized, tenant-scoped operational graph with source proven
 - Tenant record keys are distinct from canonical IDs.
 - Every imported value retains its source, capture time, and verification state where material.
 - Current-state conveniences do not replace historical event or interval records.
+- Authoritative Asset ownership is explicit. Current custody, assignment, location, deployment, and external-system placement are separate temporal or source relationships and cannot be used as ownership proxies.
 - Schema-driven forms store structured answers and retain rendered submissions as evidence when appropriate.
 - Conflicts are reconciled explicitly; data from a new source does not silently overwrite verified truth.
 - Sensitive fields are classified for internal, customer, restricted, or credential-bearing handling.
-

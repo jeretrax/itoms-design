@@ -17,8 +17,13 @@ OBJ-LOC-0001,DOM-LOC-0001,LOC,Location,Latitude,Decimal,No,Geographic latitude,
 OBJ-LOC-0001,DOM-LOC-0001,LOC,Location,Longitude,Decimal,No,Geographic longitude,
 OBJ-AST-0001,DOM-INV-0001,INV,Asset,AssetID,UUID,Yes,Runtime Asset record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-AST-0001,DOM-INV-0001,INV,Asset,AssetTag,String,No,Human-facing tag,Unique within company where used
+OBJ-AST-0001,DOM-INV-0001,INV,Asset,OwnershipState,Enum,Yes,Current authoritative ownership resolution state,Verified asserted unknown disputed or reconciling
+OBJ-AST-0001,DOM-INV-0001,INV,Asset,OwnerType,Enum,No,Current authoritative Owner type,Company or Person; required unless ownership is unresolved
+OBJ-AST-0001,DOM-INV-0001,INV,Asset,OwnerID,UUID,No,Current authoritative Owner runtime identifier,Typed FK according to OwnerType; historical intervals retained separately
+OBJ-AST-0001,DOM-INV-0001,INV,Asset,OwnerEffectiveFrom,DateTime,No,Start of current ownership interval,Required with OwnerID
+OBJ-AST-0001,DOM-INV-0001,INV,Asset,OwnerVerifiedAt,DateTime,No,Most recent ownership verification time,Verification evidence retained separately
 OBJ-AST-0001,DOM-INV-0001,INV,Asset,CurrentLocationID,UUID,No,Convenience current location,Derived from latest occupancy interval
-OBJ-AST-0001,DOM-INV-0001,INV,Asset,CustodianPersonID,UUID,No,Current responsible person,FK Person
+OBJ-AST-0001,DOM-INV-0001,INV,Asset,CustodianPersonID,UUID,No,Convenience current individual custodian,Derived from active custody relationship; never defines Owner
 OBJ-DEV-0001,DOM-INV-0001,INV,Device,DeviceID,UUID,Yes,Runtime Device record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-DEV-0001,DOM-INV-0001,INV,Device,AssetID,UUID,Yes,Underlying asset,FK Asset
 OBJ-DEV-0001,DOM-INV-0001,INV,Device,Hostname,String,No,Current hostname,Historical changes retained

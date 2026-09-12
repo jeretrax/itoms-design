@@ -15,3 +15,4 @@
 11. **Context never replaces truth.** Organization Profile, Operating Model, Lens, and Permissions shape Effective Context without destroying or duplicating Canonical Data.
 12. **Navigation follows the work.** Work Sessions preserve continuity across objects, organizations, documents, and systems rather than forcing every activity into object-centric navigation.
 13. **Guidance is not rigidity.** Workflows may guide, branch, pause, reverse, and support judgment; automation remains subordinate to the Work Function and intended outcome.
+14. **Ownership is explicit.** Every Asset resolves to an authoritative Owner; custody, location, deployment, management placement, and vendor grouping never substitute for ownership.

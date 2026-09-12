@@ -10,6 +10,7 @@ Connectors extend the customer operations graph while maintaining least privileg
 - Assessment connectors are read-only and least-privileged by default.
 - Operational write capabilities use separate authorization and explicit approval boundaries.
 - Vendor identifiers map to canonical objects and never replace canonical identity.
+- Vendor sites, groups, tenants, folders, and management placement remain source mappings. They never establish or change Asset ownership.
 - Connector health, last successful synchronization, exceptions, and reconciliation status are visible.
 - Secret material is stored outside ordinary business records and never exposed through customer views.
 

@@ -95,6 +95,46 @@ Not yet incorporated.
 
 Move entries here only for organizational convenience. Do not delete their history.
 
+### DR-004 — Explicit Asset Ownership and Provider-Deployed Hardware
+
+**Status:** Implemented
+
+**Category:** Architecture / Asset Management / Integration
+
+**Domain:** Inventory & Asset Lifecycle
+
+**Facet:** IT / Finance / Executive / Inventory Control / MSP Service Delivery
+
+**Related Objects:** Asset (`OBJ-AST-0001`), Device (`OBJ-DEV-0001`), Server (`OBJ-SRV-0001`), Company, Person, Location, Work Session
+
+**Related Workflow:** Asset Registration, Ownership Reconciliation, Provider Hardware Deployment, Maintenance, Recovery, Return, Ownership Transfer
+
+**Date Raised:** 2026-09-12
+
+**Raised By:** Product Owner
+
+#### Design Concern / Idea
+
+An Asset needs a true authoritative Owner even when it is deployed at another organization's site or appears inside that organization's RMM, remote-control, endpoint-management, PSA, or documentation hierarchy. Deployment custody and operational placement must not be mistaken for ownership.
+
+#### Why It Matters
+
+Provider-owned service equipment such as the Site Admin Box must remain visible and manageable in customer operations while being correctly excluded from customer-owned property, acquisition, transfer, and audit schedules. Inferring ownership from tool or site placement would corrupt canonical truth and historical reporting.
+
+#### Disposition
+
+Accepted. Ownership is explicit and effective-dated. Custody, assignment, location, deployment, service role, management coverage, and external-system placement are separate. Provider-deployed service hardware remains the appropriate Asset, Device, or Server type and uses the Site Admin Box as its reference pattern.
+
+#### Incorporated Into
+
+- `docs/design/asset-architecture.md`
+- `docs/design/work-architecture.md`
+- `docs/design/02-ITOMS_DESIGN_PRINCIPLES.md`
+- `docs/design/06-ITOMS_RELATIONSHIP_MODEL.md`
+- `docs/design/08-ITOMS_INFORMATION_AND_DATA_MODEL.md`
+- `docs/design/11-ITOMS_INTEGRATION_SECURITY_AND_GOVERNANCE.md`
+- `adr/ADR-0004-explicit-asset-ownership-and-deployment.md`
+
 ### DR-003 — Work Architecture and Persistent Work Sessions
 
 **Status:** Implemented

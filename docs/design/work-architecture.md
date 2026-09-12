@@ -171,6 +171,12 @@ Work Architecture orchestrates work involving canonical and proposed objects; it
 | Topic | An enduring subject (`OBJ-TOP-0001`) that can accumulate Cases, work, evidence, decisions, risks, and initiatives across many sessions. |
 | Business Initiative | A strategic or operational change effort that may sponsor Projects and Work Functions. Its canonical boundary remains pending. |
 
+## Asset work example
+
+Asset relationships supply context and obligations to Work Architecture without becoming Workflow state. A provider-owned Site Admin Box remains one canonical Asset while Work Functions coordinate procurement, registration, deployment, management-tool enrollment, maintenance, backup operations, custody handoff, recovery, return, and any later ownership transfer.
+
+The Work Session may cross the customer record, Asset, Location, agreement, Datto RMM, TeamViewer, Intune, backup console, documentation, and communications while preserving the authoritative Owner. A management-placement Action can complete without completing an ownership-transfer Task. Detailed rules are defined in [`asset-architecture.md`](asset-architecture.md).
+
 ## Architectural separation
 
 1. **Canonical Data Architecture** determines what information exists or existed and what persists.
