@@ -48,6 +48,53 @@ List the canonical design document(s), functional specification(s), workflow(s),
 
 ## Active Design Notes
 
+### DR-007 — Engineering Work Package Governance Details
+
+**Status:** Proposed
+
+**Category:** Design Governance / Engineering Handoff / Traceability
+
+**Domain:** Cross-domain
+
+**Facet:** Product / Architecture / Engineering / Quality / Security
+
+**Related Objects:** All canonical objects affected by implementation
+
+**Related Workflow:** Design Review, Engineering Handoff, Implementation, Validation, Design Gap Escalation
+
+**Date Raised:** 2026-09-12
+
+**Raised By:** Product Owner
+
+#### Design Concern / Idea
+
+Design-to-Implementation Governance establishes canonical authority, bounded Engineering Work Packages, bidirectional traceability, and mandatory escalation of material Design Gaps. Several operational details require deliberate approval before they become repository or engineering behavior.
+
+#### Design Considerations
+
+- **Identifier convention:** Decide whether Engineering Work Packages need a repository-wide permanent namespace, a repository-scoped sequence, or references supplied by the implementation work-management system.
+- **Approval authority:** Define who may approve design baselines, Engineering Work Packages, revisions, deviations, and completion for product, architecture, security, data, and user-experience concerns.
+- **Lifecycle and status model:** Define draft, review, approval, implementation, blocked, superseded, completed, rejected, and reopened semantics without confusing package state with product Workflow state.
+- **Package size and decomposition:** Define practical boundaries for splitting work while retaining one coherent objective and complete acceptance criteria.
+- **Traceability storage:** Decide which links belong in `itoms-design`, implementation repositories, issues, pull requests, build records, release records, or a future traceability service.
+- **Multiple implementation repositories:** Define how one package targets several services, clients, deployment shapes, branches, or version lines without losing atomic review or compatibility expectations.
+- **Design baseline selection:** Define how packages reference commits, releases, ADR status, proposed documents, and later canonical corrections.
+- **Automation and generated artifacts:** Define validation rules for generated schemas, API contracts, migrations, tests, and documentation, including how drift is detected without treating generated output as design authority.
+- **Emergency and defect work:** Define when an urgent security or operational correction may proceed before full design reconciliation and what retrospective evidence and approval are mandatory.
+- **Deviation handling:** Define when a deviation requires package revision, a new package, a design note, or an ADR, and who may accept temporary nonconformance.
+- **Implementation feedback classification:** Define the boundary among ordinary engineering detail, defect, nonconformance, optimization, and material Design Gap.
+
+#### Disposition
+
+Pending design review. Until resolved, use the placeholder-only template, record explicit references available in the participating repositories or tools, and escalate any uncertainty that could change product meaning or obligations.
+
+#### Incorporated Into
+
+- `docs/design/design-to-implementation-governance.md` establishes the governing boundaries without inventing the unresolved operating details.
+- `docs/design/templates/engineering-work-package-template.md` provides placeholders only.
+
+---
+
 ### DR-006 — Information Guard Policy and Administration Boundaries
 
 **Status:** Proposed

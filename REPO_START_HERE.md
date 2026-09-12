@@ -7,14 +7,15 @@ Any developer, AI coding assistant, agent, automation, or reviewer working in th
 1. `REPO_START_HERE.md` — repository operating rules.
 2. `ITOMS_CANONICAL_RULES.md` — identity, domain, naming, and relationship rules.
 3. `docs/design/README.md` — master design index and reading structure.
-4. `docs/design/context-architecture.md` — rules for Canonical Data, profiles, operating models, lenses, capabilities, permissions, and Effective Context.
-5. `docs/design/work-architecture.md` — rules for Work Functions, flexible Workflows, Work Sessions, guidance, handoffs, exceptions, and outcomes.
-6. `docs/design/asset-architecture.md` — rules for explicit ownership, custody, assignment, deployment, provider service hardware, and external-system placement.
-7. `docs/design/system-settings-architecture.md` — control-plane configuration, Information Guard, Channels, AI Sentinel, and enforcement rules.
-8. `itoms_domains.csv` — canonical Domain registry.
-9. `itoms_objects.csv` — canonical Object registry.
-10. `itoms_glossary.html` — authoritative human-readable glossary and object library.
-11. `itoms_schema.csv` — field-level starter schema/data dictionary.
+4. `docs/design/design-to-implementation-governance.md` — canonical design authority, Engineering Work Packages, traceability, and design-gap escalation.
+5. `docs/design/context-architecture.md` — rules for Canonical Data, profiles, operating models, lenses, capabilities, permissions, and Effective Context.
+6. `docs/design/work-architecture.md` — rules for Work Functions, flexible Workflows, Work Sessions, guidance, handoffs, exceptions, and outcomes.
+7. `docs/design/asset-architecture.md` — rules for explicit ownership, custody, assignment, deployment, provider service hardware, and external-system placement.
+8. `docs/design/system-settings-architecture.md` — control-plane configuration, Information Guard, Channels, AI Sentinel, and enforcement rules.
+9. `itoms_domains.csv` — canonical Domain registry.
+10. `itoms_objects.csv` — canonical Object registry.
+11. `itoms_glossary.html` — authoritative human-readable glossary and object library.
+12. `itoms_schema.csv` — field-level starter schema/data dictionary.
 
 If two files appear to disagree, stop treating the names as authority. Resolve the concept by its permanent ID and update the inconsistent documentation. Permanent IDs are the identity of a concept; display names are labels.
 
@@ -32,6 +33,8 @@ If two files appear to disagree, stop treating the names as authority. Resolve t
 - Workflows guide possible progression and must not be assumed to be rigid sequences. Work Session preserves resumable work context independently of Workspace presentation.
 - Every Asset has an explicit authoritative Owner. Custody, assignment, location, deployment, service role, management coverage, and external-system placement never implicitly define or change ownership.
 - Collection does not imply permission for AI processing, and local processing does not grant information rights. Information Guard policies are restrictive by default.
+- The `itoms-design` repository is the canonical design authority. Chat supplies design conversation, Work performs design review and reconciliation, and implementation follows approved bounded Engineering Work Packages.
+- Codex and other implementers must not silently invent product behavior. Material design gaps discovered during implementation are escalated into canonical design before the affected scope proceeds.
 - Material changes to definitions, ownership, or architecture should be recorded as an ADR/decision record.
 
 ## Reserved ID namespaces
@@ -56,6 +59,6 @@ Before adding a new object, search `itoms_objects.csv` and the glossary for an e
 
 ## Repository intent
 
-The repository is the canonical machine- and human-readable definition of ITOMS. Code, database migrations, API contracts, UI forms, documentation, AI instructions, test fixtures, and generated artifacts should converge on the same canonical object metadata rather than independently redefining terminology.
+The repository is the canonical machine- and human-readable definition of ITOMS. Code, database migrations, API contracts, UI forms, documentation, AI instructions, test fixtures, and generated artifacts should converge on the same canonical object metadata rather than independently redefining terminology. The design-to-implementation governance rules define how approved design becomes bounded engineering work and how implementation discoveries return for canonical reconciliation.
 
 The foundational design set is indexed in `docs/design/README.md`. New design documents should be placed according to that index instead of introducing a competing root-level naming pattern.

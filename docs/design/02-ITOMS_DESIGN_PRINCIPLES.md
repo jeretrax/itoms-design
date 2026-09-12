@@ -19,3 +19,7 @@
 15. **Collection is purpose-limited.** Collection does not imply permission for AI processing, and local processing does not grant information rights.
 16. **Deterministic first.** Use deterministic processing for known rules and AI for semantic value; AI never becomes the system of record.
 17. **Sanitize before exposure.** Collect minimally, sanitize early, and destroy prohibited values before persistence or AI processing while retaining non-sensitive audit evidence.
+18. **Canonical design governs implementation.** Conversation, work packages, code, tests, and generated artifacts must trace to and conform with approved design in `itoms-design`.
+19. **Traceability runs both ways.** Approved design traces through bounded engineering work to implementation evidence, and material implementation discoveries trace back to canonical design decisions.
+20. **Design gaps are escalated.** Implementation pauses at a material ambiguity boundary until the affected product meaning is reconciled and approved in canonical design.
+21. **Product behavior is never invented silently.** An implementation convenience cannot create or override product meaning, lifecycle, permissions, persistence, workflow, or user-visible obligations.
