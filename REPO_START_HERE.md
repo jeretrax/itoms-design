@@ -10,10 +10,11 @@ Any developer, AI coding assistant, agent, automation, or reviewer working in th
 4. `docs/design/context-architecture.md` — rules for Canonical Data, profiles, operating models, lenses, capabilities, permissions, and Effective Context.
 5. `docs/design/work-architecture.md` — rules for Work Functions, flexible Workflows, Work Sessions, guidance, handoffs, exceptions, and outcomes.
 6. `docs/design/asset-architecture.md` — rules for explicit ownership, custody, assignment, deployment, provider service hardware, and external-system placement.
-7. `itoms_domains.csv` — canonical Domain registry.
-8. `itoms_objects.csv` — canonical Object registry.
-9. `itoms_glossary.html` — authoritative human-readable glossary and object library.
-10. `itoms_schema.csv` — field-level starter schema/data dictionary.
+7. `docs/design/system-settings-architecture.md` — control-plane configuration, Information Guard, Channels, AI Sentinel, and enforcement rules.
+8. `itoms_domains.csv` — canonical Domain registry.
+9. `itoms_objects.csv` — canonical Object registry.
+10. `itoms_glossary.html` — authoritative human-readable glossary and object library.
+11. `itoms_schema.csv` — field-level starter schema/data dictionary.
 
 If two files appear to disagree, stop treating the names as authority. Resolve the concept by its permanent ID and update the inconsistent documentation. Permanent IDs are the identity of a concept; display names are labels.
 
@@ -30,6 +31,7 @@ If two files appear to disagree, stop treating the names as authority. Resolve t
 - Organization Profile, Operating Model, or Lens changes never delete, replace, or redefine Canonical Data. They may change behavior, visibility, defaults, and presentation only.
 - Workflows guide possible progression and must not be assumed to be rigid sequences. Work Session preserves resumable work context independently of Workspace presentation.
 - Every Asset has an explicit authoritative Owner. Custody, assignment, location, deployment, service role, management coverage, and external-system placement never implicitly define or change ownership.
+- Collection does not imply permission for AI processing, and local processing does not grant information rights. Information Guard policies are restrictive by default.
 - Material changes to definitions, ownership, or architecture should be recorded as an ADR/decision record.
 
 ## Reserved ID namespaces

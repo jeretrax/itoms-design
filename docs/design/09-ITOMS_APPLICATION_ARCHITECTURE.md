@@ -18,6 +18,8 @@ ITOMS is a multi-tenant platform built around shared canonical services rather t
 - Policy, risk, control, and assessment services
 - Integration and connector framework
 - Authorization, audit, and tenant-boundary services
+- System Settings control-plane and Information Guard policy enforcement
+- Channel policy resolution and AI Sentinel decision service
 
 ## Deployment shapes
 

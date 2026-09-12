@@ -48,6 +48,49 @@ List the canonical design document(s), functional specification(s), workflow(s),
 
 ## Active Design Notes
 
+### DR-006 — Information Guard Policy and Administration Boundaries
+
+**Status:** Proposed
+
+**Category:** System Settings / Information Governance / AI Governance
+
+**Domain:** Cross-domain
+
+**Facet:** Security / Compliance / IT / MSP Service Delivery / Administration
+
+**Related Objects:** Company, Person, Asset, Evidence, Policy, Control, Workflow, Work Session, and future configuration metadata
+
+**Related Workflow:** Policy Definition, Exception Approval, Channel Onboarding, AI Provider Qualification, Configuration Publication
+
+**Date Raised:** 2026-09-12
+
+**Raised By:** Product Owner
+
+#### Design Concern / Idea
+
+System Settings Architecture establishes Information Guard, Channel policy, and AI Sentinel, but several boundaries require deliberate product, security, legal, and implementation decisions before they become canonical behavior.
+
+#### Design Considerations
+
+- **Final Channel taxonomy:** Determine whether email, web forms, APIs, imports, webhooks, browser experiences, individual collectors, and connector subflows require separate canonical Channel types or configured Channel instances.
+- **Inheritance and precedence:** Define the exact resolution order across installation, provider, tenant, organization, location, Channel, capability, integration, agent, workflow, classification, purpose, and execution-environment policy. Define conflict behavior, deny precedence, explicit overrides, versioning, and effective dates.
+- **Shared and derived information ownership:** Define ownership, custody, stewardship, rights, and authorized purposes when information is submitted by one party, concerns another, combines multiple sources, or is transformed or inferred by ITOMS or AI.
+- **Regulated information ITOMS must retain:** Define how minimization and destruction interact with legal holds, security evidence, contractual records, regulated data, audit obligations, and information that ITOMS legitimately must preserve as canonical truth.
+- **AI provider qualification:** Define provider, model, region, contract, privacy, security, retention, training-use, isolation, logging, evaluation, incident-response, and subcontractor requirements before an execution environment may be approved.
+- **Provider and customer administration boundaries:** Define which System Settings a platform provider, MSP administrator, customer administrator, security officer, compliance role, or delegated operator may view, propose, approve, override, or audit.
+- **Configuration user experience:** Define safe editing, inheritance visibility, effective-policy explanation, simulation, change review, staged publication, rollback, exception expiry, and warnings without embedding interface layout into the control-plane model.
+- **Prohibited-value audit design:** Determine which metadata, hashes, fingerprints, counts, or category indicators are safe and useful when raw values must be destroyed.
+
+#### Disposition
+
+Pending design review. Until resolved, ambiguous enforcement fails closed when a broader interpretation could increase information exposure, retention, AI processing, or execution authority.
+
+#### Incorporated Into
+
+- `docs/design/system-settings-architecture.md` identifies the boundaries and placeholders but does not invent final behavior.
+
+---
+
 ### DR-001 — Bind Inbound Requests and Projects to Supported Business Processes
 
 **Status:** Proposed  
@@ -94,6 +137,44 @@ Not yet incorporated.
 ## Resolved / Integrated Design Notes
 
 Move entries here only for organizational convenience. Do not delete their history.
+
+### DR-005 — System Settings, Information Guard, Channels, and AI Sentinel
+
+**Status:** Implemented
+
+**Category:** Architecture / System Configuration / Information Governance
+
+**Domain:** Cross-domain
+
+**Facet:** All
+
+**Related Objects:** Policy, Control, Evidence, Company, Person, Asset, Workflow, Work Session, and connector source mappings
+
+**Related Workflow:** Configuration Management, Channel Onboarding, Information Handling, AI Invocation, Policy Exception
+
+**Date Raised:** 2026-09-12
+
+**Raised By:** Product Owner
+
+#### Design Concern / Idea
+
+ITOMS needs an installation-wide configuration and enforcement control plane that spans security, integrations, AI, automation, work, communications, agents, evidence, compliance, and platform operation without reverting to isolated modules or allowing AI and integrations to redefine canonical truth.
+
+#### Why It Matters
+
+Different ingestion and interaction Channels carry different information rights and handling risks. Technical access, collection, local execution, or connector authorization does not automatically permit persistence, secondary use, disclosure, or AI processing.
+
+#### Disposition
+
+Accepted. System Settings is the ITOMS installation control plane. Information Guard governs collection, Channel policy, classification, handling, retention, AI exposure, exceptions, and auditability. AI Sentinel governs AI processing within Information Guard. Policy is restrictive by default, and AI remains subordinate to deterministic rules and canonical ITOMS state.
+
+#### Incorporated Into
+
+- `docs/design/system-settings-architecture.md`
+- `docs/design/02-ITOMS_DESIGN_PRINCIPLES.md`
+- `docs/design/09-ITOMS_APPLICATION_ARCHITECTURE.md`
+- `docs/design/11-ITOMS_INTEGRATION_SECURITY_AND_GOVERNANCE.md`
+- `adr/ADR-0005-system-settings-information-guard-and-ai-sentinel.md`
 
 ### DR-004 — Explicit Asset Ownership and Provider-Deployed Hardware
 

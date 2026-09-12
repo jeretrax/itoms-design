@@ -13,6 +13,7 @@ Connectors extend the customer operations graph while maintaining least privileg
 - Vendor sites, groups, tenants, folders, and management placement remain source mappings. They never establish or change Asset ownership.
 - Connector health, last successful synchronization, exceptions, and reconciliation status are visible.
 - Secret material is stored outside ordinary business records and never exposed through customer views.
+- Every ingestion or interaction path resolves to an Information Guard Channel policy. Connector authorization does not imply permission for persistence, disclosure, secondary use, or AI processing.
 
 ## Governance rules
 
@@ -22,3 +23,4 @@ Connectors extend the customer operations graph while maintaining least privileg
 - Risk acceptance records the accepting Person, scope, rationale, evidence, and review date.
 - Retention, residency, export, and deletion rules are explicit for each deployment and data class.
 - Security architecture and durable permission changes require ADR review.
+- Information Guard retains auditable enforcement decisions without retaining raw values that policy requires to be destroyed.

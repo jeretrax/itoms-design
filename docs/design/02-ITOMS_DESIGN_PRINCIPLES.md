@@ -16,3 +16,6 @@
 12. **Navigation follows the work.** Work Sessions preserve continuity across objects, organizations, documents, and systems rather than forcing every activity into object-centric navigation.
 13. **Guidance is not rigidity.** Workflows may guide, branch, pause, reverse, and support judgment; automation remains subordinate to the Work Function and intended outcome.
 14. **Ownership is explicit.** Every Asset resolves to an authoritative Owner; custody, location, deployment, management placement, and vendor grouping never substitute for ownership.
+15. **Collection is purpose-limited.** Collection does not imply permission for AI processing, and local processing does not grant information rights.
+16. **Deterministic first.** Use deterministic processing for known rules and AI for semantic value; AI never becomes the system of record.
+17. **Sanitize before exposure.** Collect minimally, sanitize early, and destroy prohibited values before persistence or AI processing while retaining non-sensitive audit evidence.
