@@ -12,6 +12,8 @@ ITOMS maintains a normalized, tenant-scoped operational graph with source proven
 3. **Observations and evidence:** Imported facts, measurements, submissions, assertions, screenshots, documents, and logs.
 4. **Derived state:** Scores, current location, attention weight, posture, recommendations, and other reproducible calculations.
 
+For Control Monitoring, a source-native artifact may be retained as governed Evidence; normalization produces attributable Observations; evaluation produces reproducible State or Condition; and a Finding records an evidence-backed conclusion requiring disposition. These layers must not be collapsed merely because one service processes them together.
+
 ## Rules
 
 - Tenant record keys are distinct from canonical IDs.
@@ -21,3 +23,8 @@ ITOMS maintains a normalized, tenant-scoped operational graph with source proven
 - Schema-driven forms store structured answers and retain rendered submissions as evidence when appropriate.
 - Conflicts are reconciled explicitly; data from a new source does not silently overwrite verified truth.
 - Sensitive fields are classified for internal, customer, restricted, or credential-bearing handling.
+- Monitoring history retains the source, reporting interval, evaluation rule and version, applicable Control, threshold, exception, first and last seen times, recurrence, verification, and collection gaps when material.
+- Operations, Assessments, GRC, reports, and audits reference the same governed Evidence rather than creating consumer-specific copies. Effective Context and Permissions still determine which content each consumer may access.
+- Raw telemetry may be summarized or expired according to approved retention policy without erasing required historical posture, provenance, enforcement decisions, or audit evidence.
+
+See [`control-monitoring-architecture.md`](control-monitoring-architecture.md) for the reusable evaluation boundary.

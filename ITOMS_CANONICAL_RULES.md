@@ -40,7 +40,9 @@ Tags should be short, stable, unique, uppercase, and never repurposed. If a doma
 
 ## 4. Internet domain naming
 
-Do not use `PrimaryDomain` for a DNS/Internet domain. For Company records use `PrimaryInternetDomain` (for example, `contoso.com`). `PrimaryDomainID` is reserved for the ITOMS architectural domain relationship.
+Do not use `PrimaryDomain` for a DNS/Internet domain. `PrimaryDomainID` is reserved for the ITOMS architectural domain relationship.
+
+Internet Domain `OBJ-IDN-0001` is the canonical first-class technical Asset when a DNS namespace needs independent identity, ownership, relationships, configuration, observation, or history. Company may retain `PrimaryInternetDomain` as a readable convenience value and `PrimaryInternetDomainID` as the relationship to its canonical primary Internet Domain. Neither field replaces the Internet Domain record when that boundary applies.
 
 ## 5. Relationships
 

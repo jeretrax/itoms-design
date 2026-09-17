@@ -13,9 +13,8 @@ This document defines how ITOMS terminology is governed. It does not duplicate t
 - Every first-class object has exactly one `PrimaryDomainID` from `/itoms_domains.csv`.
 - `DomainTag` is a stable readable label, not the referential key.
 - A Facet is a role or use-case lens and does not change canonical ownership.
-- Company DNS names use `PrimaryInternetDomain`, never `PrimaryDomainID`.
+- Internet Domain `OBJ-IDN-0001` is the canonical technical Asset when a DNS namespace requires independent identity or history. Company uses `PrimaryInternetDomainID` to reference its canonical primary Internet Domain and may retain `PrimaryInternetDomain` as a convenience label; neither is `PrimaryDomainID`.
 
 ## Change process
 
 Proposed terms begin in `12-ITOMS_DESIGN_REGISTER.md`. Accepted first-class concepts are added to the object registry, glossary, schema where applicable, and an ADR when the change affects object boundaries or ownership.
-

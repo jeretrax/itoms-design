@@ -15,6 +15,8 @@ The core sense-making flow is:
 
 This is not a mandatory conversion pipeline. Items may remain at the lowest useful level, and evidence may support several stages.
 
+Control Monitoring has a separate evaluation flow: `Observation → Control Evaluation → State / Condition → Finding → Alert when warranted → Investigation / Work → Remediation → Verification`. It complements the sense-making flow rather than replacing it. Observation, Finding, Alert, Incident, and Risk are distinct, and no arrow requires automatic promotion. See [`control-monitoring-architecture.md`](control-monitoring-architecture.md).
+
 ## Workflow definition
 
 A workflow should specify:

@@ -20,6 +20,8 @@ ITOMS is a multi-tenant platform built around shared canonical services rather t
 - Authorization, audit, and tenant-boundary services
 - System Settings control-plane and Information Guard policy enforcement
 - Channel policy resolution and AI Sentinel decision service
+- Control Monitoring collection, normalization, entity-resolution, evaluation, Finding, verification, and posture services
+- Monitoring health, evidence reuse, and customer/MSP reporting services
 
 ## Deployment shapes
 
@@ -29,3 +31,5 @@ ITOMS is a multi-tenant platform built around shared canonical services rather t
 - Self-hosted operation for regulated or local-storage-only requirements
 
 Implementation technology choices must preserve the same contracts, canonical identity, tenant isolation, and audit behavior across deployment shapes. Durable architecture choices belong in `/adr`.
+
+The monitoring responsibilities are logical boundaries, not prescribed deployable services. Their reusable contract is defined in [`control-monitoring-architecture.md`](control-monitoring-architecture.md); the first vertical slice is [Email & Domain Security](applications/email-domain-security.md).

@@ -247,6 +247,7 @@ Hashes, fingerprints, excerpts, or reversible tokens are not automatically safe 
 - [Asset Architecture](asset-architecture.md) determines Asset ownership, custody, deployment, and management placement. Agent location or local execution does not create information rights.
 - [Integration, Security, and Governance](11-ITOMS_INTEGRATION_SECURITY_AND_GOVERNANCE.md) defines connector and governance rules. Channel policy complements rather than replaces Connector configuration.
 - [Information and Data Model](08-ITOMS_INFORMATION_AND_DATA_MODEL.md) defines canonical, tenant, evidence, and derived data layers. AI output does not become a separate canonical layer.
+- [Control Monitoring Architecture](control-monitoring-architecture.md) uses System Settings for collectors, schedules, evaluation cadence, baselines, thresholds, routing, suppression, retention, exceptions, monitoring health, and Channel policy. Configuration supplies constraints and policy; it does not own monitored subjects or create Findings by itself.
 
 ## Validation questions
 

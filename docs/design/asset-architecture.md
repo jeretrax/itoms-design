@@ -129,6 +129,12 @@ For a Traxler Consulting Site Admin Box deployed at a customer:
 
 This same model applies to provider-owned backup appliances, monitoring collectors, managed routers, loaner equipment, temporary migration devices, cellular gateways, and similar service hardware.
 
+## Internet Domain Asset
+
+Internet Domain `OBJ-IDN-0001` is a technical Asset when a DNS namespace requires independent identity, ownership, configuration, relationships, monitoring, or history. A Company may designate one canonical Internet Domain as primary without owning every Domain it uses, and ownership must remain an explicit relationship rather than an inference from DNS control, email use, tenant placement, or monitoring enrollment.
+
+Email & Domain Security observes the same canonical Internet Domain; it does not create a monitoring-specific copy. DNS records, Sending Sources, Findings, Evidence, posture, and collection configuration relate to that Asset according to their own lifecycles. Normalization and uniqueness rules for registered domains, subdomains, delegated zones, and internationalized names remain in the Design Register.
+
 ## Relationship to Context Architecture
 
 Owner is canonical Asset truth. Effective Context determines whether an actor can discover or act on ownership, custody, deployment, tool placement, commercial terms, or sensitive configuration.

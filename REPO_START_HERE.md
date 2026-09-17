@@ -12,10 +12,11 @@ Any developer, AI coding assistant, agent, automation, or reviewer working in th
 6. `docs/design/work-architecture.md` — rules for Work Functions, flexible Workflows, Work Sessions, guidance, handoffs, exceptions, and outcomes.
 7. `docs/design/asset-architecture.md` — rules for explicit ownership, custody, assignment, deployment, provider service hardware, and external-system placement.
 8. `docs/design/system-settings-architecture.md` — control-plane configuration, Information Guard, Channels, AI Sentinel, and enforcement rules.
-9. `itoms_domains.csv` — canonical Domain registry.
-10. `itoms_objects.csv` — canonical Object registry.
-11. `itoms_glossary.html` — authoritative human-readable glossary and object library.
-12. `itoms_schema.csv` — field-level starter schema/data dictionary.
+9. `docs/design/control-monitoring-architecture.md` — reusable observation, evaluation, Finding, remediation, verification, Evidence, and posture architecture.
+10. `itoms_domains.csv` — canonical Domain registry.
+11. `itoms_objects.csv` — canonical Object registry.
+12. `itoms_glossary.html` — authoritative human-readable glossary and object library.
+13. `itoms_schema.csv` — field-level starter schema/data dictionary.
 
 If two files appear to disagree, stop treating the names as authority. Resolve the concept by its permanent ID and update the inconsistent documentation. Permanent IDs are the identity of a concept; display names are labels.
 
@@ -33,6 +34,7 @@ If two files appear to disagree, stop treating the names as authority. Resolve t
 - Workflows guide possible progression and must not be assumed to be rigid sequences. Work Session preserves resumable work context independently of Workspace presentation.
 - Every Asset has an explicit authoritative Owner. Custody, assignment, location, deployment, service role, management coverage, and external-system placement never implicitly define or change ownership.
 - Collection does not imply permission for AI processing, and local processing does not grant information rights. Information Guard policies are restrictive by default.
+- Observation does not imply Finding, Alert, Incident, or Risk. Monitoring conclusions and posture must remain attributable, explainable, and historical.
 - The `itoms-design` repository is the canonical design authority. Chat supplies design conversation, Work performs design review and reconciliation, and implementation follows approved bounded Engineering Work Packages.
 - Codex and other implementers must not silently invent product behavior. Material design gaps discovered during implementation are escalated into canonical design before the affected scope proceeds.
 - Material changes to definitions, ownership, or architecture should be recorded as an ADR/decision record.

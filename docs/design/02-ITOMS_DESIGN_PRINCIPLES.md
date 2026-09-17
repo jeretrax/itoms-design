@@ -23,3 +23,6 @@
 19. **Traceability runs both ways.** Approved design traces through bounded engineering work to implementation evidence, and material implementation discoveries trace back to canonical design decisions.
 20. **Design gaps are escalated.** Implementation pauses at a material ambiguity boundary until the affected product meaning is reconciled and approved in canonical design.
 21. **Product behavior is never invented silently.** An implementation convenience cannot create or override product meaning, lifecycle, permissions, persistence, workflow, or user-visible obligations.
+22. **Telemetry is not a conclusion.** Collection or Observation does not automatically create a Finding, Alert, Incident, or Risk; promotion remains policy-driven and attributable.
+23. **Posture is explainable.** A score or status never replaces the conditions, Controls, Evidence, configuration, exceptions, and history that support it.
+24. **Evidence is referenced, not copied.** Operations, GRC, Assessments, reports, and audits reuse governed canonical Evidence subject to context and Permissions.

@@ -4,6 +4,7 @@ OBJ-CMP-0001,DOM-ORG-0001,ORG,Company,Name,String,Yes,Common company name,
 OBJ-CMP-0001,DOM-ORG-0001,ORG,Company,CompanyType,Enum,Yes,Customer Vendor Partner Internal Prospect etc,
 OBJ-CMP-0001,DOM-ORG-0001,ORG,Company,PrimaryLocationID,UUID,No,Primary operating location,FK Location
 OBJ-CMP-0001,DOM-ORG-0001,ORG,Company,PrimaryInternetDomain,String,No,Primary DNS/Internet domain for the company,Not the ITOMS architectural PrimaryDomainID
+OBJ-CMP-0001,DOM-ORG-0001,ORG,Company,PrimaryInternetDomainID,UUID,No,Canonical primary Internet Domain when established,FK Internet Domain; PrimaryInternetDomain remains a convenience label
 OBJ-PER-0001,DOM-ORG-0001,ORG,Person,PersonID,UUID,Yes,Runtime Person record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-PER-0001,DOM-ORG-0001,ORG,Person,DisplayName,String,Yes,Display name,
 OBJ-PER-0001,DOM-ORG-0001,ORG,Person,VerificationState,Enum,Yes,Unverified Verified Authorized NotAuthorized,
@@ -30,6 +31,9 @@ OBJ-DEV-0001,DOM-INV-0001,INV,Device,Hostname,String,No,Current hostname,Histori
 OBJ-DEV-0001,DOM-INV-0001,INV,Device,LastSeen,DateTime,No,Last management or discovery sighting,
 OBJ-SRV-0001,DOM-INV-0001,INV,Server,ServerID,UUID,Yes,Runtime Server record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-SRV-0001,DOM-INV-0001,INV,Server,DeviceID,UUID,Yes,Underlying device,FK Device
+OBJ-IDN-0001,DOM-INV-0001,INV,InternetDomain,InternetDomainID,UUID,Yes,Runtime Internet Domain record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-IDN-0001,DOM-INV-0001,INV,InternetDomain,AssetID,UUID,Yes,Underlying technical Asset,FK Asset
+OBJ-IDN-0001,DOM-INV-0001,INV,InternetDomain,DomainName,String,Yes,Normalized Internet DNS name,Normalization and uniqueness scope pending design review
 OBJ-APP-0001,DOM-APP-0001,APP,Application,ApplicationID,UUID,Yes,Runtime Application record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-APP-0001,DOM-APP-0001,APP,Application,BusinessOwnerPersonID,UUID,No,Business owner,FK Person
 OBJ-SUB-0001,DOM-FIN-0001,FIN,Subscription,SubscriptionID,UUID,Yes,Runtime Subscription record identifier,Runtime primary key; distinct from canonical ObjectID
@@ -43,6 +47,14 @@ OBJ-RSK-0001,DOM-GRC-0001,GRC,Risk,RiskID,UUID,Yes,Runtime Risk record identifie
 OBJ-RSK-0001,DOM-GRC-0001,GRC,Risk,AcceptedByPersonID,UUID,No,Person accepting risk,FK Person
 OBJ-OBS-0001,DOM-OPS-0001,OPS,Observation,ObservationID,UUID,Yes,Runtime Observation record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-OBS-0001,DOM-OPS-0001,OPS,Observation,ObservationText,Text,Yes,Factual captured note,
+OBJ-FND-0001,DOM-OPS-0001,OPS,Finding,FindingID,UUID,Yes,Runtime Finding record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-FND-0001,DOM-OPS-0001,OPS,Finding,SubjectObjectType,String,Yes,Canonical subject type evaluated,References a registered ObjectID type
+OBJ-FND-0001,DOM-OPS-0001,OPS,Finding,SubjectObjectID,UUID,Yes,Runtime subject record identifier,Typed relationship according to SubjectObjectType
+OBJ-FND-0001,DOM-OPS-0001,OPS,Finding,ControlID,UUID,No,Control whose evaluation contributed to the Finding,FK Control
+OBJ-FND-0001,DOM-OPS-0001,OPS,Finding,Severity,String,No,Current explainable severity,Configured policy value; thresholds retained with evaluation history
+OBJ-FND-0001,DOM-OPS-0001,OPS,Finding,Status,String,Yes,Current lifecycle or disposition state,Final state model pending design review
+OBJ-FND-0001,DOM-OPS-0001,OPS,Finding,FirstSeenAt,DateTime,Yes,First supported occurrence time,
+OBJ-FND-0001,DOM-OPS-0001,OPS,Finding,LastSeenAt,DateTime,Yes,Most recent supported occurrence time,
 OBJ-ASM-0001,DOM-GRC-0001,GRC,Assessment,AssessmentID,UUID,Yes,Runtime Assessment record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-ASM-0001,DOM-GRC-0001,GRC,Assessment,RunAt,DateTime,Yes,Assessment execution timestamp,
 OBJ-WFL-0001,DOM-OPS-0001,OPS,Workflow,WorkflowID,UUID,Yes,Runtime Workflow record identifier,Runtime primary key; distinct from canonical ObjectID

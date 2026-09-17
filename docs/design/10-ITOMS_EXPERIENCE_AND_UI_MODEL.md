@@ -27,4 +27,8 @@ ITOMS navigation is centered on the user's role, current position, responsibilit
 
 Customer-facing views explain what is happening, why it matters, what is needed from the customer, and what happens next while keeping credentials and technician-only details hidden.
 
-Detailed visual behavior remains an Interface Architecture concern. Work requirements and terminology are defined in [`work-architecture.md`](work-architecture.md).
+Monitoring experiences are work-first: they emphasize meaningful changes, investigation, remediation, verification, and collection health rather than requiring users to watch raw telemetry. A posture summary must explain the condition, supporting Evidence, applicable Control or expectation, responsible party, first-seen time, and last verification to the extent permitted. Summary access never grants access to restricted Evidence or Incident detail.
+
+Authorized administrative views may expose observations, evaluation state, Findings, Attention Items, Evidence, and configuration. Final names such as “Work Mode” and “Data Mode,” their navigation placement, and their permission behavior remain future Interface Architecture decisions.
+
+Detailed visual behavior remains an Interface Architecture concern. Work requirements and terminology are defined in [`work-architecture.md`](work-architecture.md), and monitoring experience requirements are defined in [`control-monitoring-architecture.md`](control-monitoring-architecture.md).

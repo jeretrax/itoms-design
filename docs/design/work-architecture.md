@@ -177,6 +177,10 @@ Asset relationships supply context and obligations to Work Architecture without 
 
 The Work Session may cross the customer record, Asset, Location, agreement, Datto RMM, TeamViewer, Intune, backup console, documentation, and communications while preserving the authoritative Owner. A management-placement Action can complete without completing an ownership-transfer Task. Detailed rules are defined in [`asset-architecture.md`](asset-architecture.md).
 
+## Monitoring work example
+
+Control Monitoring can identify a Finding without imposing a rigid ticket sequence. A Work Function such as “Improve Email Domain Security” may guide review of a newly observed Sending Source, customer or vendor handoff, DNS remediation outside ITOMS, waiting for propagation, verification, exception approval, and closure. The Work Session preserves the Internet Domain, Finding, Evidence, external systems, people, and recent Actions throughout that progression. Detailed evaluation rules remain in [`control-monitoring-architecture.md`](control-monitoring-architecture.md).
+
 ## Architectural separation
 
 1. **Canonical Data Architecture** determines what information exists or existed and what persists.

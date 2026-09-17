@@ -48,6 +48,56 @@ List the canonical design document(s), functional specification(s), workflow(s),
 
 ## Active Design Notes
 
+### DR-008 — Control Monitoring and Email & Domain Security Open Boundaries
+
+**Status:** Proposed
+
+**Category:** Control Monitoring / Security Monitoring / Email & Domain Security
+
+**Domain:** Cross-domain; Inventory & Asset Lifecycle; Operations & Work Management; Governance, Risk & Compliance
+
+**Facet:** Security / IT / MSP Service Delivery / Customer / Executive / GRC
+
+**Related Objects:** Internet Domain, Asset, Company, Application, Device, Observation, Finding, Attention Item, Case, Control, Policy, Evidence, Assessment, Risk, Workflow, Work Session
+
+**Related Workflow:** Domain Enrollment, Sending Source Review, Finding Investigation, Remediation, Verification, Exception Review
+
+**Date Raised:** 2026-09-17
+
+**Raised By:** Product Owner
+
+#### Design Concern / Idea
+
+Control Monitoring and the initial Email & Domain Security vertical slice establish a canonical monitoring pipeline and promote Internet Domain `OBJ-IDN-0001` and Finding `OBJ-FND-0001`. The following boundaries need deliberate design decisions before an affected Engineering Work Package is approved.
+
+#### Design Considerations
+
+- **Internet Domain identity:** Define normalization, uniqueness, tenancy, public-suffix handling, registered-domain versus subdomain scope, delegated zones, internationalized names, aliases, and lifecycle.
+- **Finding lifecycle:** Define creation, recurrence, deduplication, grouping, suppression, acceptance, remediation, verification, reopening, closure, and retention semantics.
+- **Evaluation persistence:** Decide when Control Evaluation, State, and Condition require independent persisted identities rather than versioned records or derived state.
+- **Sending Source resolution:** Define candidate, resolved, approved, unauthorized, expected, retired, and shared-source relationships without creating duplicate Companies, Applications, Devices, services, or vendors.
+- **Policy inheritance:** Define baseline, severity, alert, routing, suppression, and exception inheritance and precedence across provider, tenant, organization, Internet Domain, source, Control, and engagement scopes.
+- **DMARC information handling:** Define aggregate-report raw and normalized retention, forensic-report availability and necessity, classification, redaction, destruction, AI exposure, and customer-visible detail.
+- **Report delegation and tenancy:** Define authorization and isolation for cross-domain report destinations, provider-operated receivers, shared providers, and multi-customer report streams.
+- **Incident boundary:** Define the Case classification, lifecycle, escalation, evidence, notification, and permission rules that make a Case an Incident without prematurely creating a separate canonical object.
+- **Interface terminology:** Decide final Work Mode and Data Mode labels, navigation, permission boundaries, and customer/MSP transitions in future Interface Architecture.
+- **Assessment boundary:** Define how a future Lookout capability, if canonically approved, invokes assessment and continuous monitoring without duplicating Internet Domains, Findings, or Evidence.
+- **DKIM discovery:** Define selector discovery, collection methods, authorization, false-negative handling, and key-rotation history.
+- **Posture representation:** Define dimensions, maturity levels, grade or score formulas, enforcement-readiness criteria, attestation language, and the evidence required to support claims.
+- **Control mappings:** Approve the initial canonical Controls, evaluation rules, framework mappings, and evidence intervals for email and domain security.
+
+#### Disposition
+
+Pending design review. The architecture records explicit boundaries and conservative placeholders; it does not invent final lifecycle, policy, scoring, interface, or provider behavior.
+
+#### Incorporated Into
+
+- `docs/design/control-monitoring-architecture.md`
+- `docs/design/applications/email-domain-security.md`
+- `adr/ADR-0007-control-monitoring-and-email-domain-security.md`
+
+---
+
 ### DR-007 — Engineering Work Package Governance Details
 
 **Status:** Proposed
