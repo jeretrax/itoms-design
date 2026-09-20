@@ -31,6 +31,7 @@ Read `REPO_START_HERE.md` before this directory. Root registries and canonical r
 ## Detailed specifications
 
 - [`applications/email-domain-security.md`](applications/email-domain-security.md) — initial Security Monitoring vertical slice for DNS, SPF, DKIM, DMARC, Sending Sources, posture, Findings, and guided remediation.
+- [`mockups/grc-solutions-landscape-summary.html`](mockups/grc-solutions-landscape-summary.html) — deliberately massive single-page concept showing the full policy, procedure, control, implementation, evidence, assessment, remediation, service, and reporting landscape.
 - [`templates/engineering-work-package-template.md`](templates/engineering-work-package-template.md) — placeholder-only governed handoff from approved design to implementation.
 
 ## Naming and structure

@@ -33,4 +33,6 @@ Authorized administrative views may expose observations, evaluation state, Findi
 
 The GRC Scorecard presents Control Domain and Framework views over the same records, with Current, Planned, and Target percentages side by side. It also shows underlying state counts and makes the calculation scope, date, and policy discoverable. Drill-down preserves context from scorecard to Requirement, Control, Control Implementation, Evidence, Assessment Result, Finding, Remediation, and related Task or Project. Planned values must be visually and semantically distinguishable from assessed Current Posture.
 
+The [GRC Solutions Landscape Summary mockup](mockups/grc-solutions-landscape-summary.html) explores a deliberately oversized single-page view of the full solution landscape. It is an interface concept and catalog-breadth illustration, not a normative control catalog, final navigation design, or claim that every entry applies to every organization.
+
 Detailed visual behavior remains an Interface Architecture concern. Work requirements and terminology are defined in [`work-architecture.md`](work-architecture.md), monitoring experience requirements in [`control-monitoring-architecture.md`](control-monitoring-architecture.md), and GRC scorecard requirements in [`grc-architecture.md`](grc-architecture.md).
