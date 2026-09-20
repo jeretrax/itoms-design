@@ -26,3 +26,5 @@
 22. **Telemetry is not a conclusion.** Collection or Observation does not automatically create a Finding, Alert, Incident, or Risk; promotion remains policy-driven and attributable.
 23. **Posture is explainable.** A score or status never replaces the conditions, Controls, Evidence, configuration, exceptions, and history that support it.
 24. **Evidence is referenced, not copied.** Operations, GRC, Assessments, reports, and audits reuse governed canonical Evidence subject to context and Permissions.
+25. **Planned is not verified.** Accepted Remediation may project Planned Posture, but only an attributable, evidence-backed Assessment changes Current Posture.
+26. **Frameworks reuse Controls.** Requirements map many-to-many to reusable Controls and shared Evidence instead of creating framework-specific copies.

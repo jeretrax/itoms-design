@@ -28,5 +28,9 @@ Connectors extend the customer operations graph while maintaining least privileg
 - Information Guard retains auditable enforcement decisions without retaining raw values that policy requires to be destroyed.
 - Broad monitoring summaries and restricted investigative Evidence use separate permission checks; a visible status or count does not reveal protected underlying content.
 - Operational monitoring Evidence is referenced by GRC, Assessments, reports, and audits rather than copied into separate evidence stores.
+- Imported Frameworks and Requirements retain publisher, version, source identifier, source text, effective period, and import provenance. Import must not overwrite local mapping, applicability, Assessment, or Evidence history.
+- Automated or imported Evidence remains an input. It cannot silently approve an Assessment Result, certify compliance, or change Current Posture.
 
 The reusable collector-to-posture flow is defined in [`control-monitoring-architecture.md`](control-monitoring-architecture.md).
+
+Unified GRC governance and posture semantics are defined in [`grc-architecture.md`](grc-architecture.md).

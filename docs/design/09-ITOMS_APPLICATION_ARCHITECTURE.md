@@ -16,6 +16,8 @@ ITOMS is a multi-tenant platform built around shared canonical services rather t
 - Search, reporting, and timeline services
 - Evidence and knowledge services
 - Policy, risk, control, and assessment services
+- Framework, Requirement, Control mapping, Control Implementation, Remediation, and posture projection services
+- GRC scorecard, manual assessment, evidence traceability, and progress reporting services
 - Integration and connector framework
 - Authorization, audit, and tenant-boundary services
 - System Settings control-plane and Information Guard policy enforcement
@@ -33,3 +35,5 @@ ITOMS is a multi-tenant platform built around shared canonical services rather t
 Implementation technology choices must preserve the same contracts, canonical identity, tenant isolation, and audit behavior across deployment shapes. Durable architecture choices belong in `/adr`.
 
 The monitoring responsibilities are logical boundaries, not prescribed deployable services. Their reusable contract is defined in [`control-monitoring-architecture.md`](control-monitoring-architecture.md); the first vertical slice is [Email & Domain Security](applications/email-domain-security.md).
+
+The unified GRC contract is defined in [`grc-architecture.md`](grc-architecture.md). Its V1 service boundaries must support manual operation without requiring monitoring or AI services.

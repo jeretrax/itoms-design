@@ -28,3 +28,7 @@ For Control Monitoring, a source-native artifact may be retained as governed Evi
 - Raw telemetry may be summarized or expired according to approved retention policy without erasing required historical posture, provenance, enforcement decisions, or audit evidence.
 
 See [`control-monitoring-architecture.md`](control-monitoring-architecture.md) for the reusable evaluation boundary.
+
+For GRC, Framework and Requirement versions, many-to-many Control mappings, scoped Control Implementations, Evidence metadata, Assessment Results, Findings, Remediations, and posture calculation policy remain separately traceable. Current Posture is based on approved assessment history. Planned Posture is a labeled projection from accepted Remediations. Target Posture is an approved desired baseline. None may overwrite the others.
+
+`Policy.VerificationPercent` is a compatibility convenience field, not authoritative assessment history. Unified posture is derived from scoped, versioned records under [`grc-architecture.md`](grc-architecture.md).

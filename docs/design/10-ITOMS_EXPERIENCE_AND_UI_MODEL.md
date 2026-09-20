@@ -31,4 +31,6 @@ Monitoring experiences are work-first: they emphasize meaningful changes, invest
 
 Authorized administrative views may expose observations, evaluation state, Findings, Attention Items, Evidence, and configuration. Final names such as “Work Mode” and “Data Mode,” their navigation placement, and their permission behavior remain future Interface Architecture decisions.
 
-Detailed visual behavior remains an Interface Architecture concern. Work requirements and terminology are defined in [`work-architecture.md`](work-architecture.md), and monitoring experience requirements are defined in [`control-monitoring-architecture.md`](control-monitoring-architecture.md).
+The GRC Scorecard presents Control Domain and Framework views over the same records, with Current, Planned, and Target percentages side by side. It also shows underlying state counts and makes the calculation scope, date, and policy discoverable. Drill-down preserves context from scorecard to Requirement, Control, Control Implementation, Evidence, Assessment Result, Finding, Remediation, and related Task or Project. Planned values must be visually and semantically distinguishable from assessed Current Posture.
+
+Detailed visual behavior remains an Interface Architecture concern. Work requirements and terminology are defined in [`work-architecture.md`](work-architecture.md), monitoring experience requirements in [`control-monitoring-architecture.md`](control-monitoring-architecture.md), and GRC scorecard requirements in [`grc-architecture.md`](grc-architecture.md).

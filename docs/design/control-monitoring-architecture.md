@@ -119,6 +119,8 @@ Monitoring must not create separate copies of Evidence for dashboards, customer 
 
 A Control may be evaluated continuously, periodically, on change, on demand, or as part of an Assessment. Evaluation cadence does not change Control identity.
 
+The unified Framework, Requirement, Control Implementation, manual Assessment, Finding, Remediation, and posture semantics are defined in [`grc-architecture.md`](grc-architecture.md). A monitoring evaluation may supply attributable Evidence or an assessment input, but it does not silently approve a GRC Assessment Result or change Current Posture.
+
 ## Temporal and historical requirements
 
 Control Monitoring preserves meaningful time and does not overwrite material state. At minimum, the architecture must support:

@@ -248,6 +248,7 @@ Hashes, fingerprints, excerpts, or reversible tokens are not automatically safe 
 - [Integration, Security, and Governance](11-ITOMS_INTEGRATION_SECURITY_AND_GOVERNANCE.md) defines connector and governance rules. Channel policy complements rather than replaces Connector configuration.
 - [Information and Data Model](08-ITOMS_INFORMATION_AND_DATA_MODEL.md) defines canonical, tenant, evidence, and derived data layers. AI output does not become a separate canonical layer.
 - [Control Monitoring Architecture](control-monitoring-architecture.md) uses System Settings for collectors, schedules, evaluation cadence, baselines, thresholds, routing, suppression, retention, exceptions, monitoring health, and Channel policy. Configuration supplies constraints and policy; it does not own monitored subjects or create Findings by itself.
+- [GRC Architecture](grc-architecture.md) uses System Settings for framework sources, assessment and approval policy, posture calculation policy, evidence retention, estimate units and currency, exception rules, and reporting defaults. Settings do not alter historical Assessment Results or convert Planned Posture into Current Posture.
 
 ## Validation questions
 

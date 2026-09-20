@@ -17,6 +17,8 @@ This is not a mandatory conversion pipeline. Items may remain at the lowest usef
 
 Control Monitoring has a separate evaluation flow: `Observation → Control Evaluation → State / Condition → Finding → Alert when warranted → Investigation / Work → Remediation → Verification`. It complements the sense-making flow rather than replacing it. Observation, Finding, Alert, Incident, and Risk are distinct, and no arrow requires automatic promotion. See [`control-monitoring-architecture.md`](control-monitoring-architecture.md).
 
+GRC uses a traceability chain rather than a mandatory Workflow: `Framework → Requirement ↔ Control → Control Implementation → Evidence → Assessment → Finding → Remediation`. Manual assessment and remediation planning may invoke guided Workflows and Work Sessions, but accepting or completing work does not change Current Posture until an authorized reassessment records a supported conclusion. See [`grc-architecture.md`](grc-architecture.md).
+
 ## Workflow definition
 
 A workflow should specify:

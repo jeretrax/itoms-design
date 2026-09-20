@@ -40,9 +40,22 @@ OBJ-SUB-0001,DOM-FIN-0001,FIN,Subscription,SubscriptionID,UUID,Yes,Runtime Subsc
 OBJ-SUB-0001,DOM-FIN-0001,FIN,Subscription,RenewalDate,Date,No,Next renewal date,
 OBJ-SGR-0001,DOM-IAM-0001,IAM,SecurityGroup,SecurityGroupID,UUID,Yes,Runtime SecurityGroup record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-SGR-0001,DOM-IAM-0001,IAM,SecurityGroup,SourceSystem,String,No,Entra AD local app etc,
+OBJ-FWK-0001,DOM-GRC-0001,GRC,Framework,FrameworkID,UUID,Yes,Runtime Framework record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-FWK-0001,DOM-GRC-0001,GRC,Framework,Name,String,Yes,Framework name,
+OBJ-FWK-0001,DOM-GRC-0001,GRC,Framework,Version,String,Yes,Framework edition or version,Version history retained
+OBJ-FWK-0001,DOM-GRC-0001,GRC,Framework,Authority,String,No,Issuing or maintaining authority,May later resolve to Company or another canonical party
+OBJ-REQ-0001,DOM-GRC-0001,GRC,Requirement,RequirementID,UUID,Yes,Runtime Requirement record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-REQ-0001,DOM-GRC-0001,GRC,Requirement,FrameworkID,UUID,Yes,Source Framework,FK Framework
+OBJ-REQ-0001,DOM-GRC-0001,GRC,Requirement,RequirementCode,String,Yes,Source identifier within the Framework,Uniqueness scope includes Framework version
+OBJ-REQ-0001,DOM-GRC-0001,GRC,Requirement,RequirementText,Text,Yes,Versioned source requirement text,Preserve provenance and effective period
 OBJ-POL-0001,DOM-GRC-0001,GRC,Policy,PolicyID,UUID,Yes,Runtime Policy record identifier,Runtime primary key; distinct from canonical ObjectID
-OBJ-POL-0001,DOM-GRC-0001,GRC,Policy,VerificationPercent,Decimal,No,Percent currently verified,0-100
+OBJ-POL-0001,DOM-GRC-0001,GRC,Policy,VerificationPercent,Decimal,No,Legacy current verification convenience value,0-100; derived compatibility field and not assessment history
 OBJ-CTL-0001,DOM-GRC-0001,GRC,Control,ControlID,UUID,Yes,Runtime Control record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-CIM-0001,DOM-GRC-0001,GRC,ControlImplementation,ControlImplementationID,UUID,Yes,Runtime Control Implementation identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-CIM-0001,DOM-GRC-0001,GRC,ControlImplementation,ControlID,UUID,Yes,Reusable Control being implemented,FK Control
+OBJ-CIM-0001,DOM-GRC-0001,GRC,ControlImplementation,ScopeObjectType,String,Yes,Canonical type defining implementation scope,References a registered ObjectID type
+OBJ-CIM-0001,DOM-GRC-0001,GRC,ControlImplementation,ScopeObjectID,UUID,Yes,Runtime record defining implementation scope,Typed relationship according to ScopeObjectType
+OBJ-CIM-0001,DOM-GRC-0001,GRC,ControlImplementation,ImplementationNarrative,Text,Yes,Description of actual or planned implementation,Version and effective dates retained
 OBJ-RSK-0001,DOM-GRC-0001,GRC,Risk,RiskID,UUID,Yes,Runtime Risk record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-RSK-0001,DOM-GRC-0001,GRC,Risk,AcceptedByPersonID,UUID,No,Person accepting risk,FK Person
 OBJ-OBS-0001,DOM-OPS-0001,OPS,Observation,ObservationID,UUID,Yes,Runtime Observation record identifier,Runtime primary key; distinct from canonical ObjectID
@@ -57,6 +70,12 @@ OBJ-FND-0001,DOM-OPS-0001,OPS,Finding,FirstSeenAt,DateTime,Yes,First supported o
 OBJ-FND-0001,DOM-OPS-0001,OPS,Finding,LastSeenAt,DateTime,Yes,Most recent supported occurrence time,
 OBJ-ASM-0001,DOM-GRC-0001,GRC,Assessment,AssessmentID,UUID,Yes,Runtime Assessment record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-ASM-0001,DOM-GRC-0001,GRC,Assessment,RunAt,DateTime,Yes,Assessment execution timestamp,
+OBJ-ASM-0001,DOM-GRC-0001,GRC,Assessment,AssessmentMode,String,Yes,Manual or approved future mode,V1 default Manual
+OBJ-REM-0001,DOM-GRC-0001,GRC,Remediation,RemediationID,UUID,Yes,Runtime Remediation record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-REM-0001,DOM-GRC-0001,GRC,Remediation,Status,String,Yes,Proposal and planning lifecycle state,Final lifecycle pending design review
+OBJ-REM-0001,DOM-GRC-0001,GRC,Remediation,EstimatedEffort,Decimal,No,Estimated work effort,Unit and estimating basis required
+OBJ-REM-0001,DOM-GRC-0001,GRC,Remediation,EstimatedCost,Decimal,No,Estimated monetary cost,Currency range confidence and estimating basis required
+OBJ-REM-0001,DOM-GRC-0001,GRC,Remediation,TargetEffect,String,Yes,Explicit projected posture effect,Used only for Planned Posture until reassessed
 OBJ-WFL-0001,DOM-OPS-0001,OPS,Workflow,WorkflowID,UUID,Yes,Runtime Workflow record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-WFL-0001,DOM-OPS-0001,OPS,Workflow,ObjectType,String,Yes,Object type workflow applies to,
 OBJ-WSS-0001,DOM-OPS-0001,OPS,WorkSession,WorkSessionID,UUID,Yes,Runtime Work Session record identifier,Runtime primary key; distinct from canonical ObjectID

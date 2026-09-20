@@ -14,6 +14,8 @@ This document defines how ITOMS terminology is governed. It does not duplicate t
 - `DomainTag` is a stable readable label, not the referential key.
 - A Facet is a role or use-case lens and does not change canonical ownership.
 - Internet Domain `OBJ-IDN-0001` is the canonical technical Asset when a DNS namespace requires independent identity or history. Company uses `PrimaryInternetDomainID` to reference its canonical primary Internet Domain and may retain `PrimaryInternetDomain` as a convenience label; neither is `PrimaryDomainID`.
+- Framework, Requirement, Control, Control Implementation, Evidence, Assessment, Finding, and Remediation retain distinct canonical meanings defined in [`grc-architecture.md`](grc-architecture.md).
+- “Control Domain” in a GRC Scorecard is a control-classification axis, not an ITOMS Primary Domain and not a replacement for `PrimaryDomainID`.
 
 ## Change process
 

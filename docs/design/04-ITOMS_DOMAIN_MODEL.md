@@ -5,6 +5,8 @@
 
 Domains establish canonical ownership of definitions and lifecycles. They are not navigation menus, departments, or DNS domains.
 
+A GRC **Control Domain** is a classification used to group Controls across Frameworks for posture reporting. It is not an ITOMS Domain, does not receive a `DOM-` identifier by default, and cannot replace `PrimaryDomainID`. Its final taxonomy and promotion boundary are recorded in the Design Register.
+
 | Domain ID | Tag | Domain |
 |---|---|---|
 | `DOM-ORG-0001` | ORG | Organization & People |
@@ -27,4 +29,3 @@ Every first-class object belongs to exactly one Primary Domain. Cross-domain use
 - Which other Domains consume or relate to it?
 - Which Facets expose it to specific audiences?
 - What evidence and history must survive archival?
-

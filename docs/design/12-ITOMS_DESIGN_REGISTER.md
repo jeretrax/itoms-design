@@ -48,6 +48,57 @@ List the canonical design document(s), functional specification(s), workflow(s),
 
 ## Active Design Notes
 
+### DR-009 — Unified GRC Scoring, Applicability, and Lifecycle Boundaries
+
+**Status:** Proposed
+
+**Category:** GRC / Assessment / Posture / Remediation
+
+**Domain:** Governance, Risk & Compliance
+
+**Facet:** GRC / Security / IT / Executive / MSP Service Delivery / Customer
+
+**Related Objects:** Framework, Requirement, Control, Control Implementation, Evidence, Assessment, Finding, Remediation, Risk, Policy, Workflow, Work Session
+
+**Related Workflow:** Manual Assessment, Evidence Review, Gap Analysis, Remediation Planning, Verification, Reassessment, Progress Reporting
+
+**Date Raised:** 2026-09-20
+
+**Raised By:** Product Owner
+
+#### Design Concern / Idea
+
+Unified GRC Architecture establishes the canonical Framework-to-Remediation graph, manual V1 assessment states, and distinct Current, Planned, and Target Posture. The following details require deliberate approval before an affected Engineering Work Package is authorized.
+
+#### Design Considerations
+
+- **Posture formula:** Define treatment of Partial and Not Assessed results, weights, denominators, exclusions, rounding, confidence, stale assessments, and aggregation across scopes.
+- **Applicability:** Define applicable, not applicable, inherited, alternative, compensating, shared, and customer-responsibility decisions, including approval and Evidence requirements.
+- **Target baseline:** Define who can establish or change Target Posture, effective dates, target state granularity, due dates, and historical reconstruction.
+- **Assessment Results:** Finalize the relationship/result schema, assessor qualification, review and approval, supersession, challenge, sampling, expiration, and reassessment rules.
+- **Control mappings:** Define mapping type, coverage strength, rationale, provenance, versioning, crosswalk governance, and whether a mapping may be tenant-specific.
+- **Control Domain taxonomy:** Decide the governed classification used for cross-framework scorecard rows and whether it requires promotion beyond classification metadata. It must remain distinct from ITOMS Primary Domain.
+- **Control Implementation lifecycle:** Define actual, planned, inherited, shared, compensating, not implemented, and retired semantics without confusing implementation state with Assessment state.
+- **Remediation lifecycle:** Define proposed, accepted, deferred, rejected, scheduled, in progress, blocked, completed, verified, ineffective, superseded, and closed behavior, including reopening and split/merge rules.
+- **Effort and cost estimates:** Define units, currency, ranges, confidence, estimate basis, internal versus customer cost, recurring cost, and authorization to view or approve financial detail.
+- **Finding relationship:** Define when a posture gap must create a Finding, when one Finding may span several results, and how duplicate or recurring Findings are handled.
+- **Evidence sufficiency:** Define evidence freshness, coverage, sampling, integrity, validation, expiration, supersession, restricted access, and minimum metadata by evidence type.
+- **Framework content:** Define licensing, source import, update, local extension, deprecation, cross-version migration, and customer-defined Framework rules.
+- **Certification language:** Define when ITOMS may state readiness, conformity, compliance, attestation, or certification and what authority and Evidence each claim requires.
+- **Task and Project boundary:** Finalize canonical Task and Project objects before implementation relies on durable direct references from Remediation.
+- **Risk and exception interaction:** Define when a gap becomes a Risk, how risk acceptance differs from remediation deferral, and how exceptions affect Current, Planned, and Target Posture.
+
+#### Disposition
+
+Pending design review. V1 remains manual and progress-focused. Every displayed percentage must disclose its calculation policy and scope, and Planned Posture must remain visibly projected rather than verified.
+
+#### Incorporated Into
+
+- `docs/design/grc-architecture.md`
+- `adr/ADR-0008-unified-grc-posture-and-remediation.md`
+
+---
+
 ### DR-008 — Control Monitoring and Email & Domain Security Open Boundaries
 
 **Status:** Proposed

@@ -16,16 +16,17 @@ Read `REPO_START_HERE.md` before this directory. Root registries and canonical r
 6. [`asset-architecture.md`](asset-architecture.md) — explicit ownership, temporal custody and deployment, provider service hardware, external-system placement, and inventory scope.
 7. [`system-settings-architecture.md`](system-settings-architecture.md) — installation control plane, configuration realms, Information Guard, Channels, AI Sentinel, and restrictive enforcement defaults.
 8. [`control-monitoring-architecture.md`](control-monitoring-architecture.md) — reusable collection, observation, evaluation, Finding, remediation, verification, Evidence, and historical-posture architecture.
-9. [`03-ITOMS_GLOSSARY_MODEL.md`](03-ITOMS_GLOSSARY_MODEL.md) — terminology governance.
-10. [`04-ITOMS_DOMAIN_MODEL.md`](04-ITOMS_DOMAIN_MODEL.md) — canonical ownership boundaries.
-11. [`05-ITOMS_OBJECT_MODEL.md`](05-ITOMS_OBJECT_MODEL.md) — first-class concept rules.
-12. [`06-ITOMS_RELATIONSHIP_MODEL.md`](06-ITOMS_RELATIONSHIP_MODEL.md) — graph and historical relationship rules.
-13. [`07-ITOMS_WORKFLOW_MODEL.md`](07-ITOMS_WORKFLOW_MODEL.md) — versioned work progression.
-14. [`08-ITOMS_INFORMATION_AND_DATA_MODEL.md`](08-ITOMS_INFORMATION_AND_DATA_MODEL.md) — information layers, provenance, and history.
-15. [`09-ITOMS_APPLICATION_ARCHITECTURE.md`](09-ITOMS_APPLICATION_ARCHITECTURE.md) — logical services and deployment shapes.
-16. [`10-ITOMS_EXPERIENCE_AND_UI_MODEL.md`](10-ITOMS_EXPERIENCE_AND_UI_MODEL.md) — role-centered interaction model.
-17. [`11-ITOMS_INTEGRATION_SECURITY_AND_GOVERNANCE.md`](11-ITOMS_INTEGRATION_SECURITY_AND_GOVERNANCE.md) — connectors, security, and governance.
-18. [`12-ITOMS_DESIGN_REGISTER.md`](12-ITOMS_DESIGN_REGISTER.md) — durable design inbox and decision history.
+9. [`grc-architecture.md`](grc-architecture.md) — unified Framework-to-Remediation traceability, manual assessment, Evidence, and Current/Planned/Target posture.
+10. [`03-ITOMS_GLOSSARY_MODEL.md`](03-ITOMS_GLOSSARY_MODEL.md) — terminology governance.
+11. [`04-ITOMS_DOMAIN_MODEL.md`](04-ITOMS_DOMAIN_MODEL.md) — canonical ownership boundaries.
+12. [`05-ITOMS_OBJECT_MODEL.md`](05-ITOMS_OBJECT_MODEL.md) — first-class concept rules.
+13. [`06-ITOMS_RELATIONSHIP_MODEL.md`](06-ITOMS_RELATIONSHIP_MODEL.md) — graph and historical relationship rules.
+14. [`07-ITOMS_WORKFLOW_MODEL.md`](07-ITOMS_WORKFLOW_MODEL.md) — versioned work progression.
+15. [`08-ITOMS_INFORMATION_AND_DATA_MODEL.md`](08-ITOMS_INFORMATION_AND_DATA_MODEL.md) — information layers, provenance, and history.
+16. [`09-ITOMS_APPLICATION_ARCHITECTURE.md`](09-ITOMS_APPLICATION_ARCHITECTURE.md) — logical services and deployment shapes.
+17. [`10-ITOMS_EXPERIENCE_AND_UI_MODEL.md`](10-ITOMS_EXPERIENCE_AND_UI_MODEL.md) — role-centered interaction model.
+18. [`11-ITOMS_INTEGRATION_SECURITY_AND_GOVERNANCE.md`](11-ITOMS_INTEGRATION_SECURITY_AND_GOVERNANCE.md) — connectors, security, and governance.
+19. [`12-ITOMS_DESIGN_REGISTER.md`](12-ITOMS_DESIGN_REGISTER.md) — durable design inbox and decision history.
 
 ## Detailed specifications
 
@@ -42,4 +43,4 @@ Read `REPO_START_HERE.md` before this directory. Root registries and canonical r
 
 ## Conceptual dependency
 
-The Vision and Design Principles establish intent. Design-to-Implementation Governance preserves canonical authority and traceability as approved design becomes bounded engineering work and implementation discoveries return for design reconciliation. Context Architecture determines the Effective Context in which a person operates. Work Architecture determines the Work Function being performed, its possible progression, and continuity through a Work Session. Asset Architecture applies canonical identity, temporal relationships, and work orchestration to ownership, custody, deployment, and service hardware. System Settings Architecture supplies configuration and enforcement policy across the installation without replacing canonical truth or the other architectures. Control Monitoring applies those foundations to continuous observation, evaluation, Findings, remediation, verification, Evidence, and historical posture. Domain, Object, Relationship, Workflow, and Data models define persistent truth and reusable definitions. Application, Experience, Integration, Security, and Governance documents define how they are delivered and controlled.
+The Vision and Design Principles establish intent. Design-to-Implementation Governance preserves canonical authority and traceability as approved design becomes bounded engineering work and implementation discoveries return for design reconciliation. Context Architecture determines the Effective Context in which a person operates. Work Architecture determines the Work Function being performed, its possible progression, and continuity through a Work Session. Asset Architecture applies canonical identity, temporal relationships, and work orchestration to ownership, custody, deployment, and service hardware. System Settings Architecture supplies configuration and enforcement policy across the installation without replacing canonical truth or the other architectures. Control Monitoring applies those foundations to continuous observation and evaluation. GRC Architecture applies them to obligations, reusable Controls, scoped implementation, Evidence, attributable Assessment, Findings, Remediation, and progress from Current to Target Posture. Domain, Object, Relationship, Workflow, and Data models define persistent truth and reusable definitions. Application, Experience, Integration, Security, and Governance documents define how they are delivered and controlled.
