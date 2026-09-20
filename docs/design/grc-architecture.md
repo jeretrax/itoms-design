@@ -14,6 +14,40 @@ The chain expresses traceability, not a rigid Workflow. Controls and Requirement
 
 Version 1 is manual and progress-focused. It provides structured assessment, evidence attachment, gap identification, proposed remediation, planning, and traceable progress. Automated evidence collection and continuous evaluation may be added later through Control Monitoring, but automation does not replace attributable assessment or canonical state.
 
+## Target product goal
+
+The [GRC Solutions Landscape Summary](mockups/grc-solutions-landscape-summary.html) is the accepted target experience and capability-coverage goal for GRC in ITOMS.
+
+The goal is not merely to reproduce the mockup as one enormous screen. The goal is for ITOMS to make the complete security, risk, governance, compliance, resilience, policy, procedure, control, service, evidence, assessment, remediation, and improvement landscape available through one coherent GRC capability.
+
+The resulting capability must allow an authorized person to understand, in one connected environment:
+
+- what the organization could adopt, configure, subscribe to, document, assess, or improve;
+- what is applicable to the organization and why;
+- what has been selected, adopted, purchased, assigned, or declined;
+- what is currently implemented and operating;
+- what is supported by Evidence and what remains unverified;
+- what the latest approved Assessment concluded;
+- what gaps and Findings remain;
+- what Remediations have been proposed, accepted, deferred, rejected, completed, or verified;
+- what effort, cost, dependencies, services, Tasks, or Projects are associated with improvement;
+- how Current Posture compares with Planned and Target Posture;
+- which Framework Requirements and reusable Controls are affected by each decision.
+
+The landscape should be consumable by an ordinary business manager while retaining drill-down for technicians, assessors, auditors, security personnel, service managers, and executives. It should make both existing work and additional available solutions visible without presenting optional services as already included, planned work as verified, or broad visibility as authorization to restricted records.
+
+### Goal versus literal interface
+
+The mockup establishes required breadth, connectedness, visibility, posture comparison, filtering, traceability, and navigation intent. Its exact dimensions, generated sample entries, record counts, percentages, colors, wording, and card layout are illustrative. They are not canonical data, a mandatory final screen layout, or a claim that every solution applies to every organization.
+
+The final interface may provide summary, filtered, role-specific, Work-oriented, Data-oriented, mobile, executive, customer, and detailed views. Those views must all resolve to the same canonical GRC graph and must collectively preserve the whole-landscape goal.
+
+### Capability rather than silo
+
+“GRC module” may be used conversationally for the user-facing capability area. Architecturally, GRC remains a cross-cutting ITOMS Capability and Workspace, not a module-owned data silo. It uses canonical Companies, People, Assets, Applications, Policies, Frameworks, Requirements, Controls, Control Implementations, Evidence, Assessments, Findings, Remediations, Risks, Work Sessions, Tasks, Projects, costs, subscriptions, and relationships.
+
+GRC processes are responsible for progressively turning the possible landscape into attributable organizational decisions, implementation records, Evidence, Assessment Results, Findings, accepted plans, completed work, and verified improvement.
+
 ## Standards alignment
 
 The terminology and separation align conceptually with the [NIST Open Security Controls Assessment Language layers and models](https://pages.nist.gov/OSCAL/learn/concepts/layer/): control catalogs, profiles and mappings; system and component implementation; assessment plans and results; Findings with supporting Evidence; and Plan of Action and Milestones remediation. ITOMS uses broader cross-framework business terms and does not claim OSCAL serialization or conformance in V1. Future import or export must map explicitly and preserve canonical IDs, source versions, and provenance.

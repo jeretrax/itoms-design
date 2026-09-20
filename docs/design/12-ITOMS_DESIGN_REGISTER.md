@@ -90,7 +90,7 @@ Unified GRC Architecture establishes the canonical Framework-to-Remediation grap
 
 #### Disposition
 
-Pending design review. V1 remains manual and progress-focused. Every displayed percentage must disclose its calculation policy and scope, and Planned Posture must remain visibly projected rather than verified.
+Pending design review for the detailed boundaries above. The GRC Solutions Landscape Summary is accepted as the target experience and capability-coverage goal, while its exact taxonomy, generated catalog entries, dimensions, and visual layout remain illustrative. V1 remains manual and progress-focused. Every displayed percentage must disclose its calculation policy and scope, and Planned Posture must remain visibly projected rather than verified.
 
 #### Incorporated Into
 

@@ -14,6 +14,8 @@ V1 is manual and progress-focused. Its assessment states are Satisfied, Partial,
 
 The complete architecture is maintained in `docs/design/grc-architecture.md`.
 
+The GRC Solutions Landscape Summary at `docs/design/mockups/grc-solutions-landscape-summary.html` is accepted as the target experience and capability-coverage goal. Its breadth, connectedness, posture comparison, solution visibility, and drill-down intent are requirements. Its exact dimensions, generated sample catalog, visual treatment, and layout are illustrative and may evolve through Interface Architecture.
+
 ## Consequences
 
 - Framework-specific checklists do not duplicate reusable Controls or Evidence.
@@ -21,4 +23,5 @@ The complete architecture is maintained in `docs/design/grc-architecture.md`.
 - Finding remains cross-domain in Operations and Work Management; Evidence remains in Knowledge and Evidence.
 - Remediation is a GRC plan linked to, but not synonymous with, a Task or Project.
 - Scorecards must expose Current, Planned, and Target values with traceable scope and calculation policy.
+- GRC processes and experiences must collectively make the full available, applicable, adopted, implemented, evidenced, assessed, planned, and verified solution landscape understandable without creating a module-owned data silo.
 - Final scoring weights, applicability rules, Control Domain taxonomy, lifecycle details, imports, and certification claims remain open design questions.
