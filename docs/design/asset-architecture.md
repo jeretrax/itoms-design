@@ -129,6 +129,16 @@ For a Traxler Consulting Site Admin Box deployed at a customer:
 
 This same model applies to provider-owned backup appliances, monitoring collectors, managed routers, loaner equipment, temporary migration devices, cellular gateways, and similar service hardware.
 
+## Device Agent identity and management state
+
+Installing or discovering the ITOMS Device Agent does not create a second Device. Agent enrollment, RMM identity, MDM identity, Intune or Entra identity, serial number, operating-system identifiers, hostname history, network identifiers, and Site Admin Box observations are source identities and matching evidence for the same canonical Device.
+
+Agent enrollment must resolve to the existing Device or create an explicit unresolved Device candidate for reconciliation. Reinstallation, re-enrollment, cloned images, operating-system replacement, and hardware replacement require approved identity rules; they must not silently duplicate or merge Assets.
+
+Device management classification is independent of Device type, ownership, discovery, and service complexity. Candidate classifications include Agent Managed, Infrastructure/API Managed, Known/Documented, BYOD, Guest, Discovered/Unclassified, and Unknown/Unauthorized. The final state model is unresolved. Discovery alone never proves management authority, customer ownership, or OEM license consumption.
+
+The Device Agent observes inside an endpoint. A Site Admin Box observes across a Location or network. Their source observations may corroborate or conflict, but neither source overwrites canonical identity or ownership by authority of placement. Detailed agent behavior is defined in [`local-agent-platform-architecture.md`](local-agent-platform-architecture.md).
+
 ## Internet Domain Asset
 
 Internet Domain `OBJ-IDN-0001` is a technical Asset when a DNS namespace requires independent identity, ownership, configuration, relationships, monitoring, or history. A Company may designate one canonical Internet Domain as primary without owning every Domain it uses, and ownership must remain an explicit relationship rather than an inference from DNS control, email use, tenant placement, or monitoring enrollment.

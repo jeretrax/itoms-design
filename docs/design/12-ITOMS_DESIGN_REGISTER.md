@@ -48,6 +48,63 @@ List the canonical design document(s), functional specification(s), workflow(s),
 
 ## Active Design Notes
 
+### DR-010 — Local Agent Platform Implementation Boundaries
+
+**Status:** Proposed
+
+**Category:** Endpoint / Agent / Edge / Security / Monitoring
+
+**Domain:** Cross-domain; Inventory & Asset Lifecycle; Operations & Work Management; Applications & Services
+
+**Facet:** IT / Security / MSP Service Delivery / Customer / End User / Administration
+
+**Related Objects:** Asset, Device, Application, Observation, Finding, Attention Item, Case, Evidence, Workflow, Work Session
+
+**Related Workflow:** Agent Enrollment, Device Reconciliation, Agent Recovery, Endpoint Diagnosis, Authorized Endpoint Action, Support Request, Agent Update
+
+**Date Raised:** 2026-09-21
+
+**Raised By:** Product Owner
+
+#### Design Concern / Idea
+
+Local Agent Platform Architecture establishes the trusted endpoint presence, shared-core direction, logical communication contract, bounded local history, disconnected operation, secure execution boundary, Support App separation, and Site Admin Box relationship. The following details require deliberate approval before an affected Engineering Work Package selects product behavior.
+
+#### Design Considerations
+
+- **Product identity and branding:** Approve the public, service, executable, package, and Support App names without confusing the platform architecture with a single binary.
+- **Operational identity:** Define agent-installation identity, Device association, reinstall, cloning, hardware replacement, operating-system replacement, re-enrollment, rotation, revocation, and retirement semantics. Decide whether Agent Installation eventually requires a first-class object.
+- **Enrollment and credentials:** Define bootstrap authorization, certificate or workload-identity architecture, tenant binding, key storage, rotation, expiry, revocation, recovery, and ownership of enrollment approval.
+- **Transport and protocol:** Select connection direction, transport, message serialization, acknowledgement, ordering, deduplication, compression, backpressure, broker, tenancy, region, relay, and self-hosted compatibility.
+- **Channel taxonomy:** Decide whether enrollment, telemetry, control/configuration, jobs, results, updates, local support, and cloud support are configured Channels or policy-distinct subflows of broader Channels.
+- **Local storage:** Select telemetry and queue storage technology, encryption, integrity, corruption recovery, resource limits, compaction, priority, expiration, and secure deletion behavior.
+- **Sampling and retention:** Define default and maximum sampling intervals, event priority, local history, cloud retention, summarization, upload thresholds, metered-network behavior, and treatment of extended offline periods.
+- **Job and command contract:** Define job lifecycle, cancellation, approval references, capability registry, output limits, exit/result semantics, retries, idempotency, concurrency, resource control, destructive-action policy, and whether Job requires canonical promotion.
+- **Script execution:** Define approved interpreters, signing, provenance, authoring, review, parameter handling, secret access, constrained language or sandboxing, logging, timeout, output classification, and emergency revocation.
+- **Extension model:** Define native extensions, plugins, version compatibility, trust, isolation, distribution, capability declaration, resource limits, and recovery when an extension fails.
+- **Update and recovery:** Define signing hierarchy, manifests, channels/rings, canary policy, pause and rollback authority, watchdog or second-service design, last-known-good behavior, partial-install repair, and out-of-band recovery.
+- **Packaging:** Select Windows installer and service technologies, macOS packaging and system-extension boundaries, Linux packages and init integration, upgrade and removal behavior, and mobile distribution boundaries.
+- **Local IPC:** Select the Support App-to-Agent transport, authentication, identity, capability authorization, rate limiting, consent, audit, and behavior when either component is outdated or compromised.
+- **Mobile boundary:** Define which shared identities, schemas, diagnostics, and support functions are feasible on Android and Apple platforms and which remain delegated to MDM/MAM.
+- **Management classification:** Finalize Agent Managed, Infrastructure/API Managed, Known/Documented, BYOD, Guest, Discovered/Unclassified, and Unknown/Unauthorized semantics, transitions, history, and authorization.
+- **Discovery and licensing:** Define how ITOMS-controlled discovery avoids unintended OEM RMM consumption while retaining enough identity, complexity, and service-effort information.
+- **Pricing and complexity:** Define time windows, deduplication, categories, weights, guest/BYOD treatment, unknown-Device aging, and how visibility affects pricing without implying management or ownership.
+- **EDR compatibility:** Define supported security products, test matrix, release gate, vendor reputation and false-positive submission process, quarantine detection, and customer-specific conflict handling.
+- **Remote support boundary:** Decide whether ITOMS builds, embeds, or integrates remote-control technology; define consent, session authorization, recording, evidence, file transfer, clipboard, privilege elevation, and offline limits.
+- **Site Admin Box role:** Define optional relay, cache, probe, recovery, and local-support services without making the box a mandatory trust anchor or changing Asset and information rights.
+- **Failure semantics:** Define how the platform distinguishes Device, agent, network, Internet, DNS, relay, identity, policy, queue, broker, and ITOMS service failures and how uncertainty appears to users.
+
+#### Disposition
+
+Pending design review. Until resolved, use the logical communication and security contract in Local Agent Platform Architecture, fail closed on ambiguous execution authority, keep local storage bounded, preserve delayed-versus-current timestamps and collection gaps, and do not promote operational agent concepts into canonical objects.
+
+#### Incorporated Into
+
+- `docs/design/local-agent-platform-architecture.md`
+- `adr/ADR-0009-local-agent-platform-and-secure-device-communication.md`
+
+---
+
 ### DR-009 — Unified GRC Scoring, Applicability, and Lifecycle Boundaries
 
 **Status:** Proposed

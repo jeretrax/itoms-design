@@ -26,8 +26,12 @@ For Control Monitoring, a source-native artifact may be retained as governed Evi
 - Monitoring history retains the source, reporting interval, evaluation rule and version, applicable Control, threshold, exception, first and last seen times, recurrence, verification, and collection gaps when material.
 - Operations, Assessments, GRC, reports, and audits reference the same governed Evidence rather than creating consumer-specific copies. Effective Context and Permissions still determine which content each consumer may access.
 - Raw telemetry may be summarized or expired according to approved retention policy without erasing required historical posture, provenance, enforcement decisions, or audit evidence.
+- Store-and-forward telemetry retains capture time separately from receipt time, plus agent/source identity, applicable configuration version, ordering or correlation metadata, and explicit loss or gap indicators where material.
+- Device Agent, RMM, MDM, directory, and network-discovery identifiers are source mappings and reconciliation evidence for the canonical Device; they do not create competing Device truth.
 
 See [`control-monitoring-architecture.md`](control-monitoring-architecture.md) for the reusable evaluation boundary.
+
+See [`local-agent-platform-architecture.md`](local-agent-platform-architecture.md) for bounded local history, disconnected queues, Device reconciliation, and the endpoint communication contract.
 
 For GRC, Framework and Requirement versions, many-to-many Control mappings, scoped Control Implementations, Evidence metadata, Assessment Results, Findings, Remediations, and posture calculation policy remain separately traceable. Current Posture is based on approved assessment history. Planned Posture is a labeled projection from accepted Remediations. Target Posture is an approved desired baseline. None may overwrite the others.
 

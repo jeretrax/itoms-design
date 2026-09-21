@@ -14,6 +14,7 @@ Read `REPO_START_HERE.md` first. It defines the mandatory read order and the rul
 - `docs/design/work-architecture.md` — work hierarchy, Work Session continuity, guidance, workflow discovery, and selective automation.
 - `docs/design/asset-architecture.md` — explicit ownership, separate custody and deployment, provider service hardware, and inventory-scope rules.
 - `docs/design/system-settings-architecture.md` — installation control plane, Information Guard, Channels, AI Sentinel, and system configuration realms.
+- `docs/design/local-agent-platform-architecture.md` — trusted Device Agent and Support App, secure agent protocol, local history, disconnected operation, controlled execution, and recovery.
 - `docs/design/control-monitoring-architecture.md` — reusable monitoring pipeline, canonical boundaries, work integration, Evidence reuse, and historical posture.
 - `docs/design/grc-architecture.md` — unified GRC graph, manual assessment, remediation planning, and Current/Planned/Target posture.
 - `docs/design/applications/email-domain-security.md` — initial Security Monitoring vertical slice for Internet Domains, DNS, SPF, DKIM, DMARC, and Sending Sources.

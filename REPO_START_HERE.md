@@ -12,12 +12,13 @@ Any developer, AI coding assistant, agent, automation, or reviewer working in th
 6. `docs/design/work-architecture.md` — rules for Work Functions, flexible Workflows, Work Sessions, guidance, handoffs, exceptions, and outcomes.
 7. `docs/design/asset-architecture.md` — rules for explicit ownership, custody, assignment, deployment, provider service hardware, and external-system placement.
 8. `docs/design/system-settings-architecture.md` — control-plane configuration, Information Guard, Channels, AI Sentinel, and enforcement rules.
-9. `docs/design/control-monitoring-architecture.md` — reusable observation, evaluation, Finding, remediation, verification, Evidence, and posture architecture.
-10. `docs/design/grc-architecture.md` — unified Framework, Requirement, Control, implementation, Evidence, Assessment, Finding, Remediation, and posture architecture.
-11. `itoms_domains.csv` — canonical Domain registry.
-12. `itoms_objects.csv` — canonical Object registry.
-13. `itoms_glossary.html` — authoritative human-readable glossary and object library.
-14. `itoms_schema.csv` — field-level starter schema/data dictionary.
+9. `docs/design/local-agent-platform-architecture.md` — trusted endpoint presence, secure device communication, offline operation, local support, controlled execution, and Site Admin Box relationship.
+10. `docs/design/control-monitoring-architecture.md` — reusable observation, evaluation, Finding, remediation, verification, Evidence, and posture architecture.
+11. `docs/design/grc-architecture.md` — unified Framework, Requirement, Control, implementation, Evidence, Assessment, Finding, Remediation, and posture architecture.
+12. `itoms_domains.csv` — canonical Domain registry.
+13. `itoms_objects.csv` — canonical Object registry.
+14. `itoms_glossary.html` — authoritative human-readable glossary and object library.
+15. `itoms_schema.csv` — field-level starter schema/data dictionary.
 
 If two files appear to disagree, stop treating the names as authority. Resolve the concept by its permanent ID and update the inconsistent documentation. Permanent IDs are the identity of a concept; display names are labels.
 
@@ -35,6 +36,7 @@ If two files appear to disagree, stop treating the names as authority. Resolve t
 - Workflows guide possible progression and must not be assumed to be rigid sequences. Work Session preserves resumable work context independently of Workspace presentation.
 - Every Asset has an explicit authoritative Owner. Custody, assignment, location, deployment, service role, management coverage, and external-system placement never implicitly define or change ownership.
 - Collection does not imply permission for AI processing, and local processing does not grant information rights. Information Guard policies are restrictive by default.
+- Endpoint presence does not imply unrestricted execution. The Local Agent Platform executes only authenticated, scoped capabilities allowed by resolved policy and preserves the canonical Device as the system of record.
 - Observation does not imply Finding, Alert, Incident, or Risk. Monitoring conclusions and posture must remain attributable, explainable, and historical.
 - Current, Planned, and Target Posture remain distinct. Accepted Remediation may change Planned Posture, but only supported reassessment changes Current Posture.
 - The `itoms-design` repository is the canonical design authority. Chat supplies design conversation, Work performs design review and reconciliation, and implementation follows approved bounded Engineering Work Packages.

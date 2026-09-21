@@ -24,6 +24,10 @@ ITOMS is a multi-tenant platform built around shared canonical services rather t
 - Channel policy resolution and AI Sentinel decision service
 - Control Monitoring collection, normalization, entity-resolution, evaluation, Finding, verification, and posture services
 - Monitoring health, evidence reuse, and customer/MSP reporting services
+- Agent ingress, trust, heartbeat, configuration, queue acknowledgement, and Device reconciliation services
+- Authorized job policy, dispatch, result correlation, revocation, and audit services
+- Agent release, update-ring, compatibility, rollback, and recovery services
+- Shared Local Agent core, platform adapters, and separate person-facing Support App
 
 ## Deployment shapes
 
@@ -35,5 +39,7 @@ ITOMS is a multi-tenant platform built around shared canonical services rather t
 Implementation technology choices must preserve the same contracts, canonical identity, tenant isolation, and audit behavior across deployment shapes. Durable architecture choices belong in `/adr`.
 
 The monitoring responsibilities are logical boundaries, not prescribed deployable services. Their reusable contract is defined in [`control-monitoring-architecture.md`](control-monitoring-architecture.md); the first vertical slice is [Email & Domain Security](applications/email-domain-security.md).
+
+The endpoint and edge responsibilities are likewise logical boundaries. Their communication contract, offline behavior, execution boundary, and relationship to canonical Device identity are defined in [`local-agent-platform-architecture.md`](local-agent-platform-architecture.md). A deployment may combine or separate ingress, queueing, job dispatch, update, and monitoring services, but it must preserve purpose-specific policy enforcement and audit correlation.
 
 The unified GRC contract is defined in [`grc-architecture.md`](grc-architecture.md). Its V1 service boundaries must support manual operation without requiring monitoring or AI services.

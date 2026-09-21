@@ -16,6 +16,10 @@ Connectors extend the customer operations graph while maintaining least privileg
 - Every ingestion or interaction path resolves to an Information Guard Channel policy. Connector authorization does not imply permission for persistence, disclosure, secondary use, or AI processing.
 - Monitoring collectors declare source, cadence, scope, provenance, expected failure behavior, and entity-resolution behavior. Collector access does not make the collector authoritative for the canonical subject it observes.
 - Source-native artifacts, normalized Observations, and derived evaluations remain distinguishable. Sensitive sources such as DMARC forensic or failure reports require an explicit Channel policy and must not be assumed available.
+- Local Agent traffic resolves to purpose-distinct enrollment, health, telemetry, control/configuration, job, result, update, and support flows even when one transport multiplexes them. Each flow retains independent authorization, Information Guard, priority, retention, failure, and audit behavior.
+- Agent messages carry or resolve tenant, workload identity, canonical Device candidate, purpose, capture or issue time, applicable contract/configuration version, and correlation metadata. Delayed delivery remains distinguishable from current state.
+- Platform-to-agent jobs are capability-scoped, expiring, replay-resistant, and independently validated at the Device. Connector or platform access never implies unrestricted SYSTEM or root execution.
+- Agent-to-platform delivery is idempotent or safely deduplicated where practical. Queue gaps, expiry, overflow, rejected jobs, and lost intervals remain visible rather than being interpreted as healthy state.
 
 ## Governance rules
 
@@ -32,5 +36,7 @@ Connectors extend the customer operations graph while maintaining least privileg
 - Automated or imported Evidence remains an input. It cannot silently approve an Assessment Result, certify compliance, or change Current Posture.
 
 The reusable collector-to-posture flow is defined in [`control-monitoring-architecture.md`](control-monitoring-architecture.md).
+
+The endpoint trust and communication contract is defined in [`local-agent-platform-architecture.md`](local-agent-platform-architecture.md).
 
 Unified GRC governance and posture semantics are defined in [`grc-architecture.md`](grc-architecture.md).

@@ -181,6 +181,12 @@ The Work Session may cross the customer record, Asset, Location, agreement, Datt
 
 Control Monitoring can identify a Finding without imposing a rigid ticket sequence. A Work Function such as “Improve Email Domain Security” may guide review of a newly observed Sending Source, customer or vendor handoff, DNS remediation outside ITOMS, waiting for propagation, verification, exception approval, and closure. The Work Session preserves the Internet Domain, Finding, Evidence, external systems, people, and recent Actions throughout that progression. Detailed evaluation rules remain in [`control-monitoring-architecture.md`](control-monitoring-architecture.md).
 
+## Local Agent work example
+
+A Work Function such as “Diagnose and Repair an Offline Endpoint” may correlate Site Admin Box reachability, the Device Agent's last heartbeat, queued local history, network state, Support App input, a Case, a Finding, and prior Actions. The Work Session preserves that context while a technician requests an approved diagnostic, waits for reconnection, reviews bounded results, performs a repair, or hands work to a customer or third party.
+
+The platform authorizes an endpoint job as an Action within this work. The Device Agent independently validates the job envelope and local policy. Technical job completion does not automatically complete the Task, close the Case or Finding, prove a Control, or determine the Work Function outcome. Offline, denied, expired, failed, rolled-back, or insufficient-result states return as explainable conditions or Exceptions. See [`local-agent-platform-architecture.md`](local-agent-platform-architecture.md).
+
 ## GRC work example
 
 A Work Function such as “Assess and Improve CMMC Level 1 Posture” may move across Framework Requirements, mapped Controls, scoped Control Implementations, Evidence, manual Assessment Results, Findings, proposed Remediations, estimates, approvals, Tasks, and Projects. Accepting a Remediation updates Planned Posture, while Current Posture remains unchanged until Evidence is reviewed and an authorized reassessment records a supported result. Detailed boundaries are defined in [`grc-architecture.md`](grc-architecture.md).

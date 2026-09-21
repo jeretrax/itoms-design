@@ -28,3 +28,7 @@
 24. **Evidence is referenced, not copied.** Operations, GRC, Assessments, reports, and audits reuse governed canonical Evidence subject to context and Permissions.
 25. **Planned is not verified.** Accepted Remediation may project Planned Posture, but only an attributable, evidence-backed Assessment changes Current Posture.
 26. **Frameworks reuse Controls.** Requirements map many-to-many to reusable Controls and shared Evidence instead of creating framework-specific copies.
+27. **The endpoint layer remains locally useful.** A managed Device continues permitted observation, bounded history, diagnostics, and support behavior during cloud or Internet failure.
+28. **Endpoint presence is bounded authority.** Installing an agent does not grant the cloud arbitrary SYSTEM or root execution; every operation is authenticated, scoped to an allowed capability, policy-checked, replay-resistant, and attributable.
+29. **The Device stays canonical.** Agent, RMM, MDM, directory, and discovery identities enrich or map to one canonical Device and never create a competing endpoint directory by convenience.
+30. **Fleet updates are a safety boundary.** Agent signing, staged release, compatibility, rollback, repair, and recovery are architectural requirements, not release-process afterthoughts.

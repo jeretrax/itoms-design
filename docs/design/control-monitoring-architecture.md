@@ -15,6 +15,8 @@ Control Monitoring contains two major concerns:
 
 The initial vertical slice is [Email & Domain Security](applications/email-domain-security.md) within Security Monitoring. It establishes reusable patterns for future identity, endpoint, vulnerability, SaaS, network, WAN, infrastructure, and service-availability monitoring without declaring those future capabilities implemented.
 
+[Local Agent Platform Architecture](local-agent-platform-architecture.md) defines the trusted endpoint source for future endpoint and Device-health monitoring. It establishes collection, buffering, identity, and communication behavior, but does not by itself define final endpoint Controls, evaluation rules, Findings, alert thresholds, or assessment outcomes.
+
 Conceptually:
 
 ```text
@@ -157,6 +159,8 @@ Navigation should follow the monitoring Work Function across the canonical subje
 System Settings governs monitoring configuration, including collectors, credentials and secret references, schedules, evaluation cadence, thresholds, baselines, routing, suppression, exceptions, retention, and health. Configuration creates no authority by itself.
 
 Each collection or interaction path resolves to an Information Guard Channel. Connectors provide technical access and source mappings; Channels provide collection and handling policy. Collector access does not imply permission to retain, disclose, or submit all accessible data to AI.
+
+Device Agent observations retain capture time, source identity, configuration version, delivery time, and collection-gap information so delayed store-and-forward data is not mistaken for current state. Local thresholding or detection remains a source assertion until platform normalization, entity resolution, and evaluation determine the applicable Observation, Evidence, State, or Finding.
 
 ## Experience requirements
 
