@@ -221,9 +221,25 @@ A useful customer communication pattern is:
 
 `Source says → Plain English → Current coverage → Gap → Required action → Service / responsibility that addresses it`
 
-## Service-package mapping
+## Service linkage and service-package mapping
 
-Service-package mapping is an explanatory relationship, not proof of compliance.
+Service linkage is a durable, bidirectional explanatory relationship connecting the customer's requirements graph to the services that implement it. It is not proof of compliance.
+
+The working chain is:
+
+`Case → Source → Driver → Required Outcome / Requirement → Control → Control Implementation → Service Capability → Customer Service Entitlement → Service Package`
+
+Evidence and Assessment remain attached to the applicable Control Implementation and assessment scope. A subscription or package assignment never substitutes for implementation Evidence or an approved Assessment.
+
+The linkage must support both directions:
+
+- **Why is this service needed?** Trace from a Service Capability backward through the Control Implementation, Control, Required Outcome / Requirement, Driver, Case, and authorized source provenance.
+- **How is this requirement being addressed?** Trace from a Driver or Required Outcome forward through the Control and Control Implementation to the Service Capability and the customer's current entitlement.
+- **What is not covered?** Identify required capabilities with no current customer entitlement, without treating that gap as proof that a Control is unsatisfied until implementation and Evidence are assessed.
+
+Service Capability is the stable delivery concept. Service Package is a commercial grouping or entitlement mechanism and may change over time. Therefore, package membership must not be embedded as permanent truth on a Control or Driver.
+
+Service Linkage relationships must be effective-dated and historically reconstructable. At minimum they must preserve the customer/scope, linked Control Implementation, Service Capability, entitlement/package through which it was delivered, provider/responsible party, relationship status, effective period, provenance, and change history. Moving a capability between IT Essentials, IT Advanced, an add-on, or another offering must not rewrite what service coverage existed at an earlier date.
 
 The Analyzer may show that a capability required to address a driver is:
 
@@ -356,7 +372,7 @@ Automatic legal conclusions, automatic certification claims, and automatic conve
 2. What canonical object represents a source contract/RFP when the raw document remains enclave-restricted?
 3. What certainty/applicability states should be canonical?
 4. How are interpretations approved, superseded, and historically reconstructed?
-5. How are service packages and capabilities represented so package changes do not rewrite historical analysis?
+5. What canonical objects and relationship IDs represent Service Capability, Customer Service Entitlement, and effective-dated Service Linkage in `itoms_objects.csv` and `itoms_schema.csv`?
 6. Which prospect questionnaire answers may be retained after conversion to a customer?
 7. What is the handoff process from marketing lead to customer onboarding without overstating inferred obligations?
 8. What human review is mandatory before a document-derived requirement becomes authoritative?
@@ -372,6 +388,6 @@ Automatic legal conclusions, automatic certification claims, and automatic conve
 5. Can a requirement be assigned to the customer or a third party rather than automatically becoming an MSP sales item?
 6. Can the same underlying engine support both direct customer discovery and nontechnical prospect discovery?
 7. Can source documents remain restricted while structured, approved findings participate in the wider ITOMS graph?
-8. Can service-package changes occur without destroying historical analysis?
+8. Can service-package or entitlement changes occur without destroying historical Service Linkage or changing prior assessment truth?
 9. Can a prospect understand why a service package is suggested?
 10. Can an identified driver transition cleanly into assessment, remediation, Projects, and Tasks while preserving provenance?
