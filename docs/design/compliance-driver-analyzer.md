@@ -43,21 +43,66 @@ Possible outcomes include:
 - potential requirement requiring validation;
 - insufficient information to determine applicability.
 
-## Primary intake types
+## Content Driver Case and primary case types
 
-### Document-driven intake
+Analysis begins with a **Content Driver Case**: the governed container that records why ITOMS is reviewing a situation before individual Sources are analyzed. The Case is distinct from a document. One continuing business situation may accumulate multiple Sources over time.
 
-The Analyzer should support at least these source classes:
+All case types share a common structure, while case type controls intake questions, source handling, authority assumptions, analysis rules, certainty, and expected outputs.
 
-1. **Customer / Vendor Contract** — customer, supplier, vendor, or other commercial agreements containing security, privacy, confidentiality, insurance, data-handling, technology, or operational obligations.
-2. **Partnership / Business Agreement** — partnership, subcontractor, joint-venture, business-associate, data-sharing, or similar relationship agreements.
+The nine initial case/intake types are:
+
+1. **Customer / Vendor Contract** — commercial agreements containing security, privacy, confidentiality, insurance, data-handling, technology, or operational obligations.
+2. **Partnership / Business Agreement** — partnership, subcontractor, joint-venture, business-associate, data-sharing, mutual restriction/non-compete, or similar relationship agreements.
 3. **Employment / Employer Agreement** — agreements imposing obligations involving employee information, confidentiality, access, systems, intellectual property, privacy, or security practices.
 4. **Request for Proposal / Bid Requirement** — RFPs, RFQs, procurement requirements, bid packages, prequalification material, and related security questionnaires.
-5. **IT / Security Audit or Assessment** — audit reports, customer assessments, penetration-test findings, assessment responses, or similar findings that reveal obligations or deficiencies.
-6. **Regulatory / Government Requirement Source** — source material associated with regulatory, government, contractual flow-down, or industry obligations. Mention of a framework alone does not prove applicability.
+5. **IT / Security Audit or Assessment** — audit reports, customer assessments, penetration-test findings, third-party assessments, assessment responses, or similar findings. Assessment context and possible commercial interests inform scrutiny but do not determine whether an individual finding is valid.
+6. **Regulatory / Government Requirement** — regulatory, government, contractual flow-down, or industry obligations. Mention of a framework alone does not prove applicability.
 7. **Cyber Insurance Requirement** — applications, renewal questionnaires, underwriting requirements, coverage conditions, exclusions, attestations, and required safeguards.
+8. **Questionnaire / Discovery** — structured customer or prospect discovery that can originate potential Drivers when no authoritative source document exists. Self-reported or inferred information retains its lower certainty until validated.
+9. **Framework Adoption / Desired Compliance** — an organization voluntarily selects a framework, standard, profile, or security baseline as a target even when no external counterparty currently requires it. The initiating Driver is organizational intent. If a later contract, regulation, insurer, or other authority makes the same outcome mandatory, ITOMS adds the new Driver and authority rather than rewriting the original history.
 
-Additional source classes may be added without creating separate compliance silos.
+Additional case types may be added without creating separate compliance silos.
+
+### Case Context
+
+Before Source Analysis, ITOMS performs **Case Framing**. Case Context answers: **What is going on, why are we looking at it, and what decision are we trying to make?**
+
+The common Case Context should capture:
+
+- case identity, organization, case type, status, owner, initiator, sensitivity, and important dates;
+- purpose, trigger/event, why the review is occurring now, and the **Decision Sought**;
+- parties and their roles and relationships to the organization;
+- relationship context, including current/proposed/renewing/terminating/disputed status and known commercial interests or incentives when relevant;
+- the original human narrative and subsequent attributable additions or corrections;
+- structured Context Statements classified as **Fact**, **Reported Statement**, **User Assertion**, **Opinion / Concern**, **AI Inference**, or **Unknown**;
+- attribution, provenance, confidence, validation state, effective dates, and history for each material Context Statement;
+- goals, concerns, perceived consequences, constraints, deadlines, dependencies, and handling restrictions;
+- questions and unknowns discovered during intake or analysis;
+- linked Sources and source classifications;
+- confidentiality, access, retention, and AI-processing restrictions;
+- a versioned AI-generated Case Context Summary derived from the underlying structured context.
+
+The original narrative is preserved. The AI summary is a derived human-readable view, not the database truth. AI may extract and maintain structured Context Statements, but inference must not silently become fact.
+
+Core rule:
+
+> **Case Context informs analysis. Source Evidence establishes what the Sources say. Neither is allowed to overwrite the other.**
+
+Conceptually:
+
+`Human Narrative → AI Context Extraction → Structured Context Statements → Case Context Summary`
+
+followed by:
+
+`Case Context + Sources → Analysis → Drivers → Required Outcomes / Requirements → Controls → Control Implementations → Service Linkage`
+
+Drivers, Controls, Findings, Service Linkages, and work are related downstream objects; they are not embedded fields inside Case Context.
+
+### Source handling
+
+A Source is evidence or input attached to the Case, such as a contract, audit, insurance policy, questionnaire, email, meeting note, verbal statement, or authoritative reference. Multiple Sources may attach to one Case, and a customer may have multiple Cases whose Drivers converge on the same Required Outcome or Control.
+
+Raw confidential Sources remain subject to the private-enclave boundary and role-based access. Derived Context Statements and Drivers retain provenance pointers rather than requiring unrestricted copies of source material.
 
 ### No-document intake
 
@@ -192,7 +237,7 @@ Applicability, provenance, source, interpretation, and validation state must rem
 
 Document and questionnaire intake converge into a common conceptual pipeline:
 
-`Source / Questionnaire → Driver Analysis → Applicability & Certainty → Plain-Language Interpretation → Requirement Mapping → Control Mapping → Coverage / Gap Analysis → Responsibility & Service Mapping → Customer-Facing Output → Work`
+`Content Driver Case → Case Framing / Context → Sources / Questionnaire → Driver Analysis → Applicability & Certainty → Plain-Language Interpretation → Required Outcome / Requirement Mapping → Control Mapping → Coverage / Gap Analysis → Responsibility & Service Mapping → Customer-Facing Output → Work`
 
 For document-driven analysis:
 
@@ -299,7 +344,7 @@ It introduces an upstream discovery and applicability concern:
 
 `Business / External Driver → Applicability → Framework and/or Requirement → Control ...`
 
-A Driver may originate from a contract, RFP, business relationship, audit, insurer, regulation, customer expectation, or questionnaire inference.
+A Driver may originate from a contract, RFP, business relationship, audit, insurer, regulation, customer expectation, questionnaire inference, or an organization's voluntary Framework Adoption / Desired Compliance decision.
 
 A Driver does not prove that a Control is implemented or that a Requirement is satisfied.
 
@@ -368,7 +413,7 @@ Automatic legal conclusions, automatic certification claims, and automatic conve
 
 ## Open design decisions
 
-1. Should **Driver** become a first-class canonical ITOMS object or an effective-dated relationship/provenance record?
+1. What canonical object and relationship IDs represent **Content Driver Case**, **Case Context Statement**, **Driver**, and their effective-dated provenance in `itoms_objects.csv` and `itoms_schema.csv`?
 2. What canonical object represents a source contract/RFP when the raw document remains enclave-restricted?
 3. What certainty/applicability states should be canonical?
 4. How are interpretations approved, superseded, and historically reconstructed?
@@ -378,6 +423,8 @@ Automatic legal conclusions, automatic certification claims, and automatic conve
 8. What human review is mandatory before a document-derived requirement becomes authoritative?
 9. What security and retention controls govern enclave source material?
 10. Which Driver Report elements are visible to customer users versus MSP/internal roles?
+11. What controlled vocabulary and lifecycle should govern the nine initial Content Driver Case types?
+12. Which Case Context classifications require human validation before they may influence authoritative analysis?
 
 ## Validation questions
 
