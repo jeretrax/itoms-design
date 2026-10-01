@@ -78,6 +78,22 @@ A **Control Implementation** (`OBJ-CIM-0001`) describes how a Control is impleme
 
 It provides the implementation narrative, scope, responsible party, operating frequency, implementation status, applicable dates, and relationships to Evidence and work. The Control remains the reusable definition; the Control Implementation is the contextual realization.
 
+### Service Linkage
+
+A **Service Linkage** connects a scoped Control Implementation to the Service Capability that delivers, operates, supports, or otherwise contributes to that implementation for a customer or defined scope.
+
+The relationship extends the GRC graph without changing assessment truth:
+
+`Requirement ↔ Control → Control Implementation → Service Capability → Customer Service Entitlement → Service Package`
+
+Service Capability represents the stable operational capability. Customer Service Entitlement represents whether and how that customer is entitled to receive it. Service Package represents the commercial grouping through which the entitlement may currently be provided.
+
+Service Linkage is many-to-many and effective-dated. A Control Implementation may depend on several capabilities, and one capability may support several Control Implementations or requirements. The relationship must preserve scope, provider/responsible party, relationship type, effective period, status, provenance, and history.
+
+Service Linkage is explanatory and operational, not assessment Evidence by itself. A customer may be entitled to a capability that is not implemented correctly, and a Control may be implemented outside an MSP service. Current Posture changes only through the governed Evidence and Assessment model.
+
+This linkage must support reverse traceability so ITOMS can explain both why a service capability is being provided and which requirements, outcomes, Controls, and customer implementations depend on it. Package changes must not rewrite historical service coverage or prior analysis.
+
 ### Evidence
 
 **Evidence** (`OBJ-EVD-0001`) is the governed artifact, assertion, record, measurement, document, screenshot, configuration result, approval, interview result, or other support used to substantiate an implementation, assessment result, Finding, remediation, exception, or decision.
@@ -164,7 +180,7 @@ The GRC Scorecard presents two coordinated views of the same canonical graph:
 
 For each supported row or group, the Scorecard shows Current, Planned, and Target posture side by side, including state counts and progress toward the target. A user with the appropriate Permissions can drill through:
 
-`Scorecard → Framework / Control Domain → Requirement → mapped Control → Control Implementation → Evidence / Assessment Result → Finding → Remediation → Task or Project`
+`Scorecard → Framework / Control Domain → Requirement → mapped Control → Control Implementation → Service Linkage / Evidence / Assessment Result → Finding → Remediation → Task or Project`
 
 The interface must explain why a value exists and must preserve scope while moving between framework and control-oriented views. It must not duplicate the underlying records to produce each view.
 
@@ -207,6 +223,7 @@ The architecture must preserve:
 - Framework and Requirement versions;
 - effective-dated mappings and applicability decisions;
 - Control Implementation history and responsible parties;
+- effective-dated Service Linkage, Service Capability, customer entitlement, package membership, and responsible provider history;
 - Assessment scope, baseline, result, rationale, assessor, and approval;
 - Evidence version, period, provenance, classification, and retention;
 - Finding and Remediation decisions, estimates, approvals, and state changes;
@@ -215,7 +232,7 @@ The architecture must preserve:
 
 ## V1 boundary
 
-V1 includes manual Framework and Requirement setup or import, many-to-many Control mapping, scoped Control Implementations, Evidence attachment and metadata, manual Assessments using the four canonical states, Findings, proposed Remediations with effort and cost estimates, acceptance-driven Planned Posture, progress scorecards, and drill-down to work.
+V1 includes manual Framework and Requirement setup or import, many-to-many Control mapping, scoped Control Implementations, effective-dated Service Linkage to Service Capabilities and customer entitlements, Evidence attachment and metadata, manual Assessments using the four canonical states, Findings, proposed Remediations with effort and cost estimates, acceptance-driven Planned Posture, progress scorecards, and drill-down to work.
 
 V1 does not require automated evidence collection, continuous control monitoring, AI assessment, automatic remediation, certification issuance, or a universal scoring formula. Those capabilities require separately approved design and Engineering Work Packages.
 
@@ -231,3 +248,5 @@ V1 does not require automated evidence collection, continuous control monitoring
 8. Can users drill from posture to Requirement, Control, Evidence, Finding, Remediation, and work?
 9. Does V1 remain useful when every assessment and evidence decision is manual?
 10. Are formula, weighting, applicability, exception, and certification claims explicit rather than implied?
+11. Can ITOMS trace a Control Implementation to the capability and customer entitlement that currently delivers it without treating subscription as proof of satisfaction?
+12. Can package changes occur without rewriting historical Service Linkage or prior assessment truth?
