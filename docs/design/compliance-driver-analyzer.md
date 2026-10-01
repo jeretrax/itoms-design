@@ -1,0 +1,377 @@
+# Compliance Driver Analyzer Design Handoff
+
+**Status:** Proposed
+
+**Purpose:** Define the ITOMS Compliance Driver Analyzer as a private-enclave intake, interpretation, communication, and service-coverage capability that discovers why an organization has security obligations, translates those obligations into plain business language, and connects them to actionable requirements, controls, responsibilities, and service coverage.
+
+## Core product decision
+
+The Compliance Driver Analyzer is not a generic compliance score and is not the primary ITOMS security-posture experience.
+
+Its primary question is:
+
+> **Why does this organization need to do these particular security things?**
+
+The Analyzer discovers external and business drivers, interprets them, establishes provenance and certainty, and feeds structured results into the canonical ITOMS GRC graph.
+
+Customer-facing ITOMS can continue to focus on:
+
+- where the organization is now;
+- what needs attention;
+- what is already being done;
+- what should happen next.
+
+The Driver Analyzer supplies the reason behind those recommendations.
+
+## Business role
+
+The capability has three simultaneous roles:
+
+1. **Requirements discovery** — identify obligations or likely obligations arising from contracts, business relationships, audits, insurance, regulation, or business practices.
+2. **Translation and communication** — explain source language in terms an ordinary business owner or manager can understand.
+3. **Sales and service alignment** — show which requirements are already addressed by the customer's subscribed services, which require additional capabilities, and which remain the customer's or another party's responsibility.
+
+The Analyzer must not manufacture demand or treat every gap as an upsell. Source evidence and applicability drive recommendations.
+
+Possible outcomes include:
+
+- already addressed by the customer's current service;
+- requires a capability included in another service tier;
+- available as an add-on or project;
+- customer organizational responsibility;
+- third-party or legal responsibility;
+- potential requirement requiring validation;
+- insufficient information to determine applicability.
+
+## Primary intake types
+
+### Document-driven intake
+
+The Analyzer should support at least these source classes:
+
+1. **Customer / Vendor Contract** — customer, supplier, vendor, or other commercial agreements containing security, privacy, confidentiality, insurance, data-handling, technology, or operational obligations.
+2. **Partnership / Business Agreement** — partnership, subcontractor, joint-venture, business-associate, data-sharing, or similar relationship agreements.
+3. **Employment / Employer Agreement** — agreements imposing obligations involving employee information, confidentiality, access, systems, intellectual property, privacy, or security practices.
+4. **Request for Proposal / Bid Requirement** — RFPs, RFQs, procurement requirements, bid packages, prequalification material, and related security questionnaires.
+5. **IT / Security Audit or Assessment** — audit reports, customer assessments, penetration-test findings, assessment responses, or similar findings that reveal obligations or deficiencies.
+6. **Regulatory / Government Requirement Source** — source material associated with regulatory, government, contractual flow-down, or industry obligations. Mention of a framework alone does not prove applicability.
+7. **Cyber Insurance Requirement** — applications, renewal questionnaires, underwriting requirements, coverage conditions, exclusions, attestations, and required safeguards.
+
+Additional source classes may be added without creating separate compliance silos.
+
+### No-document intake
+
+When no authoritative document is available, ITOMS uses questionnaire-driven discovery. Two separate questionnaire experiences feed the same Driver Analyzer but have different language, workflows, and certainty rules.
+
+## Questionnaire instance 1: Customer Requirements Discovery
+
+**Audience:** Existing customer.
+
+**Purpose:** Directly identify, validate, and maintain known or suspected requirements for an organization with an established ITOMS/customer relationship.
+
+Because a trusted relationship already exists, questions may explicitly reference contracts, audits, cyber insurance, regulatory requirements, frameworks, customer questionnaires, CMMC, DFARS, HIPAA, PCI, and other known terminology when useful.
+
+### Workflow
+
+`Known Customer → Direct Requirements Questionnaire → Identify Drivers → Validate Evidence → Map Requirements → Compare Against Current Services → Identify Gaps → Customer Review → Action Plan`
+
+### Expected question areas
+
+- contractual cybersecurity or technology requirements;
+- customer or vendor security questionnaires;
+- government or subcontract work;
+- regulated or sensitive data;
+- known frameworks or standards;
+- prior audits and findings;
+- cyber-insurance applications and control requirements;
+- legal or contractual review findings;
+- customer portals and data exchange;
+- existing attestations or representations;
+- current and planned business relationships that may introduce new obligations.
+
+### Existing-customer advantage
+
+This workflow can compare discovered requirements against known ITOMS context, including subscribed services, existing controls, implementations, evidence, findings, projects, and planned work.
+
+A result can therefore distinguish:
+
+- requirement already addressed through IT Essentials;
+- requirement addressed through another current service;
+- capability not included in the current subscription;
+- capability available through IT Advanced or another defined offering;
+- organizational/process responsibility outside the MSP service;
+- requirement requiring evidence or reassessment;
+- requirement whose applicability remains unresolved.
+
+## Questionnaire instance 2: Business Security Requirements Discovery
+
+**Audience:** General prospect, business owner, manager, or other nontechnical participant.
+
+**Purpose:** Discover likely security and business requirements without expecting the participant to understand compliance terminology.
+
+This is both a lead-generation/customer-education experience and an input to service-package guidance.
+
+### Language rule
+
+The participant answers questions about **how the business operates**. The Analyzer determines which compliance, contractual, regulatory, insurance, and security questions those answers imply.
+
+Avoid requiring the prospect to understand terms such as DFARS, CMMC, NIST, control families, or regulatory citations.
+
+Questions should sound like a knowledgeable business advisor, for example:
+
+- What does your company do and who do you primarily do business with?
+- Do you work with hospitals, doctors, clinics, pharmacies, or healthcare organizations?
+- Do you perform work for federal, state, or local government, directly or through another contractor?
+- Do customers send contracts containing requirements about computers, security, confidentiality, or protecting information?
+- Do customers ask you to complete security questionnaires?
+- Do employees use customer portals to upload or download files?
+- Do customers give you information they consider confidential?
+- Do you handle employee records, Social Security numbers, financial information, medical information, drawings, designs, or other sensitive information?
+- Do you accept or process credit-card payments?
+- Have you participated in an IT, security, customer, financial, or insurance audit?
+- Has a customer required an IT or security change before doing business with you?
+- Does the word “compliance” come up with customers, vendors, insurers, auditors, or attorneys even if you are unsure what it means?
+- Do you carry cybersecurity insurance?
+- Does your insurer ask about MFA, backups, training, antivirus, monitoring, or other IT practices?
+- Do you have legal counsel who reviews business contracts?
+- Has legal counsel raised concerns involving technology, privacy, cybersecurity, or customer information?
+- Have you signed technology or security requirements you were not completely sure the business was meeting?
+
+### Conditional branching
+
+Follow-up questions should be driven by prior answers.
+
+Example:
+
+`Government work = Yes → Prime or subcontractor? → Receives technical files/drawings/specifications? → How are those files received/stored/shared? → Internal applicability investigation`
+
+The prospect should not need to know whether DFARS or CMMC applies. ITOMS should use their business facts to identify that these may be relevant and require validation.
+
+### Workflow
+
+`Prospect → Business-Language Questionnaire → Discover Potential Drivers → Conditional Follow-ups → Infer Likely Requirements → Map Likely Service Coverage → Prospect Report → Sales Follow-up`
+
+### Marketing role
+
+Possible public-facing positioning includes:
+
+- **What security requirements apply to your business?**
+- **Do your customers expect more from your IT than you realize?**
+- **Find out what your customers, contracts, and insurance may require from your IT.**
+
+The experience should provide value before a sales conversation. It may summarize potential drivers, likely security needs, unresolved questions, and service coverage that could address them.
+
+## Certainty and applicability model
+
+The two questionnaire instances must not overstate certainty.
+
+### Existing customer / verified source
+
+When authoritative source material or validated evidence establishes applicability, ITOMS may use language such as:
+
+- Required
+- Applicable
+- Contractually required
+- Verified requirement
+
+### Prospect / inferred source
+
+Questionnaire inference should use language such as:
+
+- Likely requirement
+- Potential requirement
+- May apply
+- Needs confirmation
+- Additional information required
+
+An inferred requirement must not silently become a verified obligation.
+
+Applicability, provenance, source, interpretation, and validation state must remain traceable.
+
+## Analyzer pipeline
+
+Document and questionnaire intake converge into a common conceptual pipeline:
+
+`Source / Questionnaire → Driver Analysis → Applicability & Certainty → Plain-Language Interpretation → Requirement Mapping → Control Mapping → Coverage / Gap Analysis → Responsibility & Service Mapping → Customer-Facing Output → Work`
+
+For document-driven analysis:
+
+`Contract / RFP / Audit / Insurance Source → Analyzer → Drivers → Requirements / Controls → Current ITOMS Posture → Gaps / Actions`
+
+For questionnaire-driven analysis:
+
+`Questionnaire → Analyzer → Potential or Confirmed Drivers → Requirements / Controls → Current or Prospect Coverage → Gaps / Actions`
+
+## Customer-facing requirement record
+
+The customer communication experience should be able to present each material item as:
+
+- **Required by / Driven by:** source and location when available;
+- **What it means:** plain-business-language interpretation;
+- **Why it applies:** applicability rationale;
+- **Certainty:** verified, likely, potential, unresolved, etc.;
+- **Current status:** addressed, partial, missing, not assessed, or unresolved as appropriate;
+- **What you already have:** current service/control coverage;
+- **What is needed:** capability, process, evidence, decision, or implementation;
+- **Responsibility:** MSP, customer, shared, third party, legal, assessor, or unresolved;
+- **Available through:** current service, higher service tier, add-on/project, customer action, or external provider;
+- **Next action:** review, validate, subscribe, implement, document, assess, or otherwise disposition.
+
+A useful customer communication pattern is:
+
+`Source says → Plain English → Current coverage → Gap → Required action → Service / responsibility that addresses it`
+
+## Service-package mapping
+
+Service-package mapping is an explanatory relationship, not proof of compliance.
+
+The Analyzer may show that a capability required to address a driver is:
+
+- included in IT Essentials;
+- included in IT Advanced;
+- included in another defined service package;
+- separately purchasable;
+- project-based;
+- not provided by the MSP;
+- an internal customer responsibility.
+
+The design must prevent optional services from appearing already included and prevent subscription status from being treated as evidence that a requirement is satisfied.
+
+The strongest sales communication is source-driven:
+
+> The customer's business obligation creates the need. The service recommendation explains how that need can be addressed.
+
+## Prospect service guidance
+
+The external questionnaire may function as a service-package configurator, but recommendations must remain explainable at the capability level.
+
+Example output pattern:
+
+> Your business profile suggests 11 security needs. Six appear covered by IT Essentials, four require capabilities available in IT Advanced, and one requires additional review because it may be a contractual obligation.
+
+Counts and package names are dynamic examples, not fixed product claims.
+
+The report should allow the prospect to understand **why** a package is suggested rather than simply producing a package score.
+
+## Private-enclave boundary
+
+Document analysis should operate inside a dedicated private analysis enclave.
+
+Raw contracts, RFPs, audit material, insurance documents, and potentially sensitive questionnaire responses should not automatically become broadly available ITOMS records.
+
+The enclave should:
+
+- receive and process source material;
+- preserve source provenance and controlled access;
+- extract candidate drivers and requirement statements;
+- produce plain-language interpretations;
+- identify applicability questions and confidence/certainty;
+- allow human validation where required;
+- emit only governed structured findings and references needed by the broader ITOMS graph.
+
+The main ITOMS environment should consume structured Driver/Requirement relationships, provenance references, applicability state, and approved interpretations without requiring unrestricted replication of source documents.
+
+Final retention, encryption, key-management, isolation, deletion, model-processing, and source-document access policies require a dedicated security design before implementation.
+
+## Relationship to canonical GRC architecture
+
+The Driver Analyzer extends, rather than replaces, the existing GRC chain:
+
+`Framework → Requirement ↔ Control → Control Implementation → Evidence → Assessment → Finding → Remediation`
+
+It introduces an upstream discovery and applicability concern:
+
+`Business / External Driver → Applicability → Framework and/or Requirement → Control ...`
+
+A Driver may originate from a contract, RFP, business relationship, audit, insurer, regulation, customer expectation, or questionnaire inference.
+
+A Driver does not prove that a Control is implemented or that a Requirement is satisfied.
+
+The final canonical object/relationship decision for Driver, Source Document, Applicability Decision, and Service Coverage Mapping must be reconciled with `ITOMS_CANONICAL_RULES.md`, `itoms_objects.csv`, and `itoms_schema.csv` before engineering implementation.
+
+## Relationship to Work Architecture
+
+Analyzer findings should be actionable without collapsing analysis into Tasks.
+
+Possible transitions include:
+
+- request missing source material;
+- obtain legal/customer clarification;
+- validate applicability;
+- review interpretation;
+- map or confirm a Control;
+- gather Evidence;
+- perform an Assessment;
+- propose a Remediation;
+- recommend a service change;
+- create a Project;
+- create or coordinate Tasks;
+- record customer acceptance, deferral, rejection, or alternative treatment.
+
+Work Sessions preserve the business reason and source provenance as the item moves from discovery through decision and implementation.
+
+## Separation of concerns
+
+The implementation should preserve three distinguishable capabilities:
+
+### 1. Driver Analyzer
+
+Discovers and interprets the external or business reason for a requirement.
+
+### 2. Coverage / Gap Engine
+
+Compares applicable requirements and needed capabilities with the organization's actual controls, evidence, posture, responsibilities, and subscribed services.
+
+### 3. Driver Report / Customer Communication
+
+Explains why something is required, what it means, where the organization stands, who is responsible, and what action or service can address it.
+
+These may share UI and data but should not be collapsed into one opaque scoring mechanism.
+
+## Initial implementation boundary
+
+A first implementation should support:
+
+- source-type selection;
+- secure source-document intake;
+- two questionnaire instances with independent workflows;
+- conditional question branching;
+- driver extraction;
+- plain-language interpretation;
+- applicability and certainty states;
+- human validation;
+- requirement/control mapping;
+- service-package and responsibility mapping;
+- current-service comparison for known customers;
+- prospect-oriented service guidance;
+- customer/prospect Driver Report;
+- transition to GRC assessment/remediation/work;
+- provenance and audit history.
+
+Automatic legal conclusions, automatic certification claims, and automatic conversion of inferred prospect requirements into verified obligations are explicitly out of scope.
+
+## Open design decisions
+
+1. Should **Driver** become a first-class canonical ITOMS object or an effective-dated relationship/provenance record?
+2. What canonical object represents a source contract/RFP when the raw document remains enclave-restricted?
+3. What certainty/applicability states should be canonical?
+4. How are interpretations approved, superseded, and historically reconstructed?
+5. How are service packages and capabilities represented so package changes do not rewrite historical analysis?
+6. Which prospect questionnaire answers may be retained after conversion to a customer?
+7. What is the handoff process from marketing lead to customer onboarding without overstating inferred obligations?
+8. What human review is mandatory before a document-derived requirement becomes authoritative?
+9. What security and retention controls govern enclave source material?
+10. Which Driver Report elements are visible to customer users versus MSP/internal roles?
+
+## Validation questions
+
+1. Can every recommendation explain the business or external driver that caused it?
+2. Can the customer see what a source requirement means without reading compliance jargon?
+3. Can ITOMS distinguish verified requirements from inferred prospect requirements?
+4. Can a capability be shown as available in IT Advanced without implying that the customer already receives it?
+5. Can a requirement be assigned to the customer or a third party rather than automatically becoming an MSP sales item?
+6. Can the same underlying engine support both direct customer discovery and nontechnical prospect discovery?
+7. Can source documents remain restricted while structured, approved findings participate in the wider ITOMS graph?
+8. Can service-package changes occur without destroying historical analysis?
+9. Can a prospect understand why a service package is suggested?
+10. Can an identified driver transition cleanly into assessment, remediation, Projects, and Tasks while preserving provenance?
