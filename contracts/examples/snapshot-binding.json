@@ -1,0 +1,40 @@
+{
+  "contractVersion": "1.0.0",
+  "canonicalRevision": "7ec850392ea6004693c042b30e8859d4dc45fc28",
+  "messageId": "00000000-0000-0000-0000-0000000000c9",
+  "correlationId": "00000000-0000-0000-0000-0000000001f4",
+  "issuedAt": "2026-10-03T12:00:00Z",
+  "kind": "atlas.binding",
+  "body": {
+    "bindingId": "00000000-0000-0000-0000-000000000064",
+    "revision": "1",
+    "mode": "Snapshot",
+    "source": {
+      "namespace": "atlas.example",
+      "objectId": "OBJ-REQ-0001",
+      "recordId": "00000000-0000-0000-0000-00000000000a",
+      "revision": "1",
+      "scope": "atlas"
+    },
+    "target": {
+      "namespace": "itoms.example",
+      "objectId": "OBJ-REQ-0001",
+      "recordId": "00000000-0000-0000-0000-000000000014",
+      "revision": "1",
+      "scope": "itoms",
+      "tenantScope": "tenant-example"
+    },
+    "snapshot": {
+      "evidenceRef": {
+        "namespace": "itoms.example",
+        "objectId": "OBJ-EVD-0001",
+        "recordId": "00000000-0000-0000-0000-00000000001e",
+        "revision": "1",
+        "scope": "itoms",
+        "tenantScope": "tenant-example"
+      },
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "capturedAt": "2026-10-03T11:00:00Z"
+    }
+  }
+}

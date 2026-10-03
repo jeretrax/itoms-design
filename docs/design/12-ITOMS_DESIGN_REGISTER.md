@@ -48,6 +48,60 @@ List the canonical design document(s), functional specification(s), workflow(s),
 
 ## Active Design Notes
 
+### DR-011 — Canonical Ontology v1 and Atlas Integration Gates
+
+**Status:** Proposed
+
+**Category:** Canonical Model / Knowledge / GRC / Integration / Security
+
+**Domain:** Cross-domain; GRC; KNO; OPS
+
+**Facet:** Atlas / Executive / IT / GRC / Customer / MSP
+
+**Related Objects:** Existing canonical Case, Observation, Evidence, Company, Person, Framework, Requirement, Control, Control Implementation, Assessment, Finding, Remediation; proposed Compliance Driver `OBJ-DRV-0001`, Guidance `OBJ-GDN-0001`, Objective `OBJ-OBJ-0001`, Implementation Option `OBJ-IOP-0001`.
+
+**Related Workflow:** Content Driver intake, Atlas lookup, applicability review, adoption, manual assessment, knowledge revision review.
+
+**Date Raised:** 2026-10-03
+
+**Raised By:** Product Owner request for IT Visualized / IT Atlas + ITOMS reconciliation.
+
+#### Design Concern / Idea
+
+Atlas reference knowledge and ITOMS organization state need a shared vocabulary and explicit integration contract without a competing entity schema. Review the canonical extensions and binding/message semantics as one change under ADR-0010.
+
+#### Proposed reconciliations
+
+- Preserve all 27 existing object definitions and their starter fields; add four proposed objects in the same registries.
+- Content Driver Case uses Case; Source uses Evidence; Context Statement uses Observation with classification and provenance. Authority is a Company/Person role when resolved.
+- Requirement remains Framework-bound. Organization requirement is an applicability/adoption binding, not a new object. Unmapped clause remains a Driver candidate.
+- Atlas publishes reusable knowledge; ITOMS retains private state. Reference, Snapshot and ImportDerivative bindings pin immutable versions. Analyzer output remains a review proposal.
+- Applicability, adoption, decision and exception are historical relationship/result records. Selected edges use the canonical REL namespace.
+
+#### Remaining gates before affected implementation
+
+1. **Canonical acceptance:** Review ADR-0010, the four object promotions, new starter fields and relationship meanings. Resolve any semantic conflict here before runtime migration.
+2. **Reviewer and applicability policy:** Define qualified reviewers, delegated authority, legal/contractual review triggers, mandatory review of inferred context, evidence sufficiency, revocation and approval expiry. Proposal vocabulary does not establish universal legal applicability.
+3. **Source publishing and snapshots:** Approve content licensing, publisher verification, retention, withdrawal, lawful deletion, snapshot rights, classification and historical availability guarantees.
+4. **Enclave and egress:** Specify deployment isolation, key custody, residency, retention/deletion, model execution, prompt-injection containment, export authorization, feedback sanitization, approved query fields and audit content. Local execution is not permission.
+5. **Runtime resolution:** Approve catalog/installation namespace registration, revision token semantics, source matching, split/merge handling, signature/integrity trust, transport/authentication, maximum payloads, replay-window retention and transaction/outbox behavior.
+6. **Canonical dependent objects:** Finalize Service Capability, Customer Service Entitlement, Service Package, Service Linkage, Task and Project IDs before automated durable writes target them. Do not substitute Subscription, Application or Workflow merely to fill an absent type.
+7. **GRC policy:** DR-009 still governs scoring, compensating-control equivalence, mapping coverage, lifecycle, assessor qualifications and certification language. The Atlas contract does not close those gaps.
+8. **Engineering Work Package:** Pin the accepted repository commit; define integration/storage/security tests and implementation traceability before production work. This design includes no implementation authorization or deployed API.
+
+#### Disposition
+
+Proposed ontology and contract are concrete and reviewable. The reconciliations are recorded without declaring remaining policy and runtime gates resolved. No existing operational data is migrated, and no new Atlas schema may become an independent definition of ITOMS objects.
+
+#### Incorporated Into
+
+- [Canonical Ontology v1](canonical-ontology-v1.md)
+- [Atlas ↔ ITOMS schema contract](atlas-itoms-schema-contract-v1.md)
+- [ADR-0010](../../adr/ADR-0010-canonical-ontology-and-atlas-contract.md)
+- Root object/field registries, `itoms_relationships.csv`, and `contracts/README.md`.
+
+---
+
 ### DR-010 — Local Agent Platform Implementation Boundaries
 
 **Status:** Proposed

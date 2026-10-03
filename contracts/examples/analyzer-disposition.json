@@ -1,0 +1,57 @@
+{
+  "contractVersion": "1.0.0",
+  "canonicalRevision": "7ec850392ea6004693c042b30e8859d4dc45fc28",
+  "messageId": "00000000-0000-0000-0000-0000000000cb",
+  "correlationId": "00000000-0000-0000-0000-0000000001f4",
+  "issuedAt": "2026-10-03T12:00:00Z",
+  "kind": "analyzer.disposition",
+  "body": {
+    "proposalId": "00000000-0000-0000-0000-000000000065",
+    "proposalRevision": "1",
+    "outcome": "NeedsInformation",
+    "reviewerRef": {
+      "namespace": "itoms.example",
+      "objectId": "OBJ-PER-0001",
+      "recordId": "00000000-0000-0000-0000-000000000008",
+      "revision": "1",
+      "scope": "itoms",
+      "tenantScope": "tenant-example"
+    },
+    "approvalEvidenceRef": {
+      "namespace": "itoms.example",
+      "objectId": "OBJ-EVD-0001",
+      "recordId": "00000000-0000-0000-0000-000000000009",
+      "revision": "1",
+      "scope": "itoms",
+      "tenantScope": "tenant-example"
+    },
+    "reviewedAt": "2026-10-03T12:10:00Z",
+    "rationale": "Authoritative source is absent; retain candidate status.",
+    "expectedRevisions": [
+      {
+        "namespace": "itoms.example",
+        "objectId": "OBJ-CAS-0001",
+        "recordId": "00000000-0000-0000-0000-000000000001",
+        "revision": "1",
+        "scope": "itoms",
+        "tenantScope": "tenant-example"
+      },
+      {
+        "namespace": "itoms.example",
+        "objectId": "OBJ-DRV-0001",
+        "recordId": "00000000-0000-0000-0000-000000000006",
+        "revision": "1",
+        "scope": "itoms",
+        "tenantScope": "tenant-example"
+      },
+      {
+        "namespace": "itoms.example",
+        "objectId": "OBJ-REQ-0001",
+        "recordId": "00000000-0000-0000-0000-000000000014",
+        "revision": "1",
+        "scope": "itoms",
+        "tenantScope": "tenant-example"
+      }
+    ]
+  }
+}

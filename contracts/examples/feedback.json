@@ -1,0 +1,37 @@
+{
+  "contractVersion": "1.0.0",
+  "canonicalRevision": "7ec850392ea6004693c042b30e8859d4dc45fc28",
+  "messageId": "00000000-0000-0000-0000-0000000000cc",
+  "correlationId": "00000000-0000-0000-0000-0000000001f4",
+  "issuedAt": "2026-10-03T12:00:00Z",
+  "kind": "atlas.feedback",
+  "body": {
+    "publicationId": "00000000-0000-0000-0000-00000000012c",
+    "approvedExportRef": {
+      "namespace": "itoms.example",
+      "objectId": "OBJ-EVD-0001",
+      "recordId": "00000000-0000-0000-0000-00000000012d",
+      "revision": "1",
+      "scope": "itoms",
+      "tenantScope": "tenant-example"
+    },
+    "publicationApprovalRef": {
+      "namespace": "itoms.example",
+      "objectId": "OBJ-EVD-0001",
+      "recordId": "00000000-0000-0000-0000-00000000012e",
+      "revision": "1",
+      "scope": "itoms",
+      "tenantScope": "tenant-example"
+    },
+    "atlasPins": [
+      {
+        "namespace": "atlas.example",
+        "objectId": "OBJ-REQ-0001",
+        "recordId": "00000000-0000-0000-0000-00000000000a",
+        "revision": "1",
+        "scope": "atlas"
+      }
+    ],
+    "purpose": "Synthetic separately approved guidance clarification"
+  }
+}
