@@ -1,0 +1,180 @@
+{
+  "contractVersion": "1.0.0",
+  "canonicalRevision": "7ec850392ea6004693c042b30e8859d4dc45fc28",
+  "messageId": "00000000-0000-0000-0000-0000000000ca",
+  "correlationId": "00000000-0000-0000-0000-0000000001f4",
+  "issuedAt": "2026-10-03T12:00:00Z",
+  "kind": "analyzer.proposal",
+  "body": {
+    "proposalId": "00000000-0000-0000-0000-000000000065",
+    "revision": "1",
+    "caseRef": {
+      "namespace": "itoms.example",
+      "objectId": "OBJ-CAS-0001",
+      "recordId": "00000000-0000-0000-0000-000000000001",
+      "revision": "1",
+      "scope": "itoms",
+      "tenantScope": "tenant-example"
+    },
+    "contextSnapshotRef": {
+      "namespace": "itoms.example",
+      "objectId": "OBJ-EVD-0001",
+      "recordId": "00000000-0000-0000-0000-000000000002",
+      "revision": "1",
+      "scope": "itoms",
+      "tenantScope": "tenant-example"
+    },
+    "analysisRecordRef": {
+      "namespace": "itoms.example",
+      "objectId": "OBJ-EVD-0001",
+      "recordId": "00000000-0000-0000-0000-000000000003",
+      "revision": "1",
+      "scope": "itoms",
+      "tenantScope": "tenant-example"
+    },
+    "sourceEvidenceRefs": [
+      {
+        "namespace": "itoms.example",
+        "objectId": "OBJ-EVD-0001",
+        "recordId": "00000000-0000-0000-0000-000000000004",
+        "revision": "1",
+        "scope": "itoms",
+        "tenantScope": "tenant-example"
+      }
+    ],
+    "contextStatementRefs": [
+      {
+        "namespace": "itoms.example",
+        "objectId": "OBJ-OBS-0001",
+        "recordId": "00000000-0000-0000-0000-000000000005",
+        "revision": "1",
+        "scope": "itoms",
+        "tenantScope": "tenant-example"
+      }
+    ],
+    "driverRefs": [
+      {
+        "namespace": "itoms.example",
+        "objectId": "OBJ-DRV-0001",
+        "recordId": "00000000-0000-0000-0000-000000000006",
+        "revision": "1",
+        "scope": "itoms",
+        "tenantScope": "tenant-example"
+      }
+    ],
+    "atlasPins": [
+      {
+        "namespace": "atlas.example",
+        "objectId": "OBJ-REQ-0001",
+        "recordId": "00000000-0000-0000-0000-00000000000a",
+        "revision": "1",
+        "scope": "atlas"
+      }
+    ],
+    "bindings": [
+      {
+        "bindingId": "00000000-0000-0000-0000-000000000064",
+        "revision": "1",
+        "mode": "Snapshot",
+        "source": {
+          "namespace": "atlas.example",
+          "objectId": "OBJ-REQ-0001",
+          "recordId": "00000000-0000-0000-0000-00000000000a",
+          "revision": "1",
+          "scope": "atlas"
+        },
+        "target": {
+          "namespace": "itoms.example",
+          "objectId": "OBJ-REQ-0001",
+          "recordId": "00000000-0000-0000-0000-000000000014",
+          "revision": "1",
+          "scope": "itoms",
+          "tenantScope": "tenant-example"
+        },
+        "snapshot": {
+          "evidenceRef": {
+            "namespace": "itoms.example",
+            "objectId": "OBJ-EVD-0001",
+            "recordId": "00000000-0000-0000-0000-00000000001e",
+            "revision": "1",
+            "scope": "itoms",
+            "tenantScope": "tenant-example"
+          },
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "capturedAt": "2026-10-03T11:00:00Z"
+        }
+      }
+    ],
+    "applicability": [
+      {
+        "relationshipId": "REL-DRV-REQ-0001",
+        "driverRef": {
+          "namespace": "itoms.example",
+          "objectId": "OBJ-DRV-0001",
+          "recordId": "00000000-0000-0000-0000-000000000006",
+          "revision": "1",
+          "scope": "itoms",
+          "tenantScope": "tenant-example"
+        },
+        "requirementRef": {
+          "namespace": "itoms.example",
+          "objectId": "OBJ-REQ-0001",
+          "recordId": "00000000-0000-0000-0000-000000000014",
+          "revision": "1",
+          "scope": "itoms",
+          "tenantScope": "tenant-example"
+        },
+        "scopeRef": {
+          "namespace": "itoms.example",
+          "objectId": "OBJ-CMP-0001",
+          "recordId": "00000000-0000-0000-0000-000000000007",
+          "revision": "1",
+          "scope": "itoms",
+          "tenantScope": "tenant-example"
+        },
+        "proposedState": "Undetermined",
+        "certainty": "Potential",
+        "rationale": "Synthetic questionnaire answer suggests a requirement; authority and actual coverage still require review.",
+        "sourceEvidenceRefs": [
+          {
+            "namespace": "itoms.example",
+            "objectId": "OBJ-EVD-0001",
+            "recordId": "00000000-0000-0000-0000-000000000004",
+            "revision": "1",
+            "scope": "itoms",
+            "tenantScope": "tenant-example"
+          }
+        ]
+      }
+    ],
+    "unresolvedQuestions": [
+      "Obtain authoritative source and inspect existing controls and compensating practices."
+    ],
+    "expectedRevisions": [
+      {
+        "namespace": "itoms.example",
+        "objectId": "OBJ-CAS-0001",
+        "recordId": "00000000-0000-0000-0000-000000000001",
+        "revision": "1",
+        "scope": "itoms",
+        "tenantScope": "tenant-example"
+      },
+      {
+        "namespace": "itoms.example",
+        "objectId": "OBJ-DRV-0001",
+        "recordId": "00000000-0000-0000-0000-000000000006",
+        "revision": "1",
+        "scope": "itoms",
+        "tenantScope": "tenant-example"
+      },
+      {
+        "namespace": "itoms.example",
+        "objectId": "OBJ-REQ-0001",
+        "recordId": "00000000-0000-0000-0000-000000000014",
+        "revision": "1",
+        "scope": "itoms",
+        "tenantScope": "tenant-example"
+      }
+    ]
+  }
+}

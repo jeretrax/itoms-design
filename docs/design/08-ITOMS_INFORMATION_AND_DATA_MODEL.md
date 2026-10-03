@@ -5,6 +5,8 @@
 
 ITOMS maintains a normalized, tenant-scoped operational graph with source provenance and retained history.
 
+The proposed [Atlas integration contract](atlas-itoms-schema-contract-v1.md) adds a governed external-reference boundary. Atlas publishes reusable records using the same canonical object types; ITOMS retains tenant operational authority. Pinned references, snapshots and explicit local derivatives are source mappings into this model, not a fifth competing canonical layer. Runtime record IDs remain distinct from ObjectIDs, catalog namespaces and tenant security scopes.
+
 ## Data layers
 
 1. **Canonical metadata:** Domains, object types, relationship definitions, workflows, UI definitions, and policies.

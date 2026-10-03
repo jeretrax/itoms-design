@@ -32,6 +32,9 @@ Read `REPO_START_HERE.md` before this directory. Root registries and canonical r
 
 ## Detailed specifications
 
+- [`canonical-ontology-v1.md`](canonical-ontology-v1.md) — proposed shared IT Visualized / Atlas vocabulary reconciled to existing ITOMS IDs, with definition/instance boundaries and canonical extensions under ADR-0010.
+- [`atlas-itoms-schema-contract-v1.md`](atlas-itoms-schema-contract-v1.md) — proposed versioned references, snapshots, derivatives, private Compliance Driver Analyzer handoff, promotion gates and conformance checks. Executable transport contracts live in [`contracts/`](../../contracts/README.md); entity definitions remain in the root registries.
+
 - [`applications/email-domain-security.md`](applications/email-domain-security.md) — initial Security Monitoring vertical slice for DNS, SPF, DKIM, DMARC, Sending Sources, posture, Findings, and guided remediation.
 - [`mockups/grc-solutions-landscape-summary.html`](mockups/grc-solutions-landscape-summary.html) — accepted target experience and capability-coverage goal for the complete GRC policy, procedure, control, implementation, evidence, assessment, remediation, service, work, and reporting landscape.
 - [`templates/engineering-work-package-template.md`](templates/engineering-work-package-template.md) — placeholder-only governed handoff from approved design to implementation.

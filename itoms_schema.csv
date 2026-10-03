@@ -92,3 +92,50 @@ OBJ-CAS-0001,DOM-OPS-0001,OPS,Case,TopicID,UUID,No,Parent topic,FK Topic
 OBJ-EVD-0001,DOM-KNO-0001,KNO,Evidence,EvidenceID,UUID,Yes,Runtime Evidence record identifier,Runtime primary key; distinct from canonical ObjectID
 OBJ-EVD-0001,DOM-KNO-0001,KNO,Evidence,RelatedObjectType,String,Yes,Object type evidence supports,Polymorphic relationship
 OBJ-EVD-0001,DOM-KNO-0001,KNO,Evidence,RelatedObjectID,UUID,Yes,Object identifier evidence supports,Polymorphic relationship
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,ComplianceDriverID,UUID,Yes,Runtime record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,Revision,String,Yes,Immutable revision identifier,Changed content produces a new revision; stable record identity retained
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,EffectiveFrom,DateTime,Yes,Start of applicability or content validity,Retain prior effective intervals
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,EffectiveTo,DateTime,No,Exclusive end of validity,Absent means open interval; must be later than EffectiveFrom
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,RecordedAt,DateTime,Yes,Time this revision was recorded,Distinct from effective time
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,GuidanceID,UUID,Yes,Runtime record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,Revision,String,Yes,Immutable revision identifier,Changed content produces a new revision; stable record identity retained
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,EffectiveFrom,DateTime,Yes,Start of applicability or content validity,Retain prior effective intervals
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,EffectiveTo,DateTime,No,Exclusive end of validity,Absent means open interval; must be later than EffectiveFrom
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,RecordedAt,DateTime,Yes,Time this revision was recorded,Distinct from effective time
+OBJ-OBJ-0001,DOM-KNO-0001,KNO,Objective,ObjectiveID,UUID,Yes,Runtime record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-OBJ-0001,DOM-KNO-0001,KNO,Objective,Revision,String,Yes,Immutable revision identifier,Changed content produces a new revision; stable record identity retained
+OBJ-OBJ-0001,DOM-KNO-0001,KNO,Objective,EffectiveFrom,DateTime,Yes,Start of applicability or content validity,Retain prior effective intervals
+OBJ-OBJ-0001,DOM-KNO-0001,KNO,Objective,EffectiveTo,DateTime,No,Exclusive end of validity,Absent means open interval; must be later than EffectiveFrom
+OBJ-OBJ-0001,DOM-KNO-0001,KNO,Objective,RecordedAt,DateTime,Yes,Time this revision was recorded,Distinct from effective time
+OBJ-IOP-0001,DOM-KNO-0001,KNO,ImplementationOption,ImplementationOptionID,UUID,Yes,Runtime record identifier,Runtime primary key; distinct from canonical ObjectID
+OBJ-IOP-0001,DOM-KNO-0001,KNO,ImplementationOption,Revision,String,Yes,Immutable revision identifier,Changed content produces a new revision; stable record identity retained
+OBJ-IOP-0001,DOM-KNO-0001,KNO,ImplementationOption,EffectiveFrom,DateTime,Yes,Start of applicability or content validity,Retain prior effective intervals
+OBJ-IOP-0001,DOM-KNO-0001,KNO,ImplementationOption,EffectiveTo,DateTime,No,Exclusive end of validity,Absent means open interval; must be later than EffectiveFrom
+OBJ-IOP-0001,DOM-KNO-0001,KNO,ImplementationOption,RecordedAt,DateTime,Yes,Time this revision was recorded,Distinct from effective time
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,CompanyID,UUID,Yes,Organization whose driver is being investigated,FK Company; does not itself define the tenant boundary
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,CaseID,UUID,Yes,Originating Content Driver Case,FK Case; additional Case relationships retain provenance
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,DriverText,Text,Yes,Attributed source obligation or organizational intent,Do not replace source text with AI interpretation
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,DriverBasis,Enum,Yes,External obligation voluntary adoption or inferred need,ExternalObligation;VoluntaryAdoption;InferredNeed
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,ScopeObjectType,String,Yes,Canonical type defining affected scope,Registered ObjectID
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,ScopeObjectID,UUID,Yes,Affected runtime scope,Typed FK according to ScopeObjectType
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,SourceEvidenceIDs,UUID[],Yes,Governed source references,One or more FK Evidence; source revisions and locators retained in relationships
+OBJ-DRV-0001,DOM-GRC-0001,GRC,ComplianceDriver,ReviewState,Enum,Yes,Validation of driver interpretation,Candidate;NeedsReview;Confirmed;Rejected;Superseded; not assessment state
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,Title,String,Yes,Readable title,Never a referential key
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,GuidanceText,Text,Yes,Source-aware knowledge statement,Separate quoted source from interpretation
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,ContentKind,Enum,Yes,Kind of statement,Claim;Recommendation;Interpretation;Procedure;RiskExplanation
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,NormativeStrength,Enum,Yes,Strength attributed to source,Descriptive;Optional;Recommended;SourceMandatory;Unknown; source mandatory does not establish tenant applicability
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,ApplicabilityConditions,Text,Yes,Conditions assumptions and exclusions,Unknown or not yet specified must be explicit
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,SourceEvidenceIDs,UUID[],Yes,Source support for published guidance,One or more FK Evidence; retain exact source revision and locator
+OBJ-GDN-0001,DOM-KNO-0001,KNO,Guidance,ReviewState,Enum,Yes,Publication review state,Draft;Reviewed;Published;Withdrawn;Superseded
+OBJ-OBJ-0001,DOM-KNO-0001,KNO,Objective,Title,String,Yes,Name of reusable objective,Organization-specific goals use scoped adoption records
+OBJ-OBJ-0001,DOM-KNO-0001,KNO,Objective,OutcomeText,Text,Yes,Desired outcome definition,Not an achieved Work Outcome
+OBJ-OBJ-0001,DOM-KNO-0001,KNO,Objective,SuccessCriteria,Text,Yes,Criteria by which outcome could be evaluated,Does not record an organization assessment
+OBJ-IOP-0001,DOM-KNO-0001,KNO,ImplementationOption,Title,String,Yes,Name of reusable approach,Never implies purchase or implementation
+OBJ-IOP-0001,DOM-KNO-0001,KNO,ImplementationOption,ApproachText,Text,Yes,Description of how Controls could be realized,Use Control Implementation for actual tenant realization
+OBJ-IOP-0001,DOM-KNO-0001,KNO,ImplementationOption,AssumptionsAndLimitations,Text,Yes,Dependencies conditions and limitations,Unresolved assumptions must be visible
+OBJ-IOP-0001,DOM-KNO-0001,KNO,ImplementationOption,TradeoffBasis,Text,Yes,Cost effort disruption and risk estimate basis,Unknown permitted explicitly; monetary values require currency range period date and basis
+OBJ-CAS-0001,DOM-OPS-0001,OPS,Case,CaseClassification,String,No,Classification including ContentDriver,Classification not a second Case object
+OBJ-CAS-0001,DOM-OPS-0001,OPS,Case,ContentDriverCaseType,Enum,No,Intake type for ContentDriver cases,Required for ContentDriver; nine types in compliance-driver-analyzer.md
+OBJ-CAS-0001,DOM-OPS-0001,OPS,Case,OriginalNarrativeEvidenceID,UUID,No,Original intake narrative,FK Evidence; attributable revisions preserve originals subject to retention
+OBJ-OBS-0001,DOM-OPS-0001,OPS,Observation,StatementKind,Enum,No,Classification when used as Case Context Statement,Fact;Reported Statement;User Assertion;Opinion / Concern;AI Inference;Unknown
+OBJ-OBS-0001,DOM-OPS-0001,OPS,Observation,ValidationState,Enum,No,Review state for contextual assertion,Unverified;Validated;Disputed;Superseded; classification never auto-promotes an inference
