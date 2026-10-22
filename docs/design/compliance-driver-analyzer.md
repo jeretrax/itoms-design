@@ -413,6 +413,8 @@ Automatic legal conclusions, automatic certification claims, and automatic conve
 
 ## Open design decisions
 
+The proposed [Canonical Ontology v1](canonical-ontology-v1.md) and [Atlas ↔ ITOMS contract](atlas-itoms-schema-contract-v1.md), under [ADR-0010](../../adr/ADR-0010-canonical-ontology-and-atlas-contract.md), reconcile Content Driver Case to Case `OBJ-CAS-0001`, Source to Evidence `OBJ-EVD-0001`, and Case Context Statement to Observation `OBJ-OBS-0001`. They propose Compliance Driver `OBJ-DRV-0001` in the existing registries, with applicability/adoption represented as versioned relationship/result records. These decisions remain proposed until review; they do not silently close the other questions below. DR-011 tracks implementation gates, including service/work identities, review policy, and enclave security. Atlas supplies pinned reusable knowledge to the private Analyzer; it does not receive raw Case context or approve tenant obligations.
+
 1. What canonical object and relationship IDs represent **Content Driver Case**, **Case Context Statement**, **Driver**, and their effective-dated provenance in `itoms_objects.csv` and `itoms_schema.csv`?
 2. What canonical object represents a source contract/RFP when the raw document remains enclave-restricted?
 3. What certainty/applicability states should be canonical?

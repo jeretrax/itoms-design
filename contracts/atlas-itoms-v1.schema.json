@@ -1,0 +1,857 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.itoms.invalid/contracts/atlas-itoms-v1.schema.json",
+  "title": "Atlas\u2013ITOMS v1 integration envelopes (not entity schemas)",
+  "description": "Proposed contract. .invalid identifiers are schema identities, not deployed endpoints. Canonical object IDs are generated from the root registry.",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": "1.0.0"
+        },
+        "canonicalRevision": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "messageId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "correlationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "kind": {
+          "const": "atlas.binding"
+        },
+        "body": {
+          "$ref": "#/$defs/Binding"
+        }
+      },
+      "required": [
+        "contractVersion",
+        "canonicalRevision",
+        "messageId",
+        "correlationId",
+        "issuedAt",
+        "kind",
+        "body"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": "1.0.0"
+        },
+        "canonicalRevision": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "messageId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "correlationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "kind": {
+          "const": "analyzer.proposal"
+        },
+        "body": {
+          "$ref": "#/$defs/Proposal"
+        }
+      },
+      "required": [
+        "contractVersion",
+        "canonicalRevision",
+        "messageId",
+        "correlationId",
+        "issuedAt",
+        "kind",
+        "body"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": "1.0.0"
+        },
+        "canonicalRevision": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "messageId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "correlationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "kind": {
+          "const": "analyzer.disposition"
+        },
+        "body": {
+          "$ref": "#/$defs/Disposition"
+        }
+      },
+      "required": [
+        "contractVersion",
+        "canonicalRevision",
+        "messageId",
+        "correlationId",
+        "issuedAt",
+        "kind",
+        "body"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": "1.0.0"
+        },
+        "canonicalRevision": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "messageId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "correlationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "issuedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "kind": {
+          "const": "atlas.feedback"
+        },
+        "body": {
+          "$ref": "#/$defs/Feedback"
+        }
+      },
+      "required": [
+        "contractVersion",
+        "canonicalRevision",
+        "messageId",
+        "correlationId",
+        "issuedAt",
+        "kind",
+        "body"
+      ],
+      "additionalProperties": false
+    }
+  ],
+  "$defs": {
+    "CanonicalRef": {
+      "type": "object",
+      "properties": {
+        "namespace": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objectId": {
+          "$ref": "canonical-ids.schema.json#/$defs/ObjectID"
+        },
+        "recordId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "enum": [
+            "atlas",
+            "itoms"
+          ]
+        },
+        "tenantScope": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "namespace",
+        "objectId",
+        "recordId",
+        "revision",
+        "scope"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "scope": {
+                "const": "itoms"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "tenantScope"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "tenantScope"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Snapshot": {
+      "type": "object",
+      "properties": {
+        "evidenceRef": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "objectId": {
+                  "const": "OBJ-EVD-0001"
+                },
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "capturedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "evidenceRef",
+        "sha256",
+        "capturedAt"
+      ],
+      "additionalProperties": false
+    },
+    "Binding": {
+      "type": "object",
+      "properties": {
+        "bindingId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mode": {
+          "enum": [
+            "Reference",
+            "Snapshot",
+            "ImportDerivative"
+          ]
+        },
+        "source": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "scope": {
+                  "const": "atlas"
+                }
+              }
+            }
+          ]
+        },
+        "target": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "snapshot": {
+          "$ref": "#/$defs/Snapshot"
+        },
+        "derivationRationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "bindingId",
+        "revision",
+        "mode",
+        "source",
+        "target"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "Snapshot"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "snapshot"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "snapshot"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "ImportDerivative"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "derivationRationale"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "derivationRationale"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "Applicability": {
+      "type": "object",
+      "properties": {
+        "relationshipId": {
+          "const": "REL-DRV-REQ-0001"
+        },
+        "driverRef": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "objectId": {
+                  "const": "OBJ-DRV-0001"
+                },
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "requirementRef": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "objectId": {
+                  "const": "OBJ-REQ-0001"
+                },
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "scopeRef": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "proposedState": {
+          "enum": [
+            "Undetermined",
+            "Applicable",
+            "NotApplicable",
+            "Conditional"
+          ]
+        },
+        "certainty": {
+          "enum": [
+            "Potential",
+            "Likely",
+            "Verified"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceEvidenceRefs": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/CanonicalRef"
+              },
+              {
+                "properties": {
+                  "objectId": {
+                    "const": "OBJ-EVD-0001"
+                  },
+                  "scope": {
+                    "const": "itoms"
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "relationshipId",
+        "driverRef",
+        "requirementRef",
+        "scopeRef",
+        "proposedState",
+        "certainty",
+        "rationale",
+        "sourceEvidenceRefs"
+      ],
+      "additionalProperties": false
+    },
+    "Proposal": {
+      "type": "object",
+      "properties": {
+        "proposalId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "caseRef": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "objectId": {
+                  "const": "OBJ-CAS-0001"
+                },
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "contextSnapshotRef": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "objectId": {
+                  "const": "OBJ-EVD-0001"
+                },
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "analysisRecordRef": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "objectId": {
+                  "const": "OBJ-EVD-0001"
+                },
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "sourceEvidenceRefs": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/CanonicalRef"
+              },
+              {
+                "properties": {
+                  "objectId": {
+                    "const": "OBJ-EVD-0001"
+                  },
+                  "scope": {
+                    "const": "itoms"
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "contextStatementRefs": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/CanonicalRef"
+              },
+              {
+                "properties": {
+                  "objectId": {
+                    "const": "OBJ-OBS-0001"
+                  },
+                  "scope": {
+                    "const": "itoms"
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "driverRefs": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/CanonicalRef"
+              },
+              {
+                "properties": {
+                  "objectId": {
+                    "const": "OBJ-DRV-0001"
+                  },
+                  "scope": {
+                    "const": "itoms"
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "atlasPins": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/CanonicalRef"
+              },
+              {
+                "properties": {
+                  "scope": {
+                    "const": "atlas"
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Binding"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "applicability": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Applicability"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "unresolvedQuestions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "expectedRevisions": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/CanonicalRef"
+              },
+              {
+                "properties": {
+                  "scope": {
+                    "const": "itoms"
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "proposalId",
+        "revision",
+        "caseRef",
+        "contextSnapshotRef",
+        "analysisRecordRef",
+        "sourceEvidenceRefs",
+        "contextStatementRefs",
+        "driverRefs",
+        "atlasPins",
+        "bindings",
+        "applicability",
+        "unresolvedQuestions",
+        "expectedRevisions"
+      ],
+      "additionalProperties": false
+    },
+    "Disposition": {
+      "type": "object",
+      "properties": {
+        "proposalId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "proposalRevision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "outcome": {
+          "enum": [
+            "Approved",
+            "Rejected",
+            "NeedsInformation"
+          ]
+        },
+        "reviewerRef": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "objectId": {
+                  "const": "OBJ-PER-0001"
+                },
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "approvalEvidenceRef": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "objectId": {
+                  "const": "OBJ-EVD-0001"
+                },
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "reviewedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expectedRevisions": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/CanonicalRef"
+              },
+              {
+                "properties": {
+                  "scope": {
+                    "const": "itoms"
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "proposalId",
+        "proposalRevision",
+        "outcome",
+        "reviewerRef",
+        "approvalEvidenceRef",
+        "reviewedAt",
+        "rationale",
+        "expectedRevisions"
+      ],
+      "additionalProperties": false
+    },
+    "Feedback": {
+      "type": "object",
+      "properties": {
+        "publicationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "approvedExportRef": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "objectId": {
+                  "const": "OBJ-EVD-0001"
+                },
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "publicationApprovalRef": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/CanonicalRef"
+            },
+            {
+              "properties": {
+                "objectId": {
+                  "const": "OBJ-EVD-0001"
+                },
+                "scope": {
+                  "const": "itoms"
+                }
+              }
+            }
+          ]
+        },
+        "atlasPins": {
+          "type": "array",
+          "items": {
+            "allOf": [
+              {
+                "$ref": "#/$defs/CanonicalRef"
+              },
+              {
+                "properties": {
+                  "scope": {
+                    "const": "atlas"
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "publicationId",
+        "approvedExportRef",
+        "publicationApprovalRef",
+        "atlasPins",
+        "purpose"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

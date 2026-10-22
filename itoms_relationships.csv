@@ -1,0 +1,21 @@
+RelationshipID,Name,FromObjectIDs,ToObjectIDs,Cardinality,Meaning,Rule,Status
+REL-FWK-REQ-0001,contains,OBJ-FWK-0001,OBJ-REQ-0001,1:N,Framework contains Requirements,Every Requirement has exactly one FrameworkID including a reviewed source version,Proposed
+REL-REQ-CTL-0001,mapped_to,OBJ-REQ-0001,OBJ-CTL-0001,M:N,Requirement coverage mapping to Control,Retain mapping type rationale coverage provenance and endpoint revisions; mapping is not satisfaction,Proposed
+REL-CTL-CIM-0001,realized_by,OBJ-CTL-0001,OBJ-CIM-0001,1:N,Reusable Control has scoped realizations,Each Control Implementation has one ControlID,Proposed
+REL-CAS-DRV-0001,originates,OBJ-CAS-0001,OBJ-DRV-0001,M:N,Case introduces or contributes to a Driver,Driver.CaseID identifies origin; additional Cases do not duplicate the Driver,Proposed
+REL-EVD-ANY-0001,supports,OBJ-EVD-0001,*,M:N,Governed Evidence supports a typed subject,Existing RelatedObjectType/ID is a primary convenience link; additional typed links reuse Evidence,Proposed
+REL-CAS-OBS-0001,has_context,OBJ-CAS-0001,OBJ-OBS-0001,M:N,Case context includes attributable statements,Preserve classification validation sources and original narrative,Proposed
+REL-DRV-REQ-0001,applicability,OBJ-DRV-0001,OBJ-REQ-0001,M:N,Scoped applicability of a Framework Requirement,Retain scope decision basis certainty source revisions rationale and approval; missing mapping remains unresolved,Proposed
+REL-DRV-OBJ-0001,seeks_outcome,OBJ-DRV-0001,OBJ-OBJ-0001,M:N,Driver seeks a reusable outcome,Voluntary target does not imply external mandate,Proposed
+REL-GDN-OBJ-0001,advances,OBJ-GDN-0001,OBJ-OBJ-0001,M:N,Guidance supports an objective,Explain conditions and limitations,Proposed
+REL-GDN-CTL-0001,recommends,OBJ-GDN-0001,OBJ-CTL-0001,M:N,Guidance recommends a safeguard,Source strength remains separate from tenant applicability,Proposed
+REL-IOP-CTL-0001,realizes,OBJ-IOP-0001,OBJ-CTL-0001,M:N,Option describes a possible Control realization,Does not create a Control Implementation or prove coverage,Proposed
+REL-IOP-IOP-0001,alternative_to,OBJ-IOP-0001,OBJ-IOP-0001,M:N,Alternative approach in a stated context,Symmetric option comparison; no equivalence of compliance inferred,Proposed
+REL-GDN-GDN-0001,conflicts_with,OBJ-GDN-0001,OBJ-GDN-0001,M:N,Sourced guidance conflict,Symmetric; retain context disagreement and both sources,Proposed
+REL-GDN-GDN-0002,agrees_with,OBJ-GDN-0001,OBJ-GDN-0001,M:N,Corroborating guidance,Symmetric; agreement does not establish applicability or authority,Proposed
+REL-PTY-GDN-0001,issues,OBJ-CMP-0001;OBJ-PER-0001,OBJ-GDN-0001;OBJ-FWK-0001,M:N,Party acts as issuer or authority,Source-backed role; unresolved issuer text does not force party creation,Proposed
+REL-CMP-DEF-0001,adopts,OBJ-CMP-0001,OBJ-FWK-0001;OBJ-REQ-0001;OBJ-CTL-0001;OBJ-POL-0001;OBJ-OBJ-0001;OBJ-WFL-0001,M:N,Organization adopts a pinned definition within scope,Retain approval Evidence effective time target and optional binding; never change reusable definition,Proposed
+REL-ASM-ANY-0001,evaluates,OBJ-ASM-0001,*,M:N,Assessment Result evaluates a scoped subject,Manual V1 states Satisfied Partial Unsatisfied Not Assessed; attributable approved result,Proposed
+REL-REM-FND-0001,addresses,OBJ-REM-0001,OBJ-FND-0001,M:N,Remediation addresses a Finding,Acceptance changes Planned Posture only; reassessment changes Current Posture,Proposed
+REL-CIM-IOP-0001,uses_option,OBJ-CIM-0001,OBJ-IOP-0001,M:N,Scoped implementation uses a pinned option,Local deviations and Evidence retained; selecting option is not verification,Proposed
+REL-CTL-RSK-0001,mitigates,OBJ-CTL-0001,OBJ-RSK-0001,M:N,Control contributes to treating a tenant Risk,Effectiveness and residual risk require scope Evidence and decision history,Proposed

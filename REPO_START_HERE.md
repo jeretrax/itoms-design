@@ -20,6 +20,8 @@ Any developer, AI coding assistant, agent, automation, or reviewer working in th
 14. `itoms_glossary.html` — authoritative human-readable glossary and object library.
 15. `itoms_schema.csv` — field-level starter schema/data dictionary.
 
+For IT Visualized / IT Atlas integration, then read `docs/design/canonical-ontology-v1.md`, `docs/design/atlas-itoms-schema-contract-v1.md`, `itoms_relationships.csv`, and `adr/ADR-0010-canonical-ontology-and-atlas-contract.md`. Their proposed status must remain visible. Transport contracts in `contracts/` reference the canonical registries and do not redefine entity fields.
+
 If two files appear to disagree, stop treating the names as authority. Resolve the concept by its permanent ID and update the inconsistent documentation. Permanent IDs are the identity of a concept; display names are labels.
 
 ## Non-negotiable rules

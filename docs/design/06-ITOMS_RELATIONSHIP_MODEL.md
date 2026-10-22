@@ -33,6 +33,8 @@ Relationships make the customer operations graph useful. They preserve why objec
 
 Relationship definitions promoted to metadata use the `REL-` namespace.
 
+The proposed [Canonical Ontology v1](canonical-ontology-v1.md) promotes the selected Atlas/GRC relationship vocabulary into [`itoms_relationships.csv`](../../itoms_relationships.csv) under ADR-0010. The registry references existing or explicitly proposed ObjectIDs; it does not replace the object registry. Applicability, adoption, decisions and exceptions retain relationship/result history rather than creating parallel Atlas operational objects.
+
 Monitoring relationships are defined further in [`control-monitoring-architecture.md`](control-monitoring-architecture.md) and the initial [Email & Domain Security specification](applications/email-domain-security.md).
 
 GRC relationships and the Framework-to-Remediation traceability chain are defined in [`grc-architecture.md`](grc-architecture.md).
